@@ -17,9 +17,14 @@ interface VehiclesSectionProps {
 
 export function VehiclesSection({ t, locale, limit, hideHeading }: VehiclesSectionProps) {
   return (
-    <section id="vehicules" className="section bg-white" aria-labelledby={hideHeading ? undefined : 'vehicules-titre'}>
+    <section id="vehicules" className="section bg-white" aria-labelledby="vehicules-titre">
       <div className="container">
-        {!hideHeading && (
+        {hideHeading ? (
+          // Titre invisible : garde une hiérarchie h1 → h2 → h3 correcte pour l'accessibilité
+          <h2 id="vehicules-titre" className="sr-only">
+            {t.title}
+          </h2>
+        ) : (
           <div className="mb-12">
             <SectionHeading id="vehicules-titre" eyebrow={t.eyebrow} title={t.title} subtitle={t.subtitle} />
           </div>

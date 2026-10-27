@@ -18,7 +18,15 @@ interface PageHeroProps {
 export function PageHero({ locale, title, subtitle, homeLabel, breadcrumbLabel, image, imageAlt }: PageHeroProps) {
   return (
     <section className="relative isolate overflow-hidden bg-navy-950 pb-16 pt-32 md:pb-20 md:pt-40">
-      <Image src={image} alt={imageAlt} fill priority sizes="100vw" className="-z-20 object-cover opacity-40" />
+      {/* Photo assombrie : une version légère suffit sur mobile */}
+      <Image
+        src={image}
+        alt={imageAlt}
+        fill
+        priority
+        sizes="(max-width: 767px) 640px, 100vw"
+        className="-z-20 object-cover opacity-40"
+      />
       <div className="absolute inset-0 -z-10 bg-gradient-to-r from-navy-950 via-navy-950/85 to-navy-950/40" aria-hidden="true" />
 
       <div className="container">
@@ -38,12 +46,11 @@ export function PageHero({ locale, title, subtitle, homeLabel, breadcrumbLabel, 
           </ol>
         </nav>
         <h1
-          className="animate-fade-up mt-5 max-w-3xl text-4xl font-extrabold text-white md:text-5xl"
-          style={{ animationDelay: '80ms' }}
+          className="mt-5 max-w-3xl text-4xl font-extrabold text-white md:text-5xl"
         >
           {title}
         </h1>
-        <p className="animate-fade-up mt-4 max-w-2xl text-lg text-slate-300" style={{ animationDelay: '160ms' }}>
+        <p className="mt-4 max-w-2xl text-lg text-slate-300">
           {subtitle}
         </p>
       </div>

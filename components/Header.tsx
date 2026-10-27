@@ -79,7 +79,7 @@ export function Header({ locale, nav, whatsappMessage, skipLabel, navLabels }: H
         </a>
 
         <div className={cn('container flex items-center justify-between transition-all', solid ? 'h-16' : 'h-20')}>
-          <Link href={localePath(locale, '/')} aria-label={`${siteConfig.name} — ${nav.home}`} className="relative z-10">
+          <Link href={localePath(locale, '/')} className="relative z-10">
             <Logo tone={solid ? 'dark' : 'light'} />
           </Link>
 

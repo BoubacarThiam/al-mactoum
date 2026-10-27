@@ -14,7 +14,8 @@ const badgeIcons = [ShieldCheck, Wallet, MapPin];
 
 /**
  * Grande bannière d'accueil.
- * Animations en CSS pur (pas de JavaScript) pour un affichage immédiat sur mobile.
+ * Le titre et le sous-titre s'affichent sans animation (affichage le plus rapide possible sur mobile) ;
+ * boutons et badges apparaissent ensuite en douceur, en CSS pur.
  */
 export function Hero({ locale, t }: HeroProps) {
   return (
@@ -40,17 +41,11 @@ export function Hero({ locale, t }: HeroProps) {
             {t.eyebrow}
           </p>
 
-          <h1
-            className="animate-fade-up text-balance text-[2.15rem] font-extrabold leading-[1.1] text-white sm:text-5xl lg:text-6xl"
-            style={{ animationDelay: '80ms' }}
-          >
+          <h1 className="text-balance text-[2.15rem] font-extrabold leading-[1.1] text-white sm:text-5xl lg:text-6xl">
             {t.title}
           </h1>
 
-          <p
-            className="animate-fade-up mt-6 max-w-xl text-lg text-slate-200 md:text-xl"
-            style={{ animationDelay: '160ms' }}
-          >
+          <p className="mt-6 max-w-xl text-lg text-slate-200 md:text-xl">
             {t.subtitle}
           </p>
 
