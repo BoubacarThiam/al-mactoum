@@ -1,0 +1,327 @@
+{
+  "meta": {
+    "title": "AL MACTOUM BUSINESS AUTOMOBILE | Cars from Canada delivered to Dakar",
+    "titleTemplate": "%s | AL MACTOUM",
+    "description": "Car import from Canada to Senegal. Pay 60% when you order and the remaining 40% only when your vehicle arrives in Dakar. Pay with Wave, Orange Money or cash.",
+    "keywords": [
+      "import car Canada Senegal",
+      "car from Canada to Dakar",
+      "buy car in Canada delivery Dakar",
+      "Wave Orange Money car payment",
+      "AL MACTOUM BUSINESS AUTOMOBILE",
+      "car export Canada to Senegal"
+    ],
+    "ogAlt": "AL MACTOUM — Your car from Canada delivered to Dakar"
+  },
+  "common": {
+    "skipToContent": "Skip to content",
+    "backToTop": "Back to top",
+    "whatsappFloat": "Chat on WhatsApp",
+    "senegal": "Senegal",
+    "canada": "Canada",
+    "home": "Home",
+    "newTab": "(opens in a new tab)",
+    "breadcrumb": "Breadcrumb",
+    "mainNav": "Main navigation",
+    "mobileNav": "Mobile navigation"
+  },
+  "nav": {
+    "home": "Home",
+    "services": "Services",
+    "steps": "How it works",
+    "payment": "Payment",
+    "vehicles": "Vehicles",
+    "faq": "FAQ",
+    "contact": "Contact",
+    "quote": "Get a quote",
+    "openMenu": "Open menu",
+    "closeMenu": "Close menu",
+    "language": "Language",
+    "switchLanguage": "Version française"
+  },
+  "hero": {
+    "eyebrow": "Car import Canada → Senegal",
+    "title": "Your car from Canada, delivered to Dakar with confidence",
+    "subtitle": "Pay 60% when you order, the rest when your vehicle arrives.",
+    "ctaQuote": "Get a quote",
+    "ctaWhatsapp": "Chat on WhatsApp",
+    "imageAlt": "Container ship loaded with containers at sea, shipping vehicles by sea",
+    "whatsappMessage": "Hello AL MACTOUM, I would like to import a car from Canada to Dakar. Can you help me?",
+    "badges": [
+      "60/40 payment",
+      "Wave · Orange Money · Cash",
+      "Based in Dakar and Canada"
+    ]
+  },
+  "steps": {
+    "eyebrow": "How it works",
+    "title": "5 simple steps, from Canada to Dakar",
+    "subtitle": "A transparent process, followed end to end by our team.",
+    "items": [
+      {
+        "title": "Choose your vehicle",
+        "text": "Pick your vehicle, or let us find one for you based on your budget and needs."
+      },
+      {
+        "title": "60% deposit",
+        "text": "Pay 60% with Wave, Orange Money or cash at our office to start the order."
+      },
+      {
+        "title": "Purchase and inspection in Canada",
+        "text": "Our team in Canada inspects the vehicle and completes the purchase securely."
+      },
+      {
+        "title": "Shipping and tracking",
+        "text": "Your vehicle is shipped by sea. We keep you informed at every step until Dakar."
+      },
+      {
+        "title": "Arrival in Dakar",
+        "text": "Your car is here: pay the remaining 40% and drive it away."
+      }
+    ]
+  },
+  "payment": {
+    "eyebrow": "Secure payment",
+    "title": "You pay the rest only when your car is here",
+    "subtitle": "Our 60/40 model protects you: most of the price is paid upfront, but the balance is only due once the vehicle arrives in Dakar.",
+    "depositLabel": "When you order",
+    "depositText": "To launch the purchase of your vehicle in Canada.",
+    "balanceLabel": "On arrival in Dakar",
+    "balanceText": "Only once your car has arrived in Dakar.",
+    "progressLabel": "Payment split: 60% when you order, 40% on arrival",
+    "methodsTitle": "Accepted payment methods",
+    "receiveNumber": "Number",
+    "methods": {
+      "wave": "Fast mobile payment",
+      "orange-money": "Orange mobile payment",
+      "cash": "Cash at our Sicap Foire office"
+    },
+    "simulator": {
+      "title": "Payment simulator",
+      "subtitle": "Enter the total price of your vehicle to see your deposit and balance.",
+      "label": "Total vehicle price (FCFA)",
+      "placeholder": "e.g. 10 000 000",
+      "deposit": "Deposit when ordering (60%)",
+      "balance": "Balance on arrival (40%)",
+      "disclaimer": "Indicative amounts, final quote on request.",
+      "cta": "Pay my deposit",
+      "ctaHint": "Enter an amount to continue",
+      "whatsappMessage": "Hello AL MACTOUM, I would like to pay my deposit of {amount}. Which payment method should I use?"
+    }
+  },
+  "services": {
+    "eyebrow": "Our services",
+    "title": "Full support, from purchase to delivery",
+    "subtitle": "We handle every step so all you have to do is pick up your keys.",
+    "items": [
+      {
+        "title": "Vehicle search in Canada",
+        "text": "We find the model that matches your criteria and your budget."
+      },
+      {
+        "title": "Pre-purchase inspection",
+        "text": "Every vehicle is checked before purchase. You receive photos and details."
+      },
+      {
+        "title": "Secure purchase",
+        "text": "We buy the vehicle for you in Canada, with a two-step payment."
+      },
+      {
+        "title": "Sea freight",
+        "text": "We organise the shipping of your vehicle by sea to the port of Dakar."
+      },
+      {
+        "title": "Customs clearance support",
+        "text": "We help you with the customs clearance formalities in Dakar."
+      },
+      {
+        "title": "Delivery in Dakar",
+        "text": "Pick up your vehicle in Dakar, ready for the road."
+      }
+    ]
+  },
+  "vehicles": {
+    "eyebrow": "Vehicles",
+    "title": "Examples of available vehicles",
+    "subtitle": "SUVs, sedans, pick-ups: tell us what you are looking for and we will find it in Canada.",
+    "filterBrand": "Brand",
+    "filterType": "Type",
+    "all": "All",
+    "allBrands": "All brands",
+    "types": {
+      "suv": "SUV",
+      "berline": "Sedan",
+      "pickup": "Pick-up"
+    },
+    "year": "Year",
+    "mileage": "Mileage",
+    "price": "Price",
+    "onQuote": "On quote",
+    "example": "EXAMPLE",
+    "cta": "I'm interested",
+    "whatsappMessage": "Hello AL MACTOUM, I'm interested in the {vehicle}. Could you send me a quote?",
+    "empty": "No vehicle matches these filters.",
+    "resultCount": "{count} vehicle(s)",
+    "seeAll": "See all vehicles",
+    "customTitle": "Can't find your model?",
+    "customText": "Tell us the brand, model, year and your budget: we will search for it in Canada.",
+    "customCta": "Request a search"
+  },
+  "why": {
+    "eyebrow": "Why choose us",
+    "title": "Trust comes first",
+    "subtitle": "A reliable partner on both sides of the Atlantic.",
+    "items": [
+      {
+        "title": "Secure 60/40 payment",
+        "text": "You only pay the balance once your car has arrived in Dakar."
+      },
+      {
+        "title": "Easy payment",
+        "text": "Wave, Orange Money or cash directly at our Sicap Foire office."
+      },
+      {
+        "title": "Present in Canada and Dakar",
+        "text": "A team in Canada for the purchase, an office in Dakar to welcome you."
+      },
+      {
+        "title": "Personal support",
+        "text": "A dedicated contact who answers you and keeps you informed at every step."
+      }
+    ],
+    "imageAlt": "Car driving on a road at sunset"
+  },
+  "testimonials": {
+    "eyebrow": "Testimonials",
+    "title": "They trusted us",
+    "subtitle": "Our customers' reviews will be published here soon."
+  },
+  "social": {
+    "eyebrow": "Social media",
+    "title": "Follow us",
+    "subtitle": "New arrivals, new vehicles and deliveries: follow our news on video.",
+    "follow": "Follow",
+    "tiktok": "TikTok",
+    "facebook": "Facebook"
+  },
+  "faq": {
+    "eyebrow": "FAQ",
+    "title": "Frequently asked questions",
+    "subtitle": "Have another question? Message us on WhatsApp.",
+    "items": [
+      {
+        "q": "How does the 60/40 payment work?",
+        "a": "You pay 60% of the total price when you order, which allows us to buy and ship your vehicle. The remaining 40% is only due once your car has arrived in Dakar, when you pick it up."
+      },
+      {
+        "q": "Which payment methods do you accept?",
+        "a": "We accept Wave, Orange Money and cash at our Sicap Foire office (Airport Highway, opposite Keur Yoff, Dakar)."
+      },
+      {
+        "q": "How long does delivery from Canada to Dakar take?",
+        "a": "The timeline depends on the vehicle, the shipping schedule and port formalities. We give you an estimate with your quote and keep you informed throughout the journey."
+      },
+      {
+        "q": "Can I choose my own vehicle?",
+        "a": "Yes. You can send us a specific vehicle you have found, or simply your criteria (brand, model, year, budget) and we will look for the best options in Canada."
+      },
+      {
+        "q": "How can I track my order?",
+        "a": "Your contact person keeps you informed at every key step: purchase, inspection, loading, ship departure and arrival in Dakar. You can also message us on WhatsApp at any time to check on your order."
+      },
+      {
+        "q": "What happens if the vehicle has a problem?",
+        "a": "The vehicle is inspected before purchase and we share the available information with you. If an issue is found before purchase, we offer you another option. The applicable terms are detailed with your quote."
+      },
+      {
+        "q": "Who handles customs clearance?",
+        "a": "We support you with the customs clearance formalities on arrival in Dakar. Customs fees depend on the vehicle; we explain them when we prepare your quote."
+      }
+    ]
+  },
+  "contact": {
+    "eyebrow": "Contact & quote",
+    "title": "Request your free quote",
+    "subtitle": "Fill in the form: your request opens directly in WhatsApp, ready to send.",
+    "form": {
+      "name": "Full name",
+      "phone": "Phone",
+      "email": "Email",
+      "city": "City",
+      "brand": "Brand",
+      "model": "Model",
+      "year": "Year",
+      "vehicleGroup": "Desired vehicle",
+      "budget": "Budget (FCFA)",
+      "paymentMethod": "Preferred payment method",
+      "paymentPlaceholder": "Choose…",
+      "message": "Message",
+      "optional": "optional",
+      "required": "required",
+      "placeholders": {
+        "name": "e.g. Moussa Diop",
+        "phone": "e.g. +1 514 123 4567",
+        "email": "e.g. moussa@email.com",
+        "city": "e.g. Montréal",
+        "brand": "e.g. Toyota",
+        "model": "e.g. RAV4",
+        "year": "e.g. 2019",
+        "budget": "e.g. 12 000 000",
+        "message": "Tell us more: colour, options, preferred timeline…"
+      },
+      "errors": {
+        "name": "Please enter your name.",
+        "phone": "Please enter a valid phone number.",
+        "email": "This email address is not valid.",
+        "city": "Please enter your city.",
+        "vehicle": "Please enter at least the brand or the model.",
+        "year": "Please enter a valid year (e.g. 2019).",
+        "summary": "Please correct the highlighted fields."
+      },
+      "submit": "Send via WhatsApp",
+      "submitEmail": "Send by email",
+      "success": "WhatsApp has opened with your request. Just tap “Send”.",
+      "messageTitle": "Quote request — AL MACTOUM",
+      "emailSubject": "Quote request — {name}"
+    },
+    "info": {
+      "title": "Our details",
+      "address": "Address",
+      "phones": "Phone numbers",
+      "email": "Email",
+      "hours": "Opening hours",
+      "mapTitle": "Map: AL MACTOUM office in Sicap Foire, Dakar",
+      "directions": "Directions"
+    }
+  },
+  "footer": {
+    "description": "Purchase and delivery of vehicles from Canada to Senegal. Pay 60% when you order, 40% on arrival in Dakar.",
+    "quickLinks": "Quick links",
+    "contact": "Contact",
+    "follow": "Follow us",
+    "payments": "Accepted payments",
+    "rights": "© {year} AL MACTOUM BUSINESS AUTOMOBILE. All rights reserved."
+  },
+  "pages": {
+    "vehicles": {
+      "title": "Our vehicles",
+      "subtitle": "Examples of vehicles we import from Canada. Filter by brand and type.",
+      "imageAlt": "Mountain lake in Canada surrounded by forests"
+    },
+    "payment": {
+      "title": "60/40 payment",
+      "subtitle": "60% when you order, 40% on arrival in Dakar. Wave, Orange Money or cash.",
+      "imageAlt": "Container ship docked under port cranes"
+    },
+    "faq": {
+      "title": "Frequently asked questions",
+      "subtitle": "Everything you need to know about importing your car from Canada.",
+      "imageAlt": "Aerial view of a container port"
+    },
+    "contact": {
+      "title": "Contact & quote",
+      "subtitle": "Our team answers quickly on WhatsApp, by phone or at our office.",
+      "imageAlt": "Aerial view of a large Canadian city at sunset"
+    }
+  }
+}

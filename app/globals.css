@@ -1,0 +1,85 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    /* Compense le header fixe lors des clics sur les ancres (#services, #faq…) */
+    scroll-padding-top: 5.5rem;
+    scroll-behavior: smooth;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  body {
+    @apply bg-white font-sans text-navy-900 antialiased;
+  }
+
+  h1, h2, h3, h4 {
+    @apply font-heading tracking-tight;
+  }
+
+  :focus-visible {
+    @apply outline-none ring-2 ring-gold ring-offset-2;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    *, *::before, *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+}
+
+@layer components {
+  /* Boutons */
+  .btn {
+    @apply inline-flex items-center justify-center gap-2 rounded-full px-6 py-3.5 text-[0.95rem] font-semibold
+      transition duration-200 ease-out active:scale-[0.98] disabled:cursor-not-allowed disabled:opacity-50;
+  }
+  .btn-gold {
+    @apply btn bg-gold text-navy-950 shadow-[0_10px_25px_-10px_rgba(201,162,39,0.8)] hover:bg-gold-light hover:shadow-[0_14px_30px_-10px_rgba(201,162,39,0.9)];
+  }
+  .btn-whatsapp {
+    @apply btn bg-whatsapp text-navy-950 hover:brightness-105 hover:shadow-[0_14px_30px_-12px_rgba(37,211,102,0.8)];
+  }
+  .btn-outline-light {
+    @apply btn border border-white/40 text-white backdrop-blur hover:border-white hover:bg-white/10;
+  }
+  .btn-navy {
+    @apply btn bg-navy-900 text-white hover:bg-navy-700;
+  }
+  .btn-outline {
+    @apply btn border border-navy-900/15 bg-white text-navy-900 hover:border-navy-900/40 hover:bg-mist;
+  }
+
+  /* Sections */
+  .section {
+    @apply py-20 md:py-28;
+  }
+  .card {
+    @apply rounded-2xl border border-navy-900/[0.06] bg-white shadow-soft;
+  }
+
+  /* Formulaires */
+  .field-label {
+    @apply mb-1.5 block text-sm font-medium text-navy-900;
+  }
+  .field {
+    @apply block w-full rounded-xl border border-navy-900/15 bg-white px-4 py-3 text-base text-navy-900
+      placeholder:text-slate-400 transition focus:border-gold focus:outline-none focus:ring-2 focus:ring-gold/30;
+  }
+  .field-error {
+    @apply border-red-500 focus:border-red-500 focus:ring-red-500/20;
+  }
+}
+
+/* Apparition douce du hero (CSS pur : n'attend pas le JavaScript, bon pour la performance) */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(18px); }
+  to { opacity: 1; transform: none; }
+}
+.animate-fade-up {
+  animation: fadeUp 0.8s cubic-bezier(0.2, 0.7, 0.2, 1) both;
+}

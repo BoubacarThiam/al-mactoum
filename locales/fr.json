@@ -1,0 +1,327 @@
+{
+  "meta": {
+    "title": "AL MACTOUM BUSINESS AUTOMOBILE | Voitures du Canada livrées à Dakar",
+    "titleTemplate": "%s | AL MACTOUM",
+    "description": "Importation de voitures du Canada vers le Sénégal. Payez 60 % à la commande et 40 % seulement à l'arrivée de votre véhicule à Dakar. Paiement par Wave, Orange Money ou en espèces.",
+    "keywords": [
+      "importation voiture Canada Sénégal",
+      "voiture du Canada Dakar",
+      "achat voiture Canada livraison Dakar",
+      "paiement Wave Orange Money voiture",
+      "AL MACTOUM BUSINESS AUTOMOBILE",
+      "import auto Dakar"
+    ],
+    "ogAlt": "AL MACTOUM — Votre voiture du Canada livrée à Dakar"
+  },
+  "common": {
+    "skipToContent": "Aller au contenu",
+    "backToTop": "Retour en haut",
+    "whatsappFloat": "Écrire sur WhatsApp",
+    "senegal": "Sénégal",
+    "canada": "Canada",
+    "home": "Accueil",
+    "newTab": "(s'ouvre dans un nouvel onglet)",
+    "breadcrumb": "Fil d'Ariane",
+    "mainNav": "Navigation principale",
+    "mobileNav": "Navigation mobile"
+  },
+  "nav": {
+    "home": "Accueil",
+    "services": "Services",
+    "steps": "Comment ça marche",
+    "payment": "Paiement",
+    "vehicles": "Véhicules",
+    "faq": "FAQ",
+    "contact": "Contact",
+    "quote": "Demander un devis",
+    "openMenu": "Ouvrir le menu",
+    "closeMenu": "Fermer le menu",
+    "language": "Langue",
+    "switchLanguage": "English version"
+  },
+  "hero": {
+    "eyebrow": "Import automobile Canada → Sénégal",
+    "title": "Votre voiture du Canada livrée à Dakar, en toute confiance",
+    "subtitle": "Payez 60 % à la commande, le reste à l'arrivée de votre véhicule.",
+    "ctaQuote": "Demander un devis",
+    "ctaWhatsapp": "Écrire sur WhatsApp",
+    "imageAlt": "Porte-conteneurs chargé de conteneurs en mer, transport maritime de véhicules",
+    "whatsappMessage": "Bonjour AL MACTOUM, je souhaite importer une voiture du Canada vers Dakar. Pouvez-vous m'aider ?",
+    "badges": [
+      "Paiement 60/40",
+      "Wave · Orange Money · Cash",
+      "Basé à Dakar et au Canada"
+    ]
+  },
+  "steps": {
+    "eyebrow": "Comment ça marche",
+    "title": "5 étapes simples, du Canada jusqu'à Dakar",
+    "subtitle": "Un processus transparent, suivi de bout en bout par notre équipe.",
+    "items": [
+      {
+        "title": "Choix du véhicule",
+        "text": "Vous choisissez votre véhicule, ou nous le trouvons pour vous selon votre budget et vos besoins."
+      },
+      {
+        "title": "Acompte de 60 %",
+        "text": "Vous payez 60 % par Wave, Orange Money ou en espèces à l'agence pour lancer la commande."
+      },
+      {
+        "title": "Achat et inspection au Canada",
+        "text": "Notre équipe au Canada inspecte le véhicule et réalise l'achat en toute sécurité."
+      },
+      {
+        "title": "Expédition et suivi",
+        "text": "Le véhicule est expédié par bateau. Nous vous tenons informé à chaque étape jusqu'à Dakar."
+      },
+      {
+        "title": "Arrivée à Dakar",
+        "text": "Votre voiture est là : vous payez les 40 % restants et vous la récupérez."
+      }
+    ]
+  },
+  "payment": {
+    "eyebrow": "Paiement sécurisé",
+    "title": "Vous payez le reste seulement quand votre voiture est là",
+    "subtitle": "Notre modèle 60/40 vous protège : la plus grande partie est réglée, mais le solde n'est dû qu'à l'arrivée du véhicule à Dakar.",
+    "depositLabel": "À la commande",
+    "depositText": "Pour lancer l'achat de votre véhicule au Canada.",
+    "balanceLabel": "À l'arrivée à Dakar",
+    "balanceText": "Uniquement quand votre voiture est arrivée à Dakar.",
+    "progressLabel": "Répartition du paiement : 60 % à la commande, 40 % à l'arrivée",
+    "methodsTitle": "Moyens de paiement acceptés",
+    "receiveNumber": "Numéro",
+    "methods": {
+      "wave": "Paiement mobile rapide",
+      "orange-money": "Paiement mobile Orange",
+      "cash": "Espèces à l'agence de Sicap Foire"
+    },
+    "simulator": {
+      "title": "Simulateur de paiement",
+      "subtitle": "Entrez le prix total de votre véhicule pour connaître votre acompte et votre solde.",
+      "label": "Prix total du véhicule (FCFA)",
+      "placeholder": "Ex. 10 000 000",
+      "deposit": "Acompte à la commande (60 %)",
+      "balance": "Solde à l'arrivée (40 %)",
+      "disclaimer": "Montants indicatifs, devis final sur demande.",
+      "cta": "Payer mon acompte",
+      "ctaHint": "Entrez un montant pour continuer",
+      "whatsappMessage": "Bonjour AL MACTOUM, je souhaite payer mon acompte de {amount}. Quel moyen de paiement dois-je utiliser ?"
+    }
+  },
+  "services": {
+    "eyebrow": "Nos services",
+    "title": "Un accompagnement complet, de l'achat à la livraison",
+    "subtitle": "Nous gérons chaque étape pour que vous n'ayez qu'à récupérer vos clés.",
+    "items": [
+      {
+        "title": "Recherche de véhicule au Canada",
+        "text": "Nous trouvons le modèle qui correspond à vos critères et à votre budget."
+      },
+      {
+        "title": "Inspection avant achat",
+        "text": "Chaque véhicule est vérifié avant l'achat. Vous recevez photos et informations."
+      },
+      {
+        "title": "Achat sécurisé",
+        "text": "Nous réalisons l'achat pour vous au Canada, avec un paiement en deux temps."
+      },
+      {
+        "title": "Transport maritime",
+        "text": "Nous organisons l'expédition de votre véhicule par bateau jusqu'au port de Dakar."
+      },
+      {
+        "title": "Accompagnement dédouanement",
+        "text": "Nous vous accompagnons dans les formalités de dédouanement à Dakar."
+      },
+      {
+        "title": "Livraison à Dakar",
+        "text": "Vous récupérez votre véhicule à Dakar, prêt à prendre la route."
+      }
+    ]
+  },
+  "vehicles": {
+    "eyebrow": "Véhicules",
+    "title": "Exemples de véhicules disponibles",
+    "subtitle": "SUV, berlines, pick-up : dites-nous ce que vous cherchez, nous le trouvons au Canada.",
+    "filterBrand": "Marque",
+    "filterType": "Type",
+    "all": "Tous",
+    "allBrands": "Toutes les marques",
+    "types": {
+      "suv": "SUV",
+      "berline": "Berline",
+      "pickup": "Pick-up"
+    },
+    "year": "Année",
+    "mileage": "Kilométrage",
+    "price": "Prix",
+    "onQuote": "Sur devis",
+    "example": "EXEMPLE",
+    "cta": "Ce véhicule m'intéresse",
+    "whatsappMessage": "Bonjour AL MACTOUM, le véhicule {vehicle} m'intéresse. Pouvez-vous m'envoyer un devis ?",
+    "empty": "Aucun véhicule ne correspond à ces filtres.",
+    "resultCount": "{count} véhicule(s)",
+    "seeAll": "Voir tous les véhicules",
+    "customTitle": "Vous ne trouvez pas votre modèle ?",
+    "customText": "Dites-nous la marque, le modèle, l'année et votre budget : nous le cherchons pour vous au Canada.",
+    "customCta": "Demander une recherche"
+  },
+  "why": {
+    "eyebrow": "Pourquoi nous choisir",
+    "title": "La confiance avant tout",
+    "subtitle": "Un partenaire sérieux, présent des deux côtés de l'Atlantique.",
+    "items": [
+      {
+        "title": "Paiement sécurisé 60/40",
+        "text": "Vous ne payez le solde qu'une fois votre voiture arrivée à Dakar."
+      },
+      {
+        "title": "Paiement facile",
+        "text": "Wave, Orange Money ou espèces directement à notre agence de Sicap Foire."
+      },
+      {
+        "title": "Présence au Canada et à Dakar",
+        "text": "Une équipe au Canada pour l'achat, une agence à Dakar pour vous recevoir."
+      },
+      {
+        "title": "Accompagnement personnalisé",
+        "text": "Un interlocuteur dédié qui vous répond et vous informe à chaque étape."
+      }
+    ],
+    "imageAlt": "Voiture roulant sur une route au coucher du soleil"
+  },
+  "testimonials": {
+    "eyebrow": "Témoignages",
+    "title": "Ils nous ont fait confiance",
+    "subtitle": "Les avis de nos clients seront bientôt publiés ici."
+  },
+  "social": {
+    "eyebrow": "Réseaux sociaux",
+    "title": "Suivez-nous",
+    "subtitle": "Arrivages, nouveaux véhicules et livraisons : suivez notre actualité en vidéo.",
+    "follow": "Suivre",
+    "tiktok": "TikTok",
+    "facebook": "Facebook"
+  },
+  "faq": {
+    "eyebrow": "FAQ",
+    "title": "Questions fréquentes",
+    "subtitle": "Vous avez une autre question ? Écrivez-nous sur WhatsApp.",
+    "items": [
+      {
+        "q": "Comment fonctionne le paiement 60/40 ?",
+        "a": "Vous payez 60 % du prix total au moment de la commande, ce qui nous permet d'acheter et d'expédier votre véhicule. Les 40 % restants sont à payer uniquement lorsque votre voiture est arrivée à Dakar, au moment où vous la récupérez."
+      },
+      {
+        "q": "Quels moyens de paiement acceptez-vous ?",
+        "a": "Nous acceptons Wave, Orange Money et les espèces à notre agence de Sicap Foire (Autoroute de l'Aéroport, en face de Keur Yoff, Dakar)."
+      },
+      {
+        "q": "Combien de temps dure la livraison du Canada à Dakar ?",
+        "a": "Le délai dépend du véhicule, du calendrier des navires et des formalités portuaires. Nous vous communiquons une estimation au moment du devis et vous tenons informé tout au long du transport."
+      },
+      {
+        "q": "Puis-je choisir moi-même mon véhicule ?",
+        "a": "Oui. Vous pouvez nous indiquer un véhicule précis que vous avez repéré, ou simplement vos critères (marque, modèle, année, budget) : nous recherchons alors pour vous les meilleures options au Canada."
+      },
+      {
+        "q": "Comment suivre ma commande ?",
+        "a": "Votre interlocuteur vous informe à chaque étape importante : achat, inspection, chargement, départ du bateau et arrivée à Dakar. Vous pouvez aussi nous écrire sur WhatsApp à tout moment pour connaître l'état de votre commande."
+      },
+      {
+        "q": "Que se passe-t-il si le véhicule a un problème ?",
+        "a": "Le véhicule est inspecté avant l'achat et nous partageons avec vous les informations disponibles. Si un problème est constaté avant l'achat, nous vous proposons une autre option. Les conditions applicables sont précisées avec votre devis."
+      },
+      {
+        "q": "Qui s'occupe du dédouanement ?",
+        "a": "Nous vous accompagnons dans les formalités de dédouanement à l'arrivée à Dakar. Les frais de douane dépendent du véhicule ; nous vous les expliquons lors du devis."
+      }
+    ]
+  },
+  "contact": {
+    "eyebrow": "Contact & devis",
+    "title": "Demandez votre devis gratuit",
+    "subtitle": "Remplissez le formulaire : votre demande s'ouvre directement dans WhatsApp, prête à être envoyée.",
+    "form": {
+      "name": "Nom complet",
+      "phone": "Téléphone",
+      "email": "Email",
+      "city": "Ville",
+      "brand": "Marque",
+      "model": "Modèle",
+      "year": "Année",
+      "vehicleGroup": "Véhicule souhaité",
+      "budget": "Budget (FCFA)",
+      "paymentMethod": "Moyen de paiement préféré",
+      "paymentPlaceholder": "Choisir…",
+      "message": "Message",
+      "optional": "facultatif",
+      "required": "obligatoire",
+      "placeholders": {
+        "name": "Ex. Moussa Diop",
+        "phone": "Ex. 77 123 45 67",
+        "email": "Ex. moussa@email.com",
+        "city": "Ex. Dakar",
+        "brand": "Ex. Toyota",
+        "model": "Ex. RAV4",
+        "year": "Ex. 2019",
+        "budget": "Ex. 12 000 000",
+        "message": "Précisez vos besoins : couleur, options, délai souhaité…"
+      },
+      "errors": {
+        "name": "Veuillez indiquer votre nom.",
+        "phone": "Veuillez indiquer un numéro de téléphone valide.",
+        "email": "Cette adresse email n'est pas valide.",
+        "city": "Veuillez indiquer votre ville.",
+        "vehicle": "Indiquez au moins la marque ou le modèle souhaité.",
+        "year": "Indiquez une année valide (ex. 2019).",
+        "summary": "Veuillez corriger les champs signalés."
+      },
+      "submit": "Envoyer sur WhatsApp",
+      "submitEmail": "Envoyer par email",
+      "success": "WhatsApp s'est ouvert avec votre demande. Il ne vous reste plus qu'à appuyer sur « Envoyer ».",
+      "messageTitle": "Demande de devis — AL MACTOUM",
+      "emailSubject": "Demande de devis — {name}"
+    },
+    "info": {
+      "title": "Nos coordonnées",
+      "address": "Adresse",
+      "phones": "Téléphones",
+      "email": "Email",
+      "hours": "Horaires",
+      "mapTitle": "Carte : agence AL MACTOUM à Sicap Foire, Dakar",
+      "directions": "Itinéraire"
+    }
+  },
+  "footer": {
+    "description": "Achat et livraison de véhicules du Canada vers le Sénégal. Payez 60 % à la commande, 40 % à l'arrivée à Dakar.",
+    "quickLinks": "Liens rapides",
+    "contact": "Contact",
+    "follow": "Suivez-nous",
+    "payments": "Paiements acceptés",
+    "rights": "© {year} AL MACTOUM BUSINESS AUTOMOBILE. Tous droits réservés."
+  },
+  "pages": {
+    "vehicles": {
+      "title": "Nos véhicules",
+      "subtitle": "Des exemples de véhicules que nous importons du Canada. Filtrez par marque et par type.",
+      "imageAlt": "Lac de montagne au Canada entouré de forêts"
+    },
+    "payment": {
+      "title": "Paiement 60/40",
+      "subtitle": "60 % à la commande, 40 % à l'arrivée à Dakar. Wave, Orange Money ou espèces.",
+      "imageAlt": "Porte-conteneurs à quai sous les grues du port"
+    },
+    "faq": {
+      "title": "Questions fréquentes",
+      "subtitle": "Tout ce qu'il faut savoir sur l'importation de votre voiture du Canada.",
+      "imageAlt": "Vue aérienne d'un port à conteneurs"
+    },
+    "contact": {
+      "title": "Contact & devis",
+      "subtitle": "Notre équipe vous répond rapidement sur WhatsApp, par téléphone ou à l'agence.",
+      "imageAlt": "Vue aérienne d'une grande ville canadienne au coucher du soleil"
+    }
+  }
+}
