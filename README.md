@@ -119,6 +119,8 @@ Ouvrez `data/testimonials.ts` et remplacez un emplacement vide par un **vrai** a
 
 Supprimez les blocs `placeholder: true` restants. N'inventez jamais d'avis ni de chiffres.
 
+> Tant qu'il n'y a aucun vrai avis, la section « Témoignages » est **masquée sur le site en ligne** (des cases vides nuiraient à la confiance). Elle reste visible avec `npm run dev`, pour vous rappeler de la compléter.
+
 ---
 
 ## 6. Ajouter les numéros Wave / Orange Money
