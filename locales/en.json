@@ -44,7 +44,6 @@
     "subtitle": "Pay 60% when you order, the rest when your vehicle arrives.",
     "ctaQuote": "Get a quote",
     "ctaWhatsapp": "Chat on WhatsApp",
-    "imageAlt": "Container ship loaded with containers at sea, shipping vehicles by sea",
     "whatsappMessage": "Hello AL MACTOUM, I would like to import a car from Canada to Dakar. Can you help me?",
     "badges": [
       "60/40 payment",
@@ -52,12 +51,8 @@
       "Based in Dakar and Canada"
     ],
     "video": {
-      "label": "AL MACTOUM presentation video: your car bought in Montreal, inspected, then shipped by sea to Dakar",
-      "caption": "From Canada to Dakar: purchase, inspection, shipping, delivery.",
       "play": "Play video",
-      "pause": "Pause video",
-      "unmute": "Turn sound on",
-      "mute": "Turn sound off"
+      "pause": "Pause video"
     }
   },
   "steps": {

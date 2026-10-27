@@ -44,7 +44,6 @@
     "subtitle": "Payez 60 % à la commande, le reste à l'arrivée de votre véhicule.",
     "ctaQuote": "Demander un devis",
     "ctaWhatsapp": "Écrire sur WhatsApp",
-    "imageAlt": "Porte-conteneurs chargé de conteneurs en mer, transport maritime de véhicules",
     "whatsappMessage": "Bonjour AL MACTOUM, je souhaite importer une voiture du Canada vers Dakar. Pouvez-vous m'aider ?",
     "badges": [
       "Paiement 60/40",
@@ -52,12 +51,8 @@
       "Basé à Dakar et au Canada"
     ],
     "video": {
-      "label": "Vidéo de présentation AL MACTOUM : votre voiture achetée à Montréal, inspectée puis expédiée par bateau jusqu'à Dakar",
-      "caption": "Du Canada jusqu'à Dakar : achat, inspection, expédition, livraison.",
       "play": "Lire la vidéo",
-      "pause": "Mettre la vidéo en pause",
-      "unmute": "Activer le son",
-      "mute": "Couper le son"
+      "pause": "Mettre la vidéo en pause"
     }
   },
   "steps": {

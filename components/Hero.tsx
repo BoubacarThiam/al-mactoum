@@ -1,4 +1,3 @@
-import Image from 'next/image';
 import Link from 'next/link';
 import { ArrowRight, MapPin, ShieldCheck, Wallet } from 'lucide-react';
 import { HeroVideo } from '@/components/HeroVideo';
@@ -21,30 +20,27 @@ const badgeIcons = [ShieldCheck, Wallet, MapPin];
 export function Hero({ locale, t }: HeroProps) {
   return (
     <section className="relative isolate flex min-h-[100svh] items-center overflow-hidden bg-navy-950">
-      {/* Photo de fond — à remplacer dans /public/images/hero-cargo.webp */}
-      <Image
-        src="/images/hero-cargo.webp"
-        alt={t.imageAlt}
-        fill
-        priority
-        sizes="100vw"
-        className="-z-20 object-cover object-center"
-      />
-      {/* Voile sombre pour la lisibilité du texte */}
+      {/* Vidéo de fond — fichier dans /public/videos/al-mactoum-intro.mp4 */}
+      <HeroVideo t={t.video} />
+      {/* Voile sombre pour la lisibilité du texte ; plus léger à droite pour laisser voir la vidéo */}
       <div
-        className="absolute inset-0 -z-10 bg-gradient-to-b from-navy-950/85 via-navy-950/70 to-navy-950/95 md:bg-gradient-to-r md:from-navy-950/95 md:via-navy-950/75 md:to-navy-950/30"
+        className="absolute inset-0 -z-10 bg-gradient-to-b from-navy-950/80 via-navy-950/65 to-navy-950/95 md:bg-gradient-to-r md:from-navy-950/95 md:via-navy-950/60 md:to-navy-950/10"
+        aria-hidden="true"
+      />
+      {/* Fondu sous le menu : les titres de la vidéo ne gênent pas la navigation */}
+      <div
+        className="absolute inset-x-0 top-0 -z-10 h-36 bg-gradient-to-b from-navy-950 via-navy-950/70 to-transparent"
         aria-hidden="true"
       />
 
       {/* Marge basse : laisse la place au bandeau de confiance qui chevauche le hero */}
-      {/* Texte à gauche, vidéo à droite sur grand écran ; vidéo sous les boutons sur mobile */}
-      <div className="container grid grid-cols-1 items-center gap-12 pb-24 pt-28 md:pb-36 md:pt-32 lg:grid-cols-[1.05fr_1fr] lg:gap-14">
+      <div className="container pb-24 pt-28 md:pb-36 md:pt-32">
         <div className="max-w-3xl">
           <p className="animate-fade-up mb-5 inline-flex items-center gap-2 rounded-full border border-gold/40 bg-gold/10 px-4 py-1.5 text-xs font-semibold uppercase tracking-[0.18em] text-gold-light backdrop-blur">
             {t.eyebrow}
           </p>
 
-          <h1 className="text-balance text-[2.15rem] font-extrabold leading-[1.1] text-white sm:text-5xl xl:text-6xl">
+          <h1 className="text-balance text-[2.15rem] font-extrabold leading-[1.1] text-white sm:text-5xl lg:text-6xl">
             {t.title}
           </h1>
 
@@ -90,10 +86,6 @@ export function Hero({ locale, t }: HeroProps) {
               );
             })}
           </ul>
-        </div>
-
-        <div className="animate-fade-up" style={{ animationDelay: '160ms' }}>
-          <HeroVideo t={t.video} />
         </div>
       </div>
     </section>
