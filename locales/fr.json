@@ -50,7 +50,15 @@
       "Paiement 60/40",
       "Wave · Orange Money · Cash",
       "Basé à Dakar et au Canada"
-    ]
+    ],
+    "video": {
+      "label": "Vidéo de présentation AL MACTOUM : votre voiture achetée à Montréal, inspectée puis expédiée par bateau jusqu'à Dakar",
+      "caption": "Du Canada jusqu'à Dakar : achat, inspection, expédition, livraison.",
+      "play": "Lire la vidéo",
+      "pause": "Mettre la vidéo en pause",
+      "unmute": "Activer le son",
+      "mute": "Couper le son"
+    }
   },
   "steps": {
     "eyebrow": "Comment ça marche",

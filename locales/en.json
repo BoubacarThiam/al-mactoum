@@ -50,7 +50,15 @@
       "60/40 payment",
       "Wave · Orange Money · Cash",
       "Based in Dakar and Canada"
-    ]
+    ],
+    "video": {
+      "label": "AL MACTOUM presentation video: your car bought in Montreal, inspected, then shipped by sea to Dakar",
+      "caption": "From Canada to Dakar: purchase, inspection, shipping, delivery.",
+      "play": "Play video",
+      "pause": "Pause video",
+      "unmute": "Turn sound on",
+      "mute": "Turn sound off"
+    }
   },
   "steps": {
     "eyebrow": "How it works",

@@ -1,6 +1,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { ArrowRight, MapPin, ShieldCheck, Wallet } from 'lucide-react';
+import { HeroVideo } from '@/components/HeroVideo';
 import { WhatsAppIcon } from '@/components/icons/BrandIcons';
 import { type Dictionary, type Locale, localePath } from '@/lib/i18n';
 import { whatsappLink } from '@/lib/utils';
@@ -36,13 +37,14 @@ export function Hero({ locale, t }: HeroProps) {
       />
 
       {/* Marge basse : laisse la place au bandeau de confiance qui chevauche le hero */}
-      <div className="container pb-24 pt-28 md:pb-36 md:pt-32">
+      {/* Texte à gauche, vidéo à droite sur grand écran ; vidéo sous les boutons sur mobile */}
+      <div className="container grid grid-cols-1 items-center gap-12 pb-24 pt-28 md:pb-36 md:pt-32 lg:grid-cols-[1.05fr_1fr] lg:gap-14">
         <div className="max-w-3xl">
           <p className="animate-fade-up mb-5 inline-flex items-center gap-2 rounded-full border border-gold/40 bg-gold/10 px-4 py-1.5 text-xs font-semibold uppercase tracking-[0.18em] text-gold-light backdrop-blur">
             {t.eyebrow}
           </p>
 
-          <h1 className="text-balance text-[2.15rem] font-extrabold leading-[1.1] text-white sm:text-5xl lg:text-6xl">
+          <h1 className="text-balance text-[2.15rem] font-extrabold leading-[1.1] text-white sm:text-5xl xl:text-6xl">
             {t.title}
           </h1>
 
@@ -88,6 +90,10 @@ export function Hero({ locale, t }: HeroProps) {
               );
             })}
           </ul>
+        </div>
+
+        <div className="animate-fade-up" style={{ animationDelay: '160ms' }}>
+          <HeroVideo t={t.video} />
         </div>
       </div>
     </section>
