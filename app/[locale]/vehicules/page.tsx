@@ -20,11 +20,9 @@ export default function VehiclesPage({ params }: { params: { locale: Locale } })
   return (
     <>
       <PageHero
-        locale={locale}
+        eyebrow={dict.vehicles.eyebrow}
         title={dict.pages.vehicles.title}
         subtitle={dict.pages.vehicles.subtitle}
-        homeLabel={dict.common.home}
-        breadcrumbLabel={dict.common.breadcrumb}
         image="/images/canada-paysage.webp"
         imageAlt={dict.pages.vehicles.imageAlt}
       />

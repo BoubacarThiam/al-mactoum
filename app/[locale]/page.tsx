@@ -6,6 +6,7 @@ import { Services } from '@/components/Services';
 import { SocialSection } from '@/components/SocialSection';
 import { Steps } from '@/components/Steps';
 import { Testimonials } from '@/components/Testimonials';
+import { TrustBar } from '@/components/TrustBar';
 import { VehiclesSection } from '@/components/VehiclesSection';
 import { WhyUs } from '@/components/WhyUs';
 import { type Locale, generateLocaleParams, getDictionary } from '@/lib/i18n';
@@ -22,6 +23,7 @@ export default function HomePage({ params }: { params: { locale: Locale } }) {
   return (
     <>
       <Hero locale={locale} t={dict.hero} />
+      <TrustBar locale={locale} t={dict.trust} />
       <Steps t={dict.steps} />
       <PaymentSection t={dict.payment} />
       <Services t={dict.services} />

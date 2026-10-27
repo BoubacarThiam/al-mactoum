@@ -21,7 +21,6 @@
     "canada": "Canada",
     "home": "Home",
     "newTab": "(opens in a new tab)",
-    "breadcrumb": "Breadcrumb",
     "mainNav": "Main navigation",
     "mobileNav": "Mobile navigation"
   },
@@ -280,13 +279,15 @@
         "city": "Please enter your city.",
         "vehicle": "Please enter at least the brand or the model.",
         "year": "Please enter a valid year (e.g. 2019).",
-        "summary": "Please correct the highlighted fields."
+        "summary": "Please correct the highlighted fields.",
+        "summaryTitle": "Please correct {count} field(s):"
       },
       "submit": "Send via WhatsApp",
       "submitEmail": "Send by email",
       "success": "WhatsApp has opened with your request. Just tap “Send”.",
       "messageTitle": "Quote request — AL MACTOUM",
-      "emailSubject": "Quote request — {name}"
+      "emailSubject": "Quote request — {name}",
+      "phoneHelp": "Include the country code if you are outside Senegal (e.g. +1 for Canada)."
     },
     "info": {
       "title": "Our details",
@@ -327,5 +328,26 @@
       "subtitle": "Our team answers quickly on WhatsApp, by phone or at our office.",
       "imageAlt": "Aerial view of a large Canadian city at sunset"
     }
+  },
+  "trust": {
+    "label": "Our guarantees",
+    "items": [
+      {
+        "title": "Office in Dakar",
+        "text": "Sicap Foire, opposite Keur Yoff"
+      },
+      {
+        "title": "Team in Canada",
+        "text": "{phone}"
+      },
+      {
+        "title": "Balance on arrival",
+        "text": "60% when ordering, 40% in Dakar"
+      },
+      {
+        "title": "Open {hours}",
+        "text": "At our office and on WhatsApp"
+      }
+    ]
   }
 }

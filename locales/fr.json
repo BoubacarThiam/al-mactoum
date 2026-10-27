@@ -21,7 +21,6 @@
     "canada": "Canada",
     "home": "Accueil",
     "newTab": "(s'ouvre dans un nouvel onglet)",
-    "breadcrumb": "Fil d'Ariane",
     "mainNav": "Navigation principale",
     "mobileNav": "Navigation mobile"
   },
@@ -280,13 +279,15 @@
         "city": "Veuillez indiquer votre ville.",
         "vehicle": "Indiquez au moins la marque ou le modèle souhaité.",
         "year": "Indiquez une année valide (ex. 2019).",
-        "summary": "Veuillez corriger les champs signalés."
+        "summary": "Veuillez corriger les champs signalés.",
+        "summaryTitle": "Veuillez corriger {count} champ(s) :"
       },
       "submit": "Envoyer sur WhatsApp",
       "submitEmail": "Envoyer par email",
       "success": "WhatsApp s'est ouvert avec votre demande. Il ne vous reste plus qu'à appuyer sur « Envoyer ».",
       "messageTitle": "Demande de devis — AL MACTOUM",
-      "emailSubject": "Demande de devis — {name}"
+      "emailSubject": "Demande de devis — {name}",
+      "phoneHelp": "Avec l'indicatif si vous êtes hors du Sénégal (ex. +1 pour le Canada)."
     },
     "info": {
       "title": "Nos coordonnées",
@@ -327,5 +328,26 @@
       "subtitle": "Notre équipe vous répond rapidement sur WhatsApp, par téléphone ou à l'agence.",
       "imageAlt": "Vue aérienne d'une grande ville canadienne au coucher du soleil"
     }
+  },
+  "trust": {
+    "label": "Nos garanties",
+    "items": [
+      {
+        "title": "Agence à Dakar",
+        "text": "Sicap Foire, en face de Keur Yoff"
+      },
+      {
+        "title": "Équipe au Canada",
+        "text": "{phone}"
+      },
+      {
+        "title": "Solde à l'arrivée",
+        "text": "60 % à la commande, 40 % à Dakar"
+      },
+      {
+        "title": "Ouvert {hours}",
+        "text": "À l'agence et sur WhatsApp"
+      }
+    ]
   }
 }

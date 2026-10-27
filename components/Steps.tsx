@@ -4,13 +4,14 @@ import { m } from 'framer-motion';
 import { CarFront, KeyRound, SearchCheck, Ship, Wallet } from 'lucide-react';
 import { SectionHeading } from '@/components/ui/SectionHeading';
 import type { Dictionary } from '@/lib/i18n';
+import { motionTokens } from '@/lib/motion';
 
 const icons = [CarFront, Wallet, SearchCheck, Ship, KeyRound];
 
 /** Timeline animée en 5 étapes : verticale sur mobile, horizontale sur grand écran. */
 export function Steps({ t }: { t: Dictionary['steps'] }) {
   return (
-    <section id="etapes" className="section relative overflow-hidden bg-mist" aria-labelledby="etapes-titre">
+    <section id="etapes" className="section relative overflow-hidden bg-mist !pt-16 md:!pt-24" aria-labelledby="etapes-titre">
       <div className="container">
         <SectionHeading id="etapes-titre" eyebrow={t.eyebrow} title={t.title} subtitle={t.subtitle} />
 
@@ -22,7 +23,7 @@ export function Steps({ t }: { t: Dictionary['steps'] }) {
             initial={{ scaleX: 0 }}
             whileInView={{ scaleX: 1 }}
             viewport={{ once: true, margin: '-100px' }}
-            transition={{ duration: 1.4, ease: 'easeInOut' }}
+            transition={{ duration: motionTokens.duration.slow, ease: 'easeInOut' }}
           />
           {/* Ligne de progression (verticale sur mobile) */}
           <m.span
@@ -31,7 +32,7 @@ export function Steps({ t }: { t: Dictionary['steps'] }) {
             initial={{ scaleY: 0 }}
             whileInView={{ scaleY: 1 }}
             viewport={{ once: true, margin: '-100px' }}
-            transition={{ duration: 1.4, ease: 'easeInOut' }}
+            transition={{ duration: motionTokens.duration.slow, ease: 'easeInOut' }}
           />
 
           {t.items.map((step, i) => {
@@ -41,10 +42,10 @@ export function Steps({ t }: { t: Dictionary['steps'] }) {
               <m.li
                 key={step.title}
                 className="relative flex gap-5 lg:flex-col lg:items-center lg:text-center"
-                initial={{ opacity: 0, y: 24 }}
+                initial={{ opacity: 0, y: motionTokens.revealOffset }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: '-60px' }}
-                transition={{ duration: 0.55, delay: 0.15 * i }}
+                transition={{ duration: motionTokens.duration.base, delay: 0.1 * i, ease: motionTokens.easeOut }}
               >
                 <div className="relative z-10 shrink-0">
                   <div

@@ -5,6 +5,7 @@ import { m } from 'framer-motion';
 import { MessageCircle, Plus } from 'lucide-react';
 import { SectionHeading } from '@/components/ui/SectionHeading';
 import type { Dictionary } from '@/lib/i18n';
+import { motionTokens } from '@/lib/motion';
 import { cn, whatsappLink } from '@/lib/utils';
 
 interface FAQProps {
@@ -81,7 +82,7 @@ export function FAQ({ t, whatsappMessage, headingAs = 'h2' }: FAQProps) {
                   className="overflow-hidden"
                   initial={false}
                   animate={{ height: isOpen ? 'auto' : 0, opacity: isOpen ? 1 : 0 }}
-                  transition={{ duration: 0.3, ease: [0.2, 0.7, 0.2, 1] }}
+                  transition={{ duration: motionTokens.duration.fast + 0.1, ease: motionTokens.easeOut }}
                 >
                   <p className="px-5 pb-6 leading-relaxed text-slate-600 md:px-6">{item.a}</p>
                 </m.div>

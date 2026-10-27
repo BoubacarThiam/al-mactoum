@@ -1,6 +1,6 @@
 'use client';
 
-import { useRef, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { AnimatePresence, m } from 'framer-motion';
 import { AlertCircle, CheckCircle2, Mail } from 'lucide-react';
 import { WhatsAppIcon } from '@/components/icons/BrandIcons';
@@ -78,40 +78,70 @@ function buildMessage(v: FormValues, t: FormT) {
  * Formulaire de devis : à l'envoi, ouvre WhatsApp avec un message pré-rempli
  * (aucun serveur nécessaire). Option secondaire : envoi par email (mailto).
  */
+/** Ordre d'affichage des erreurs, et champ à atteindre pour chacune. */
+const ERROR_ORDER: Array<keyof FieldErrors> = ['name', 'phone', 'email', 'city', 'vehicle', 'year'];
+const ERROR_FIELD: Record<keyof FieldErrors, keyof FormValues> = {
+  name: 'name',
+  phone: 'phone',
+  email: 'email',
+  city: 'city',
+  vehicle: 'brand',
+  year: 'year',
+};
+
 export function ContactForm({ t }: { t: FormT }) {
   const formRef = useRef<HTMLFormElement>(null);
+  const summaryRef = useRef<HTMLDivElement>(null);
   const [values, setValues] = useState<FormValues>(initialValues);
-  const [errors, setErrors] = useState<FieldErrors>({});
+  // Champs déjà quittés par le visiteur : leurs erreurs s'affichent dès la sortie du champ
+  const [touched, setTouched] = useState<Partial<Record<keyof FieldErrors, boolean>>>({});
   const [submitted, setSubmitted] = useState(false);
+  const [failedAttempts, setFailedAttempts] = useState(0);
   const [sent, setSent] = useState(false);
+
+  // Erreurs affichées : tous les champs après une tentative d'envoi, sinon seulement les champs quittés
+  const allErrors = validate(values, t);
+  const errors: FieldErrors = Object.fromEntries(
+    Object.entries(allErrors).filter(([key]) => submitted || touched[key as keyof FieldErrors]),
+  );
+  const errorKeys = ERROR_ORDER.filter((key) => errors[key]);
+
+  // Après un envoi refusé, le focus va sur le récapitulatif des erreurs
+  useEffect(() => {
+    if (failedAttempts === 0) return;
+    summaryRef.current?.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    summaryRef.current?.focus({ preventScroll: true });
+  }, [failedAttempts]);
 
   const update = (field: keyof FormValues) => (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) => {
     let value = e.target.value;
     if (field === 'budget') value = value.replace(/\D/g, '').replace(/^0+/, '').slice(0, 11);
     if (field === 'year') value = value.replace(/\D/g, '').slice(0, 4);
-    const next = { ...values, [field]: value };
-    setValues(next);
+    setValues({ ...values, [field]: value });
     setSent(false);
-    // Après une première tentative d'envoi, les erreurs se mettent à jour en direct
-    if (submitted) setErrors(validate(next, t));
   };
 
-  /** Valide le formulaire ; place le curseur sur le premier champ en erreur. */
+  /** Marque un champ comme « quitté » pour afficher son erreur éventuelle. */
+  const touch = (key?: keyof FieldErrors) => () => {
+    if (key && !touched[key]) setTouched({ ...touched, [key]: true });
+  };
+
+  /** Valide le formulaire ; en cas d'erreur, affiche le récapitulatif. */
   const check = () => {
     setSubmitted(true);
-    const result = validate(values, t);
-    setErrors(result);
-    if (Object.keys(result).length > 0) {
-      // Le DOM n'est pas encore à jour : on cible le premier champ en erreur via son nom
-      const order: Array<keyof FieldErrors> = ['name', 'phone', 'email', 'city', 'vehicle', 'year'];
-      const firstKey = order.find((k) => result[k]);
-      const target = firstKey === 'vehicle' ? 'brand' : firstKey;
-      const field = formRef.current?.querySelector<HTMLElement>(`[name="${target}"]`);
-      field?.scrollIntoView({ behavior: 'smooth', block: 'center' });
-      field?.focus({ preventScroll: true });
+    if (Object.keys(allErrors).length > 0) {
+      setFailedAttempts((n) => n + 1);
       return false;
     }
     return true;
+  };
+
+  /** Lien du récapitulatif : amène le curseur dans le champ concerné. */
+  const goToField = (key: keyof FieldErrors) => (e: React.MouseEvent) => {
+    e.preventDefault();
+    const field = formRef.current?.querySelector<HTMLElement>(`[name="${ERROR_FIELD[key]}"]`);
+    field?.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    field?.focus({ preventScroll: true });
   };
 
   const onSubmit = (e: React.FormEvent) => {
@@ -129,19 +159,22 @@ export function ContactForm({ t }: { t: FormT }) {
     window.location.href = `mailto:${siteConfig.email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(buildMessage(values, t))}`;
   };
 
-  const hasErrors = submitted && Object.keys(errors).length > 0;
+  const showSummary = submitted && errorKeys.length > 0;
   const budgetDisplay = values.budget.replace(/\B(?=(\d{3})+(?!\d))/g, ' ');
 
   /** Propriétés communes d'un champ (accessibilité + style d'erreur). */
-  const fieldProps = (name: keyof FormValues, errorKey?: keyof FieldErrors) => {
+  const fieldProps = (name: keyof FormValues, errorKey?: keyof FieldErrors, helpId?: string) => {
     const error = errorKey ? errors[errorKey] : undefined;
+    const describedBy = [helpId, error && `contact-${errorKey}-error`].filter(Boolean).join(' ');
     return {
       id: `contact-${name}`,
       name,
       value: name === 'budget' ? budgetDisplay : values[name],
       onChange: update(name),
+      // Le véhicule (marque OU modèle) n'est vérifié qu'en quittant le champ « Modèle »
+      onBlur: touch(errorKey === 'vehicle' && name === 'brand' ? undefined : errorKey),
       'aria-invalid': error ? (true as const) : undefined,
-      'aria-describedby': error ? `contact-${errorKey}-error` : undefined,
+      'aria-describedby': describedBy || undefined,
       className: cn('field', error && 'field-error'),
     };
   };
@@ -164,20 +197,30 @@ export function ContactForm({ t }: { t: FormT }) {
 
   return (
     <form ref={formRef} onSubmit={onSubmit} noValidate className="card p-6 md:p-8">
-      <AnimatePresence>
-        {hasErrors && (
-          <m.p
-            role="alert"
-            initial={{ opacity: 0, height: 0 }}
-            animate={{ opacity: 1, height: 'auto' }}
-            exit={{ opacity: 0, height: 0 }}
-            className="mb-5 flex items-center gap-2 rounded-xl bg-red-50 px-4 py-3 text-sm font-medium text-red-700"
-          >
+      {/* Récapitulatif des erreurs : reçoit le focus après un envoi refusé, chaque ligne mène au champ */}
+      {showSummary && (
+        <div
+          ref={summaryRef}
+          tabIndex={-1}
+          role="alert"
+          aria-labelledby="contact-error-summary-title"
+          className="mb-6 rounded-xl border border-red-200 bg-red-50 px-4 py-4 text-sm text-red-800 focus:outline-none focus-visible:ring-2 focus-visible:ring-red-500"
+        >
+          <p id="contact-error-summary-title" className="flex items-center gap-2 font-semibold">
             <AlertCircle className="h-4 w-4 shrink-0" aria-hidden="true" />
-            {t.errors.summary}
-          </m.p>
-        )}
-      </AnimatePresence>
+            {fill(t.errors.summaryTitle, { count: errorKeys.length })}
+          </p>
+          <ul className="mt-2 space-y-1 pl-6">
+            {errorKeys.map((key) => (
+              <li key={key} className="list-disc">
+                <a href={`#contact-${ERROR_FIELD[key]}`} onClick={goToField(key)} className="underline underline-offset-2 hover:text-red-950">
+                  {errors[key]}
+                </a>
+              </li>
+            ))}
+          </ul>
+        </div>
+      )}
 
       <div className="grid gap-5 sm:grid-cols-2">
         <div>
@@ -193,7 +236,17 @@ export function ContactForm({ t }: { t: FormT }) {
             {t.phone}
             <Required />
           </label>
-          <input type="tel" autoComplete="tel" inputMode="tel" required placeholder={t.placeholders.phone} {...fieldProps('phone', 'phone')} />
+          <input
+            type="tel"
+            autoComplete="tel"
+            inputMode="tel"
+            required
+            placeholder={t.placeholders.phone}
+            {...fieldProps('phone', 'phone', 'contact-phone-help')}
+          />
+          <p id="contact-phone-help" className="mt-1.5 text-xs text-slate-500">
+            {t.phoneHelp}
+          </p>
           <ErrorText id="phone" />
         </div>
         <div>

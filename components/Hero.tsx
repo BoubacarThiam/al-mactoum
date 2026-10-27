@@ -35,7 +35,8 @@ export function Hero({ locale, t }: HeroProps) {
         aria-hidden="true"
       />
 
-      <div className="container pb-16 pt-28 md:pb-24 md:pt-32">
+      {/* Marge basse : laisse la place au bandeau de confiance qui chevauche le hero */}
+      <div className="container pb-24 pt-28 md:pb-36 md:pt-32">
         <div className="max-w-3xl">
           <p className="animate-fade-up mb-5 inline-flex items-center gap-2 rounded-full border border-gold/40 bg-gold/10 px-4 py-1.5 text-xs font-semibold uppercase tracking-[0.18em] text-gold-light backdrop-blur">
             {t.eyebrow}
@@ -49,6 +50,7 @@ export function Hero({ locale, t }: HeroProps) {
             {t.subtitle}
           </p>
 
+          {/* Un seul bouton principal (devis) ; WhatsApp en bouton secondaire */}
           <div
             className="animate-fade-up mt-9 flex flex-col gap-3 sm:flex-row"
             style={{ animationDelay: '240ms' }}
@@ -61,9 +63,9 @@ export function Hero({ locale, t }: HeroProps) {
               href={whatsappLink(t.whatsappMessage)}
               target="_blank"
               rel="noopener noreferrer"
-              className="btn-whatsapp text-base"
+              className="btn-outline-light text-base"
             >
-              <WhatsAppIcon className="h-5 w-5" />
+              <WhatsAppIcon className="h-5 w-5 text-whatsapp" />
               {t.ctaWhatsapp}
             </a>
           </div>
@@ -86,13 +88,6 @@ export function Hero({ locale, t }: HeroProps) {
               );
             })}
           </ul>
-        </div>
-      </div>
-
-      {/* Indicateur de défilement */}
-      <div className="absolute bottom-6 left-1/2 hidden -translate-x-1/2 md:block" aria-hidden="true">
-        <div className="flex h-10 w-6 justify-center rounded-full border-2 border-white/40 pt-2">
-          <span className="h-2 w-1 animate-bounce rounded-full bg-gold" />
         </div>
       </div>
     </section>

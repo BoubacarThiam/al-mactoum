@@ -75,7 +75,7 @@ export function PaymentSimulator({ t }: { t: Dictionary['payment']['simulator'] 
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -8 }}
               transition={{ duration: 0.2 }}
-              className="mt-1 font-heading text-xl font-extrabold text-gold md:text-2xl"
+              className="mt-1 font-heading text-xl font-extrabold tabular-nums text-gold md:text-2xl"
             >
               {formatFCFA(deposit)}
             </m.p>
@@ -90,7 +90,7 @@ export function PaymentSimulator({ t }: { t: Dictionary['payment']['simulator'] 
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -8 }}
               transition={{ duration: 0.2 }}
-              className="mt-1 font-heading text-xl font-extrabold text-navy-900 md:text-2xl"
+              className="mt-1 font-heading text-xl font-extrabold tabular-nums text-navy-900 md:text-2xl"
             >
               {formatFCFA(balance)}
             </m.p>

@@ -46,10 +46,10 @@ export function Footer({ locale, dict }: FooterProps) {
         {/* Liens rapides */}
         <nav aria-label={footer.quickLinks}>
           <p className="mb-4 font-heading text-sm font-bold uppercase tracking-[0.2em] text-white">{footer.quickLinks}</p>
-          <ul className="space-y-2.5 text-sm">
+          <ul className="space-y-1 text-sm">
             {links.map((link) => (
               <li key={link.href}>
-                <Link href={link.href} className="transition-colors hover:text-gold">
+                <Link href={link.href} className="inline-flex min-h-[36px] items-center transition-colors hover:text-gold">
                   {link.label}
                 </Link>
               </li>
@@ -71,7 +71,7 @@ export function Footer({ locale, dict }: FooterProps) {
             </li>
             {siteConfig.phones.map((phone) => (
               <li key={phone.tel}>
-                <a href={`tel:${phone.tel}`} className="flex items-center gap-3 transition-colors hover:text-gold">
+                <a href={`tel:${phone.tel}`} className="flex min-h-[32px] items-center gap-3 transition-colors hover:text-gold">
                   {phone.country === 'SN' ? (
                     <FlagSN className="h-3 w-[18px] shrink-0 rounded-[2px]" title={common.senegal} />
                   ) : (

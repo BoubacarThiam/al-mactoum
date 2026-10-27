@@ -1,6 +1,7 @@
 import { FileCheck2, KeyRound, Search, ShieldCheck, Ship, SearchCheck } from 'lucide-react';
 import { Reveal } from '@/components/ui/Reveal';
 import { SectionHeading } from '@/components/ui/SectionHeading';
+import { motionTokens } from '@/lib/motion';
 import type { Dictionary } from '@/lib/i18n';
 
 // Une icône par service, dans le même ordre que dans /locales
@@ -16,7 +17,7 @@ export function Services({ t }: { t: Dictionary['services'] }) {
           {t.items.map((service, i) => {
             const Icon = icons[i];
             return (
-              <Reveal as="li" key={service.title} delay={0.06 * i}>
+              <Reveal as="li" key={service.title} delay={motionTokens.stagger * i}>
                 <article className="card group relative h-full overflow-hidden p-7 transition-all duration-300 hover:-translate-y-1 hover:border-gold/40 hover:shadow-lift">
                   <span
                     className="absolute right-6 top-5 font-heading text-5xl font-extrabold text-navy-900/[0.05] transition-colors group-hover:text-gold/20"

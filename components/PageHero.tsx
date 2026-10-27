@@ -1,21 +1,20 @@
 import Image from 'next/image';
-import Link from 'next/link';
-import { ChevronRight } from 'lucide-react';
-import { type Locale, localePath } from '@/lib/i18n';
 
 interface PageHeroProps {
-  locale: Locale;
+  /** Sur-titre doré (ex. « Paiement sécurisé ») */
+  eyebrow: string;
   title: string;
   subtitle: string;
-  homeLabel: string;
-  breadcrumbLabel: string;
   /** Photo de fond (dans /public/images) */
   image: string;
   imageAlt: string;
 }
 
-/** En-tête sombre des pages dédiées, avec fil d'Ariane. */
-export function PageHero({ locale, title, subtitle, homeLabel, breadcrumbLabel, image, imageAlt }: PageHeroProps) {
+/**
+ * En-tête sombre des pages dédiées.
+ * Pas de fil d'Ariane : le site n'a qu'un niveau de pages, le logo et le menu suffisent pour revenir à l'accueil.
+ */
+export function PageHero({ eyebrow, title, subtitle, image, imageAlt }: PageHeroProps) {
   return (
     <section className="relative isolate overflow-hidden bg-navy-950 pb-16 pt-32 md:pb-20 md:pt-40">
       {/* Photo assombrie : une version légère suffit sur mobile */}
@@ -30,29 +29,12 @@ export function PageHero({ locale, title, subtitle, homeLabel, breadcrumbLabel, 
       <div className="absolute inset-0 -z-10 bg-gradient-to-r from-navy-950 via-navy-950/85 to-navy-950/40" aria-hidden="true" />
 
       <div className="container">
-        <nav aria-label={breadcrumbLabel} className="animate-fade-up">
-          <ol className="flex items-center gap-1.5 text-sm text-slate-300">
-            <li>
-              <Link href={localePath(locale, '/')} className="transition-colors hover:text-gold">
-                {homeLabel}
-              </Link>
-            </li>
-            <li aria-hidden="true">
-              <ChevronRight className="h-4 w-4" />
-            </li>
-            <li aria-current="page" className="font-semibold text-gold">
-              {title}
-            </li>
-          </ol>
-        </nav>
-        <h1
-          className="mt-5 max-w-3xl text-4xl font-extrabold text-white md:text-5xl"
-        >
-          {title}
-        </h1>
-        <p className="mt-4 max-w-2xl text-lg text-slate-300">
-          {subtitle}
+        <p className="inline-flex items-center gap-2 font-heading text-xs font-bold uppercase tracking-[0.22em] text-gold">
+          <span className="h-px w-6 bg-gold" aria-hidden="true" />
+          {eyebrow}
         </p>
+        <h1 className="mt-4 max-w-3xl text-balance text-4xl font-extrabold text-white md:text-5xl">{title}</h1>
+        <p className="mt-4 max-w-2xl text-lg text-slate-300">{subtitle}</p>
       </div>
     </section>
   );

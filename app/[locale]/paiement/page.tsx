@@ -21,11 +21,9 @@ export default function PaymentPage({ params }: { params: { locale: Locale } }) 
   return (
     <>
       <PageHero
-        locale={locale}
+        eyebrow={dict.payment.eyebrow}
         title={dict.pages.payment.title}
         subtitle={dict.pages.payment.subtitle}
-        homeLabel={dict.common.home}
-        breadcrumbLabel={dict.common.breadcrumb}
         image="/images/port-conteneurs.webp"
         imageAlt={dict.pages.payment.imageAlt}
       />

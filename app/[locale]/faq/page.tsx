@@ -20,11 +20,9 @@ export default function FaqPage({ params }: { params: { locale: Locale } }) {
   return (
     <>
       <PageHero
-        locale={locale}
+        eyebrow={dict.faq.eyebrow}
         title={dict.pages.faq.title}
         subtitle={dict.pages.faq.subtitle}
-        homeLabel={dict.common.home}
-        breadcrumbLabel={dict.common.breadcrumb}
         image="/images/port-aerien.webp"
         imageAlt={dict.pages.faq.imageAlt}
       />

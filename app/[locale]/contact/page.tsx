@@ -20,11 +20,9 @@ export default function ContactPage({ params }: { params: { locale: Locale } }) 
   return (
     <>
       <PageHero
-        locale={locale}
+        eyebrow={dict.contact.eyebrow}
         title={dict.pages.contact.title}
         subtitle={dict.pages.contact.subtitle}
-        homeLabel={dict.common.home}
-        breadcrumbLabel={dict.common.breadcrumb}
         image="/images/canada-ville.webp"
         imageAlt={dict.pages.contact.imageAlt}
       />

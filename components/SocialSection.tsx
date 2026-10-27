@@ -2,6 +2,7 @@ import { ArrowUpRight } from 'lucide-react';
 import { FacebookIcon, TikTokIcon } from '@/components/icons/BrandIcons';
 import { Reveal } from '@/components/ui/Reveal';
 import { SectionHeading } from '@/components/ui/SectionHeading';
+import { motionTokens } from '@/lib/motion';
 import { siteConfig } from '@/config/site';
 import type { Dictionary } from '@/lib/i18n';
 
@@ -38,7 +39,7 @@ export function SocialSection({ t, newTab }: SocialSectionProps) {
 
         <ul className="mt-14 grid gap-5 md:grid-cols-3">
           {cards.map(({ url, network, handle, Icon, style, iconStyle }, i) => (
-            <Reveal as="li" key={url} delay={0.08 * i}>
+            <Reveal as="li" key={url} delay={motionTokens.stagger * i}>
               <a
                 href={url}
                 target="_blank"

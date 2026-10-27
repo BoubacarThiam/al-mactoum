@@ -1,6 +1,7 @@
 'use client';
 
 import { m } from 'framer-motion';
+import { motionTokens } from '@/lib/motion';
 
 interface RevealProps {
   children: React.ReactNode;
@@ -16,10 +17,10 @@ export function Reveal({ children, className, delay = 0, as = 'div' }: RevealPro
   return (
     <Component
       className={className}
-      initial={{ opacity: 0, y: 24 }}
+      initial={{ opacity: 0, y: motionTokens.revealOffset }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: '-60px' }}
-      transition={{ duration: 0.6, delay, ease: [0.2, 0.7, 0.2, 1] }}
+      transition={{ duration: motionTokens.duration.base, delay, ease: motionTokens.easeOut }}
     >
       {children}
     </Component>

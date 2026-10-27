@@ -63,7 +63,7 @@ export function VehicleCard({ vehicle, t, locale }: VehicleCardProps) {
               type="button"
               onClick={() => go(-1)}
               aria-label={t.previousPhoto}
-              className="absolute left-2 top-1/2 flex h-9 w-9 -translate-y-1/2 items-center justify-center rounded-full bg-white/90 text-navy-900 shadow-sm transition hover:bg-white"
+              className="absolute left-2 top-1/2 flex h-10 w-10 -translate-y-1/2 items-center justify-center rounded-full bg-white/90 text-navy-900 shadow-sm transition hover:bg-white"
             >
               <ChevronLeft className="h-5 w-5" aria-hidden="true" />
             </button>
@@ -71,7 +71,7 @@ export function VehicleCard({ vehicle, t, locale }: VehicleCardProps) {
               type="button"
               onClick={() => go(1)}
               aria-label={t.nextPhoto}
-              className="absolute right-2 top-1/2 flex h-9 w-9 -translate-y-1/2 items-center justify-center rounded-full bg-white/90 text-navy-900 shadow-sm transition hover:bg-white"
+              className="absolute right-2 top-1/2 flex h-10 w-10 -translate-y-1/2 items-center justify-center rounded-full bg-white/90 text-navy-900 shadow-sm transition hover:bg-white"
             >
               <ChevronRight className="h-5 w-5" aria-hidden="true" />
             </button>

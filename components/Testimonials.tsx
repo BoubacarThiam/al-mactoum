@@ -1,22 +1,30 @@
 import { MessageSquareQuote, Quote, Star } from 'lucide-react';
 import { Reveal } from '@/components/ui/Reveal';
 import { SectionHeading } from '@/components/ui/SectionHeading';
+import { motionTokens } from '@/lib/motion';
 import { testimonials } from '@/data/testimonials';
 import type { Dictionary } from '@/lib/i18n';
 
 /**
  * Témoignages clients — alimentés par /data/testimonials.ts.
- * Aucun faux avis : les emplacements vides restent visibles tant qu'ils ne sont pas remplacés.
+ * Aucun faux avis : tant qu'il n'y a que des emplacements vides, la section est masquée
+ * sur le site en ligne (des cases « à remplacer » nuiraient à la confiance) et ne reste
+ * visible qu'en développement (npm run dev), comme rappel.
  */
 export function Testimonials({ t }: { t: Dictionary['testimonials'] }) {
+  const hasRealReviews = testimonials.some((item) => !item.placeholder);
+  if (!hasRealReviews && process.env.NODE_ENV === 'production') return null;
+  // En ligne, seuls les vrais avis sont affichés
+  const items = process.env.NODE_ENV === 'production' ? testimonials.filter((item) => !item.placeholder) : testimonials;
+
   return (
     <section className="section bg-mist" aria-labelledby="temoignages-titre">
       <div className="container">
         <SectionHeading id="temoignages-titre" eyebrow={t.eyebrow} title={t.title} subtitle={t.subtitle} />
 
         <ul className="mt-14 grid gap-6 md:grid-cols-3">
-          {testimonials.map((item, i) => (
-            <Reveal as="li" key={i} delay={0.08 * i}>
+          {items.map((item, i) => (
+            <Reveal as="li" key={i} delay={motionTokens.stagger * i}>
               {item.placeholder ? (
                 <div className="flex h-full min-h-[220px] flex-col items-center justify-center rounded-2xl border-2 border-dashed border-navy-900/15 bg-white/60 p-8 text-center">
                   <MessageSquareQuote className="h-10 w-10 text-slate-300" aria-hidden="true" />

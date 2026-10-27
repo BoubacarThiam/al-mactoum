@@ -46,7 +46,8 @@ const config: Config = {
         },
       },
       animation: {
-        'pulse-ring': 'pulseRing 2.4s cubic-bezier(0.2, 0.6, 0.3, 1) infinite',
+        // 3 pulsations seulement : une animation décorative ne doit pas tourner en boucle
+        'pulse-ring': 'pulseRing 2.4s cubic-bezier(0.2, 0.6, 0.3, 1) 1.5s 3 both',
       },
     },
   },

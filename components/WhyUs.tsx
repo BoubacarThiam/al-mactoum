@@ -3,6 +3,7 @@ import { Globe2, Headset, ShieldCheck, Smartphone } from 'lucide-react';
 import { FlagCA, FlagSN } from '@/components/icons/BrandIcons';
 import { Reveal } from '@/components/ui/Reveal';
 import { SectionHeading } from '@/components/ui/SectionHeading';
+import { motionTokens } from '@/lib/motion';
 import type { Dictionary } from '@/lib/i18n';
 
 const icons = [ShieldCheck, Smartphone, Globe2, Headset];
@@ -35,7 +36,7 @@ export function WhyUs({ t, common }: WhyUsProps) {
             {t.items.map((item, i) => {
               const Icon = icons[i];
               return (
-                <Reveal as="li" key={item.title} delay={0.08 * i}>
+                <Reveal as="li" key={item.title} delay={motionTokens.stagger * i}>
                   <div className="group h-full rounded-2xl border border-white/10 bg-white/[0.04] p-6 transition-all duration-300 hover:border-gold/40 hover:bg-white/[0.07]">
                     <span className="flex h-12 w-12 items-center justify-center rounded-xl bg-gold/15 text-gold transition-colors group-hover:bg-gold group-hover:text-navy-950">
                       <Icon className="h-6 w-6" aria-hidden="true" />
