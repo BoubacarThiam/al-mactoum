@@ -1,9 +1,9 @@
 import Link from 'next/link';
-import { Mail, MapPin } from 'lucide-react';
+import { Clock, Mail, MapPin } from 'lucide-react';
 import { Logo } from '@/components/Logo';
 import { PaymentBadges } from '@/components/PaymentBadges';
 import { FacebookIcon, FlagCA, FlagSN, TikTokIcon } from '@/components/icons/BrandIcons';
-import { siteConfig } from '@/config/site';
+import { isFilled, siteConfig } from '@/config/site';
 import { type Dictionary, type Locale, localePath } from '@/lib/i18n';
 import { fill } from '@/lib/utils';
 
@@ -37,7 +37,7 @@ export function Footer({ locale, dict }: FooterProps) {
       <div className="container grid gap-12 py-16 md:grid-cols-2 lg:grid-cols-[1.4fr_1fr_1.3fr_1.2fr]">
         {/* Présentation */}
         <div>
-          <Logo tone="light" />
+          <Logo className="h-14" />
           <p className="mt-5 max-w-xs text-sm leading-relaxed">{footer.description}</p>
           <p className="mt-6 mb-3 text-xs font-bold uppercase tracking-[0.2em] text-gold">{footer.payments}</p>
           <PaymentBadges variant="compact" tone="light" />
@@ -87,6 +87,15 @@ export function Footer({ locale, dict }: FooterProps) {
                 {siteConfig.email}
               </a>
             </li>
+            {isFilled(siteConfig.hours[locale]) && (
+              <li className="flex items-center gap-3">
+                <Clock className="h-4 w-4 shrink-0 text-gold" aria-hidden="true" />
+                <span>
+                  <span className="sr-only">{dict.contact.info.hours} : </span>
+                  {siteConfig.hours[locale]}
+                </span>
+              </li>
+            )}
           </ul>
         </div>
 

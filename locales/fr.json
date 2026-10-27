@@ -142,8 +142,8 @@
   },
   "vehicles": {
     "eyebrow": "Véhicules",
-    "title": "Exemples de véhicules disponibles",
-    "subtitle": "SUV, berlines, pick-up : dites-nous ce que vous cherchez, nous le trouvons au Canada.",
+    "title": "Nos véhicules disponibles",
+    "subtitle": "De vrais véhicules sélectionnés au Canada. Vous cherchez un autre modèle ? Nous le trouvons pour vous.",
     "filterBrand": "Marque",
     "filterType": "Type",
     "all": "Tous",
@@ -165,7 +165,11 @@
     "seeAll": "Voir tous les véhicules",
     "customTitle": "Vous ne trouvez pas votre modèle ?",
     "customText": "Dites-nous la marque, le modèle, l'année et votre budget : nous le cherchons pour vous au Canada.",
-    "customCta": "Demander une recherche"
+    "customCta": "Demander une recherche",
+    "color": "Couleur",
+    "photo": "Photo",
+    "previousPhoto": "Photo précédente",
+    "nextPhoto": "Photo suivante"
   },
   "why": {
     "eyebrow": "Pourquoi nous choisir",
@@ -305,7 +309,7 @@
   "pages": {
     "vehicles": {
       "title": "Nos véhicules",
-      "subtitle": "Des exemples de véhicules que nous importons du Canada. Filtrez par marque et par type.",
+      "subtitle": "Nos véhicules sélectionnés au Canada. Filtrez par marque, puis demandez votre devis sur WhatsApp.",
       "imageAlt": "Lac de montagne au Canada entouré de forêts"
     },
     "payment": {

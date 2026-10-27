@@ -26,6 +26,8 @@ export function VehicleCatalog({ vehicles, t, locale, limit }: VehicleCatalogPro
   const [type, setType] = useState<VehicleType | ''>('');
 
   const brands = useMemo(() => Array.from(new Set(vehicles.map((v) => v.brand))).sort(), [vehicles]);
+  // Seuls les types présents dans le catalogue sont proposés ; le filtre est masqué s'il n'y en a qu'un
+  const types = useMemo(() => TYPES.filter((type) => vehicles.some((v) => v.type === type)), [vehicles]);
 
   const filtered = vehicles.filter((v) => (!brand || v.brand === brand) && (!type || v.type === type));
   const shown = limit ? filtered.slice(0, limit) : filtered;
@@ -34,24 +36,28 @@ export function VehicleCatalog({ vehicles, t, locale, limit }: VehicleCatalogPro
     <div>
       {/* Filtres */}
       <div className="flex flex-col gap-4 rounded-2xl bg-mist p-4 md:flex-row md:items-center md:justify-between md:p-5">
-        <div role="group" aria-label={t.filterType} className="flex flex-wrap gap-2">
-          {(['', ...TYPES] as const).map((value) => (
-            <button
-              key={value || 'all'}
-              type="button"
-              onClick={() => setType(value)}
-              aria-pressed={type === value}
-              className={cn(
-                'rounded-full px-4 py-2 text-sm font-semibold transition-all',
-                type === value
-                  ? 'bg-navy-900 text-white shadow-soft'
-                  : 'bg-white text-navy-900 hover:bg-navy-900/5',
-              )}
-            >
-              {value ? t.types[value] : t.all}
-            </button>
-          ))}
-        </div>
+        {types.length > 1 ? (
+          <div role="group" aria-label={t.filterType} className="flex flex-wrap gap-2">
+            {(['', ...types] as const).map((value) => (
+              <button
+                key={value || 'all'}
+                type="button"
+                onClick={() => setType(value)}
+                aria-pressed={type === value}
+                className={cn(
+                  'rounded-full px-4 py-2 text-sm font-semibold transition-all',
+                  type === value
+                    ? 'bg-navy-900 text-white shadow-soft'
+                    : 'bg-white text-navy-900 hover:bg-navy-900/5',
+                )}
+              >
+                {value ? t.types[value] : t.all}
+              </button>
+            ))}
+          </div>
+        ) : (
+          <p className="text-sm font-semibold text-navy-900">{fill(t.resultCount, { count: filtered.length })}</p>
+        )}
 
         <div className="flex items-center gap-3">
           <label htmlFor={brandSelectId} className="text-sm font-medium text-slate-600">
@@ -73,7 +79,8 @@ export function VehicleCatalog({ vehicles, t, locale, limit }: VehicleCatalogPro
         </div>
       </div>
 
-      <p className="mt-4 text-sm text-slate-500" aria-live="polite">
+      {/* Nombre de résultats (déjà affiché dans la barre de filtres quand le filtre par type est masqué) */}
+      <p className={cn('mt-4 text-sm text-slate-500', types.length <= 1 && 'sr-only')} aria-live="polite">
         {fill(t.resultCount, { count: filtered.length })}
       </p>
 
@@ -90,7 +97,7 @@ export function VehicleCatalog({ vehicles, t, locale, limit }: VehicleCatalogPro
                 exit={{ opacity: 0, scale: 0.96 }}
                 transition={{ duration: 0.3 }}
               >
-                <VehicleCard vehicle={vehicle} t={t} />
+                <VehicleCard vehicle={vehicle} t={t} locale={locale} />
               </m.li>
             ))}
           </AnimatePresence>

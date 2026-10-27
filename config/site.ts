@@ -82,10 +82,10 @@ export const siteConfig = {
     facebook: { handle: 'AL MACTOUM', url: 'https://www.facebook.com/share/1CBQxkTbWU/' },
   },
 
-  /** Horaires d'ouverture de l'agence — masqués tant qu'ils valent [À COMPLÉTER] */
+  /** Horaires d'ouverture de l'agence (masqués s'ils valent [À COMPLÉTER]). Vous pouvez préciser les jours, ex. "Lundi – Samedi : 8h – 20h". */
   hours: {
-    fr: TODO, // ex. "Lundi – Samedi : 9h – 19h"
-    en: TODO, // ex. "Monday – Saturday: 9am – 7pm"
+    fr: '8h – 20h',
+    en: '8am – 8pm',
   },
 
   /** Modèle de paiement */

@@ -3,12 +3,12 @@
  *  CATALOGUE DES VÉHICULES
  * ============================================================
  *  Pour ajouter un véhicule :
- *   1. Déposez sa photo dans /public/images/vehicules (format .webp ou .jpg, idéalement 900 px de large)
+ *   1. Déposez ses photos dans /public/images/vehicules (.webp, .jpg ou .png)
  *   2. Copiez un bloc { ... } ci-dessous et modifiez les informations
- *   3. Mettez isExample: false pour un vrai véhicule
  *
- *  Les 6 véhicules ci-dessous sont des EXEMPLES (affichés avec un badge "EXEMPLE").
- *  Remplacez-les par vos vrais véhicules.
+ *  Année, kilométrage et prix sont facultatifs : laissez-les vides s'ils ne sont
+ *  pas connus. Ils ne s'afficheront pas (le prix affiche alors « Sur devis »).
+ *  Plusieurs photos dans "images" = galerie avec flèches sur la carte.
  * ============================================================
  */
 
@@ -19,85 +19,89 @@ export interface Vehicle {
   id: string;
   brand: string;
   model: string;
-  year: number;
-  /** Kilométrage en km */
-  mileageKm: number;
   type: VehicleType;
-  /** Chemin de la photo dans /public */
-  image: string;
-  /** Texte alternatif de la photo (accessibilité / SEO) */
+  /** Couleur, en français et en anglais */
+  color?: { fr: string; en: string };
+  /** Année du modèle — [À COMPLÉTER] si connue, ex. 2020 */
+  year?: number;
+  /** Kilométrage en km — [À COMPLÉTER] si connu, ex. 85000 */
+  mileageKm?: number;
+  /** Photos (la première est la photo principale), chemins dans /public */
+  images: string[];
+  /** Description de la photo principale (accessibilité / Google) */
   imageAlt: string;
   /** Prix affiché. Laissez vide pour afficher "Sur devis". Ex. "12 500 000 FCFA" */
   price?: string;
   /** true = véhicule d'exemple (affiche un badge EXEMPLE) */
-  isExample: boolean;
+  isExample?: boolean;
 }
 
 export const vehicles: Vehicle[] = [
   {
-    id: 'toyota-tacoma-2019',
-    brand: 'Toyota',
-    model: 'Tacoma TRD',
-    year: 2019,
-    mileageKm: 82000,
-    type: 'pickup',
-    image: '/images/vehicules/toyota-tacoma.webp',
-    imageAlt: 'Pick-up Toyota Tacoma beige garé sur un chemin de terre',
-    isExample: true,
+    id: 'mitsubishi-outlander-bleu',
+    brand: 'Mitsubishi',
+    model: 'Outlander',
+    type: 'suv',
+    color: { fr: 'Bleu nuit', en: 'Dark blue' },
+    images: ['/images/vehicules/mitsubishi-outlander-bleu.webp'],
+    imageAlt: 'Mitsubishi Outlander bleu nuit dans un showroom',
   },
   {
-    id: 'honda-crv-2018',
+    id: 'hyundai-tucson-gris',
+    brand: 'Hyundai',
+    model: 'Tucson',
+    type: 'suv',
+    color: { fr: 'Gris', en: 'Grey' },
+    images: ['/images/vehicules/hyundai-tucson-gris-1.webp', '/images/vehicules/hyundai-tucson-gris-2.webp'],
+    imageAlt: 'Hyundai Tucson gris dans un showroom, vue de trois quarts avant',
+  },
+  {
+    id: 'honda-crv-argent',
     brand: 'Honda',
     model: 'CR-V',
-    year: 2018,
-    mileageKm: 95000,
     type: 'suv',
-    image: '/images/vehicules/honda-crv.webp',
-    imageAlt: 'SUV Honda CR-V blanc sur une route enneigée',
-    isExample: true,
+    color: { fr: 'Argent', en: 'Silver' },
+    images: ['/images/vehicules/honda-crv-argent.webp'],
+    imageAlt: 'Honda CR-V argent dans un showroom',
   },
   {
-    id: 'ford-expedition-2020',
-    brand: 'Ford',
-    model: 'Expedition',
-    year: 2020,
-    mileageKm: 68000,
+    id: 'land-rover-discovery-sport-gris',
+    brand: 'Land Rover',
+    model: 'Discovery Sport',
     type: 'suv',
-    image: '/images/vehicules/ford-expedition.webp',
-    imageAlt: 'Grand SUV Ford Expedition blanc sur une route de désert',
-    isExample: true,
+    color: { fr: 'Gris', en: 'Grey' },
+    images: ['/images/vehicules/land-rover-discovery-sport-gris.webp'],
+    imageAlt: 'Land Rover Discovery Sport gris sur un parking au Canada',
   },
   {
-    id: 'bmw-serie5-2019',
-    brand: 'BMW',
-    model: 'Série 5',
-    year: 2019,
-    mileageKm: 74000,
-    type: 'berline',
-    image: '/images/vehicules/bmw-serie5.webp',
-    imageAlt: 'Berline BMW gris clair roulant sur une avenue bordée de palmiers',
-    isExample: true,
-  },
-  {
-    id: 'audi-a6-2018',
-    brand: 'Audi',
-    model: 'A6',
-    year: 2018,
-    mileageKm: 88000,
-    type: 'berline',
-    image: '/images/vehicules/audi-a6.webp',
-    imageAlt: 'Audi noire vue de face, phares allumés',
-    isExample: true,
-  },
-  {
-    id: 'nissan-juke-2021',
-    brand: 'Nissan',
-    model: 'Juke',
-    year: 2021,
-    mileageKm: 41000,
+    id: 'hyundai-tucson-argent',
+    brand: 'Hyundai',
+    model: 'Tucson',
     type: 'suv',
-    image: '/images/vehicules/nissan-juke.webp',
-    imageAlt: 'SUV compact Nissan Juke gris, phares allumés',
-    isExample: true,
+    color: { fr: 'Argent', en: 'Silver' },
+    images: [
+      '/images/vehicules/hyundai-tucson-argent-1.webp',
+      '/images/vehicules/hyundai-tucson-argent-2.webp',
+      '/images/vehicules/hyundai-tucson-argent-3.webp',
+    ],
+    imageAlt: 'Hyundai Tucson argent garé devant un bâtiment, vue de trois quarts avant',
+  },
+  {
+    id: 'honda-crv-blanc',
+    brand: 'Honda',
+    model: 'CR-V',
+    type: 'suv',
+    color: { fr: 'Blanc', en: 'White' },
+    images: ['/images/vehicules/honda-crv-blanc.webp'],
+    imageAlt: 'Honda CR-V blanc garé devant un entrepôt',
+  },
+  {
+    id: 'hyundai-tucson-gris-2',
+    brand: 'Hyundai',
+    model: 'Tucson',
+    type: 'suv',
+    color: { fr: 'Gris', en: 'Grey' },
+    images: ['/images/vehicules/hyundai-tucson-gris-garage.webp'],
+    imageAlt: 'Hyundai Tucson gris vu de face dans un parking couvert',
   },
 ];

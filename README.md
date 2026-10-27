@@ -38,6 +38,7 @@ npm start        # l'affiche sur http://localhost:3000
 | Les avis clients                                          | `data/testimonials.ts`                   |
 | Les photos                                                | `public/images/`                         |
 | Les logos Wave / Orange Money                             | `public/images/paiement/`                |
+| Le logo AL MACTOUM                                        | `public/brand/`                          |
 
 > Toute valeur contenant `[À COMPLÉTER]` est **automatiquement masquée** sur le site tant que vous ne l'avez pas remplacée.
 
@@ -45,7 +46,7 @@ npm start        # l'affiche sur http://localhost:3000
 
 ## 3. Changer les photos
 
-Les photos actuelles sont des images libres de droits (Unsplash). Pour mettre les vôtres :
+Les photos de véhicules sont les vôtres. Les autres photos (bannière, en-têtes de pages) sont des images libres de droits (Unsplash). Pour les remplacer :
 
 1. Déposez votre photo dans `public/images/` **en gardant le même nom de fichier** (par ex. `hero-cargo.webp`).
    Les formats `.webp`, `.jpg` et `.png` sont acceptés. Si vous changez l'extension, mettez à jour le chemin dans le composant indiqué ci-dessous.
@@ -59,11 +60,12 @@ Les photos actuelles sont des images libres de droits (Unsplash). Pour mettre le
 | `port-conteneurs.webp`      | En-tête de la page Paiement               |
 | `port-aerien.webp`          | En-tête de la page FAQ                    |
 | `canada-ville.webp`         | En-tête de la page Contact                |
-| `vehicules/*.webp`          | Photos du catalogue                       |
+| `vehicules/*.webp`          | Photos du catalogue (voir section 4)      |
 
 Conseils : photos horizontales, 1600 px de large environ, moins de 500 Ko.
 
-L'image de partage (aperçu WhatsApp / Facebook) et les icônes se régénèrent avec :
+Le logo se trouve dans `public/brand/` : `logo-al-mactoum.png` est le logo carré officiel, `logo-horizontal.png` / `.webp` la version du header à fond transparent.
+L'image de partage (aperçu WhatsApp / Facebook) et les icônes se régénèrent à partir du logo avec :
 
 ```bash
 npm run assets
@@ -77,23 +79,27 @@ Ouvrez `data/vehicles.ts` et copiez un bloc existant :
 
 ```ts
 {
-  id: 'toyota-rav4-2020',              // identifiant unique, sans espaces
+  id: 'toyota-rav4-gris',               // identifiant unique, sans espaces
   brand: 'Toyota',
   model: 'RAV4',
-  year: 2020,
-  mileageKm: 65000,
   type: 'suv',                          // 'suv' | 'berline' | 'pickup'
-  image: '/images/vehicules/toyota-rav4.webp',
+  color: { fr: 'Gris', en: 'Grey' },
+  year: 2020,                           // facultatif
+  mileageKm: 65000,                     // facultatif
+  images: [                             // 1 ou plusieurs photos (galerie avec flèches)
+    '/images/vehicules/toyota-rav4-1.webp',
+    '/images/vehicules/toyota-rav4-2.webp',
+  ],
   imageAlt: 'Toyota RAV4 gris, vue de trois quarts',
   price: '',                            // vide = « Sur devis », ou ex. '12 500 000 FCFA'
-  isExample: false,                     // false = vrai véhicule (pas de badge EXEMPLE)
 },
 ```
 
-1. Mettez la photo dans `public/images/vehicules/`.
-2. Supprimez les 6 véhicules d'exemple (`isExample: true`) quand vous avez les vôtres.
+1. Mettez les photos dans `public/images/vehicules/` (.webp, .jpg ou .png).
+2. L'année, le kilométrage et le prix sont facultatifs : s'ils sont absents, ils ne s'affichent pas.
+3. Pour retirer un véhicule vendu, supprimez simplement son bloc.
 
-Les filtres par marque et par type se mettent à jour automatiquement.
+Les filtres se mettent à jour automatiquement (le filtre par type n'apparaît que s'il y a au moins deux types de véhicules).
 
 ---
 
@@ -131,16 +137,16 @@ Les numéros s'affichent alors automatiquement sous les badges de paiement.
 
 **Logos officiels** : déposez par ex. `wave.png` dans `public/images/paiement/`, puis ajoutez `logo: '/images/paiement/wave.png'` au moyen de paiement correspondant.
 
-**Horaires** : dans `config/site.ts`, remplacez `hours: { fr: TODO, en: TODO }` par par ex. `{ fr: 'Lundi – Samedi : 9h – 19h', en: 'Monday – Saturday: 9am – 7pm' }`.
+**Horaires** : dans `config/site.ts` (`hours`), actuellement « 8h – 20h ». Vous pouvez préciser les jours, ex. `{ fr: 'Lundi – Samedi : 8h – 20h', en: 'Monday – Saturday: 8am – 8pm' }`.
 
 ---
 
 ## 7. À vérifier avant la mise en ligne
 
 - [ ] Les réponses de la **FAQ** (`locales/fr.json` et `en.json`, rubrique `faq`) : elles sont génériques, à ajuster (délais, garanties, dédouanement).
-- [ ] Les numéros Wave / Orange Money et les horaires (`config/site.ts`).
+- [ ] Les numéros Wave / Orange Money (`config/site.ts`).
 - [ ] L'adresse du site `url` dans `config/site.ts` : mettez votre adresse Vercel ou votre nom de domaine (utilisée pour Google et les aperçus de partage).
-- [ ] Remplacer les véhicules d'exemple et ajouter de vrais avis clients.
+- [ ] Compléter l'année, le kilométrage et le prix des véhicules si souhaité, et ajouter de vrais avis clients.
 
 ---
 

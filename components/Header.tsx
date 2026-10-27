@@ -68,7 +68,8 @@ export function Header({ locale, nav, whatsappMessage, skipLabel, navLabels }: H
       <header
         className={cn(
           'fixed inset-x-0 top-0 z-50 transition-all duration-300',
-          solid ? 'bg-white/95 shadow-soft backdrop-blur-md' : 'bg-transparent',
+          // Bleu nuit au défilement : le logo officiel est conçu pour un fond sombre
+          solid ? 'bg-navy-950/95 shadow-lift backdrop-blur-md' : 'bg-transparent',
         )}
       >
         <a
@@ -80,7 +81,7 @@ export function Header({ locale, nav, whatsappMessage, skipLabel, navLabels }: H
 
         <div className={cn('container flex items-center justify-between transition-all', solid ? 'h-16' : 'h-20')}>
           <Link href={localePath(locale, '/')} className="relative z-10">
-            <Logo tone={solid ? 'dark' : 'light'} />
+            <Logo priority className={cn('transition-all duration-300', solid ? 'h-10' : 'h-11 md:h-12')} />
           </Link>
 
           {/* Navigation ordinateur */}
@@ -92,7 +93,7 @@ export function Header({ locale, nav, whatsappMessage, skipLabel, navLabels }: H
                     href={link.href}
                     className={cn(
                       'group relative rounded-full px-3 py-2 text-sm font-medium transition-colors',
-                      solid ? 'text-navy-900 hover:text-gold-dark' : 'text-white/90 hover:text-white',
+                      'text-white/90 hover:text-white',
                     )}
                   >
                     {link.label}
@@ -110,7 +111,7 @@ export function Header({ locale, nav, whatsappMessage, skipLabel, navLabels }: H
               title={nav.switchLanguage}
               className={cn(
                 'flex h-10 items-center rounded-full border px-1 text-xs font-bold tracking-wider transition-colors',
-                solid ? 'border-navy-900/15' : 'border-white/30',
+                'border-white/30',
               )}
             >
               {(['fr', 'en'] as const).map((l) => (
@@ -118,7 +119,7 @@ export function Header({ locale, nav, whatsappMessage, skipLabel, navLabels }: H
                   key={l}
                   className={cn(
                     'rounded-full px-2.5 py-1.5 uppercase transition-colors',
-                    l === locale ? 'bg-gold text-navy-950' : solid ? 'text-navy-900/70' : 'text-white/80',
+                    l === locale ? 'bg-gold text-navy-950' : 'text-white/80',
                   )}
                 >
                   {l}
@@ -140,7 +141,7 @@ export function Header({ locale, nav, whatsappMessage, skipLabel, navLabels }: H
               aria-label={open ? nav.closeMenu : nav.openMenu}
               className={cn(
                 'relative z-10 flex h-11 w-11 items-center justify-center rounded-full transition-colors xl:hidden',
-                solid ? 'text-navy-900 hover:bg-mist' : 'text-white hover:bg-white/10',
+                'text-white hover:bg-white/10',
               )}
             >
               <span className="relative block h-4 w-6" aria-hidden="true">
