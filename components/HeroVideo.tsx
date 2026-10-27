@@ -72,7 +72,7 @@ export function HeroVideo({ t }: HeroVideoProps) {
       <button
         type="button"
         onClick={togglePlay}
-        className="absolute bottom-28 right-5 z-10 flex h-11 w-11 items-center justify-center rounded-full border border-white/20 bg-navy-950/60 text-white backdrop-blur-md transition hover:border-gold hover:text-gold focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold md:bottom-44 md:right-8"
+        className="absolute bottom-28 right-5 z-10 flex h-11 w-11 items-center justify-center rounded-full border border-white/20 bg-ink-950/60 text-white backdrop-blur-md transition hover:border-mint hover:text-mint focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-mint md:bottom-44 md:right-8"
         aria-label={playing ? t.pause : t.play}
       >
         {playing ? (

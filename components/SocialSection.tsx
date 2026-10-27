@@ -19,8 +19,8 @@ export function SocialSection({ t, newTab }: SocialSectionProps) {
       network: t.tiktok,
       handle: account.handle,
       Icon: TikTokIcon,
-      style: 'bg-navy-950 text-white',
-      iconStyle: 'bg-white text-navy-950',
+      style: 'bg-ink-950 text-white',
+      iconStyle: 'bg-white text-ink-950',
     })),
     {
       url: siteConfig.socials.facebook.url,

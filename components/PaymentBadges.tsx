@@ -49,7 +49,7 @@ export function PaymentBadges({ descriptions, numberLabel, variant = 'large', to
               key={method.id}
               className={cn(
                 'flex items-center gap-2 rounded-full py-1 pl-1 pr-3 text-xs font-semibold',
-                tone === 'light' ? 'bg-white/10 text-white' : 'bg-mist text-navy-900',
+                tone === 'light' ? 'bg-white/10 text-white' : 'bg-mist text-ink-900',
               )}
             >
               <span className={cn('flex h-6 w-6 items-center justify-center rounded-full', chip)}>
@@ -85,10 +85,10 @@ export function PaymentBadges({ descriptions, numberLabel, variant = 'large', to
               </span>
             )}
             <div className="min-w-0">
-              <p className="font-heading text-lg font-bold text-navy-900">{method.name}</p>
+              <p className="font-heading text-lg font-bold text-ink-900">{method.name}</p>
               {descriptions && <p className="text-sm text-slate-600">{descriptions[method.id]}</p>}
               {isFilled(method.receiveNumber) && (
-                <p className="mt-0.5 text-sm font-semibold text-navy-900">
+                <p className="mt-0.5 text-sm font-semibold text-ink-900">
                   {numberLabel} : {method.receiveNumber}
                 </p>
               )}

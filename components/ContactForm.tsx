@@ -268,8 +268,8 @@ export function ContactForm({ t }: { t: FormT }) {
       </div>
 
       {/* Véhicule souhaité */}
-      <fieldset className="mt-6 rounded-2xl border border-navy-900/10 p-4 md:p-5">
-        <legend className="px-2 text-sm font-semibold text-navy-900">
+      <fieldset className="mt-6 rounded-2xl border border-ink-900/10 p-4 md:p-5">
+        <legend className="px-2 text-sm font-semibold text-ink-900">
           {t.vehicleGroup}
           <Required />
         </legend>

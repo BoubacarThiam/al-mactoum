@@ -17,7 +17,6 @@ export function Footer({ locale, dict }: FooterProps) {
 
   const links = [
     { href: localePath(locale, '/'), label: nav.home },
-    { href: localePath(locale, '/#services'), label: nav.services },
     { href: localePath(locale, '/#etapes'), label: nav.steps },
     { href: localePath(locale, '/paiement'), label: nav.payment },
     { href: localePath(locale, '/vehicules'), label: nav.vehicles },
@@ -31,15 +30,15 @@ export function Footer({ locale, dict }: FooterProps) {
   ];
 
   return (
-    <footer className="relative overflow-hidden bg-navy-950 text-slate-300">
-      <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-gold/60 to-transparent" aria-hidden="true" />
+    <footer className="relative overflow-hidden bg-ink-950 text-slate-300">
+      <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-mint/60 to-transparent" aria-hidden="true" />
 
       <div className="container grid gap-12 py-16 md:grid-cols-2 lg:grid-cols-[1.4fr_1fr_1.3fr_1.2fr]">
         {/* Présentation */}
         <div>
           <Logo className="h-14" />
           <p className="mt-5 max-w-xs text-sm leading-relaxed">{footer.description}</p>
-          <p className="mt-6 mb-3 text-xs font-bold uppercase tracking-[0.2em] text-gold">{footer.payments}</p>
+          <p className="mt-6 mb-3 text-xs font-bold uppercase tracking-[0.2em] text-mint">{footer.payments}</p>
           <PaymentBadges variant="compact" tone="light" />
         </div>
 
@@ -49,7 +48,7 @@ export function Footer({ locale, dict }: FooterProps) {
           <ul className="space-y-1 text-sm">
             {links.map((link) => (
               <li key={link.href}>
-                <Link href={link.href} className="inline-flex min-h-[36px] items-center transition-colors hover:text-gold">
+                <Link href={link.href} className="inline-flex min-h-[36px] items-center transition-colors hover:text-mint">
                   {link.label}
                 </Link>
               </li>
@@ -62,7 +61,7 @@ export function Footer({ locale, dict }: FooterProps) {
           <p className="mb-4 font-heading text-sm font-bold uppercase tracking-[0.2em] text-white">{footer.contact}</p>
           <ul className="space-y-3 text-sm">
             <li className="flex gap-3">
-              <MapPin className="mt-0.5 h-4 w-4 shrink-0 text-gold" aria-hidden="true" />
+              <MapPin className="mt-0.5 h-4 w-4 shrink-0 text-mint" aria-hidden="true" />
               <span>
                 {siteConfig.address.street}
                 <br />
@@ -71,7 +70,7 @@ export function Footer({ locale, dict }: FooterProps) {
             </li>
             {siteConfig.phones.map((phone) => (
               <li key={phone.tel}>
-                <a href={`tel:${phone.tel}`} className="flex min-h-[32px] items-center gap-3 transition-colors hover:text-gold">
+                <a href={`tel:${phone.tel}`} className="flex min-h-[32px] items-center gap-3 transition-colors hover:text-mint">
                   {phone.country === 'SN' ? (
                     <FlagSN className="h-3 w-[18px] shrink-0 rounded-[2px]" title={common.senegal} />
                   ) : (
@@ -82,14 +81,14 @@ export function Footer({ locale, dict }: FooterProps) {
               </li>
             ))}
             <li>
-              <a href={`mailto:${siteConfig.email}`} className="flex items-center gap-3 break-all transition-colors hover:text-gold">
-                <Mail className="h-4 w-4 shrink-0 text-gold" aria-hidden="true" />
+              <a href={`mailto:${siteConfig.email}`} className="flex items-center gap-3 break-all transition-colors hover:text-mint">
+                <Mail className="h-4 w-4 shrink-0 text-mint" aria-hidden="true" />
                 {siteConfig.email}
               </a>
             </li>
             {isFilled(siteConfig.hours[locale]) && (
               <li className="flex items-center gap-3">
-                <Clock className="h-4 w-4 shrink-0 text-gold" aria-hidden="true" />
+                <Clock className="h-4 w-4 shrink-0 text-mint" aria-hidden="true" />
                 <span>
                   <span className="sr-only">{dict.contact.info.hours} : </span>
                   {siteConfig.hours[locale]}
@@ -111,7 +110,7 @@ export function Footer({ locale, dict }: FooterProps) {
                   rel="noopener noreferrer"
                   className="group flex items-center gap-3 text-sm transition-colors hover:text-white"
                 >
-                  <span className="flex h-9 w-9 items-center justify-center rounded-full bg-white/10 transition-colors group-hover:bg-gold group-hover:text-navy-950">
+                  <span className="flex h-9 w-9 items-center justify-center rounded-full bg-white/10 transition-colors group-hover:bg-mint group-hover:text-ink-950">
                     <Icon className="h-4 w-4" />
                   </span>
                   {label}

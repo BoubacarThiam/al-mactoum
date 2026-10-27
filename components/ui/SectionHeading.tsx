@@ -12,7 +12,17 @@ interface SectionHeadingProps {
   id?: string;
 }
 
-/** Titre de section standard : sur-titre doré, titre, sous-titre. */
+/** Filet à losange repris du logo (◆——) */
+export function Ornament({ className, flip }: { className?: string; flip?: boolean }) {
+  return (
+    <span className={cn('flex items-center', flip && 'flex-row-reverse', className)} aria-hidden="true">
+      <span className="h-1.5 w-1.5 rotate-45 bg-current" />
+      <span className="h-px w-8 bg-current" />
+    </span>
+  );
+}
+
+/** Titre de section standard : sur-titre espacé façon logo, titre, sous-titre. */
 export function SectionHeading({
   eyebrow,
   title,
@@ -22,17 +32,24 @@ export function SectionHeading({
   as: Tag = 'h2',
   id,
 }: SectionHeadingProps) {
+  const accent = tone === 'light' ? 'text-mint' : 'text-mint-dark';
   return (
     <Reveal className={cn('max-w-2xl', align === 'center' && 'mx-auto text-center')}>
-      <p className="mb-3 inline-flex items-center gap-2 font-heading text-xs font-bold uppercase tracking-[0.22em] text-gold-dark">
-        <span className="h-px w-6 bg-gold" aria-hidden="true" />
-        <span className={tone === 'light' ? 'text-gold' : undefined}>{eyebrow}</span>
+      <p
+        className={cn(
+          'mb-4 inline-flex items-center gap-3 text-[0.7rem] font-semibold uppercase tracking-[0.32em]',
+          accent,
+        )}
+      >
+        <Ornament />
+        <span>{eyebrow}</span>
+        {align === 'center' && <Ornament flip />}
       </p>
       <Tag
         id={id}
         className={cn(
-          'text-balance text-3xl font-extrabold leading-tight md:text-4xl',
-          tone === 'light' ? 'text-white' : 'text-navy-900',
+          'text-balance text-3xl font-extrabold leading-tight md:text-[2.6rem]',
+          tone === 'light' ? 'text-white' : 'text-ink-900',
         )}
       >
         {title}

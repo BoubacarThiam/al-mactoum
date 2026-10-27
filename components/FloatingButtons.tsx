@@ -38,7 +38,7 @@ export function FloatingButtons({ whatsappLabel, whatsappMessage, backToTopLabel
             onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
             aria-label={backToTopLabel}
             title={backToTopLabel}
-            className="flex h-11 w-11 items-center justify-center rounded-full bg-navy-900 text-white shadow-lift transition-colors hover:bg-gold hover:text-navy-950"
+            className="flex h-11 w-11 items-center justify-center rounded-full bg-ink-900 text-white shadow-lift transition-colors hover:bg-mint hover:text-ink-950"
           >
             <ArrowUp className="h-5 w-5" aria-hidden="true" />
           </m.button>

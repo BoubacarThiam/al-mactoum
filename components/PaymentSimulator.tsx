@@ -32,14 +32,14 @@ export function PaymentSimulator({ t }: { t: Dictionary['payment']['simulator'] 
 
   return (
     <div className="card relative overflow-hidden p-6 md:p-8">
-      <div className="absolute -right-16 -top-16 h-40 w-40 rounded-full bg-gold/10" aria-hidden="true" />
+      <div className="absolute -right-16 -top-16 h-40 w-40 rounded-full bg-mint/10" aria-hidden="true" />
 
       <div className="relative flex items-center gap-3">
-        <span className="flex h-11 w-11 items-center justify-center rounded-xl bg-navy-900 text-gold">
+        <span className="flex h-11 w-11 items-center justify-center rounded-xl bg-ink-900 text-mint">
           <Calculator className="h-5 w-5" aria-hidden="true" />
         </span>
         <div>
-          <h3 className="font-heading text-xl font-bold text-navy-900">{t.title}</h3>
+          <h3 className="font-heading text-xl font-bold text-ink-900">{t.title}</h3>
           <p className="text-sm text-slate-600">{t.subtitle}</p>
         </div>
       </div>
@@ -66,7 +66,7 @@ export function PaymentSimulator({ t }: { t: Dictionary['payment']['simulator'] 
 
       {/* Résultats */}
       <div className="mt-5 grid gap-3 sm:grid-cols-2" aria-live="polite">
-        <div className="rounded-xl bg-navy-900 p-4 text-white">
+        <div className="rounded-xl bg-ink-900 p-4 text-white">
           <p className="text-xs font-medium uppercase tracking-wider text-slate-300">{t.deposit}</p>
           <AnimatePresence mode="popLayout" initial={false}>
             <m.p
@@ -75,13 +75,13 @@ export function PaymentSimulator({ t }: { t: Dictionary['payment']['simulator'] 
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -8 }}
               transition={{ duration: 0.2 }}
-              className="mt-1 font-heading text-xl font-extrabold tabular-nums text-gold md:text-2xl"
+              className="mt-1 font-heading text-xl font-extrabold tabular-nums text-mint md:text-2xl"
             >
               {formatFCFA(deposit)}
             </m.p>
           </AnimatePresence>
         </div>
-        <div className="rounded-xl border-2 border-dashed border-navy-900/15 bg-mist p-4">
+        <div className="rounded-xl border-2 border-dashed border-ink-900/15 bg-mist p-4">
           <p className="text-xs font-medium uppercase tracking-wider text-slate-600">{t.balance}</p>
           <AnimatePresence mode="popLayout" initial={false}>
             <m.p
@@ -90,7 +90,7 @@ export function PaymentSimulator({ t }: { t: Dictionary['payment']['simulator'] 
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -8 }}
               transition={{ duration: 0.2 }}
-              className="mt-1 font-heading text-xl font-extrabold tabular-nums text-navy-900 md:text-2xl"
+              className="mt-1 font-heading text-xl font-extrabold tabular-nums text-ink-900 md:text-2xl"
             >
               {formatFCFA(balance)}
             </m.p>

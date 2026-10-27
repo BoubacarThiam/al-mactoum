@@ -14,6 +14,7 @@ import '../globals.css';
 const montserrat = Montserrat({
   subsets: ['latin'],
   weight: ['600', '700', '800'],
+  style: ['normal', 'italic'], // italique : titre du hero, comme le logo
   variable: '--font-montserrat',
   display: 'swap',
 });
@@ -29,7 +30,7 @@ export function generateStaticParams() {
 }
 
 export const viewport: Viewport = {
-  themeColor: '#0B1F3A',
+  themeColor: '#0E1210',
   width: 'device-width',
   initialScale: 1,
 };

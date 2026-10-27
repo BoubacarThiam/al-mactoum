@@ -1,9 +1,6 @@
 import { ContactSection } from '@/components/ContactSection';
-import { FAQ } from '@/components/FAQ';
 import { Hero } from '@/components/Hero';
 import { PaymentSection } from '@/components/PaymentSection';
-import { Services } from '@/components/Services';
-import { SocialSection } from '@/components/SocialSection';
 import { Steps } from '@/components/Steps';
 import { Testimonials } from '@/components/Testimonials';
 import { TrustBar } from '@/components/TrustBar';
@@ -15,7 +12,7 @@ export function generateStaticParams() {
   return generateLocaleParams();
 }
 
-/** Page d'accueil : toutes les sections à la suite. */
+/** Page d'accueil : l'essentiel seulement (la FAQ a sa propre page, les réseaux sont dans le pied de page). */
 export default function HomePage({ params }: { params: { locale: Locale } }) {
   const { locale } = params;
   const dict = getDictionary(locale);
@@ -25,13 +22,10 @@ export default function HomePage({ params }: { params: { locale: Locale } }) {
       <Hero locale={locale} t={dict.hero} />
       <TrustBar locale={locale} t={dict.trust} />
       <Steps t={dict.steps} />
+      <VehiclesSection t={dict.vehicles} locale={locale} limit={3} />
       <PaymentSection t={dict.payment} />
-      <Services t={dict.services} />
-      <VehiclesSection t={dict.vehicles} locale={locale} limit={6} />
       <WhyUs t={dict.why} common={dict.common} />
       <Testimonials t={dict.testimonials} />
-      <SocialSection t={dict.social} newTab={dict.common.newTab} />
-      <FAQ t={dict.faq} whatsappMessage={dict.hero.whatsappMessage} />
       <ContactSection locale={locale} t={dict.contact} common={dict.common} />
     </>
   );

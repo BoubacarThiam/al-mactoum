@@ -49,7 +49,7 @@ export function FAQ({ t, whatsappMessage, headingAs = 'h2' }: FAQProps) {
                 key={item.q}
                 className={cn(
                   'overflow-hidden rounded-2xl border bg-white transition-all duration-300',
-                  isOpen ? 'border-gold/50 shadow-soft' : 'border-navy-900/[0.07]',
+                  isOpen ? 'border-mint-dark/40 shadow-soft' : 'border-ink-900/[0.07]',
                 )}
               >
                 <h3>
@@ -61,11 +61,11 @@ export function FAQ({ t, whatsappMessage, headingAs = 'h2' }: FAQProps) {
                     onClick={() => setOpen(isOpen ? null : i)}
                     className="flex w-full items-center justify-between gap-4 px-5 py-5 text-left md:px-6"
                   >
-                    <span className="font-heading text-base font-bold text-navy-900 md:text-lg">{item.q}</span>
+                    <span className="font-heading text-base font-bold text-ink-900 md:text-lg">{item.q}</span>
                     <span
                       className={cn(
                         'flex h-9 w-9 shrink-0 items-center justify-center rounded-full transition-all duration-300',
-                        isOpen ? 'rotate-45 bg-gold text-navy-950' : 'bg-mist text-navy-900',
+                        isOpen ? 'rotate-45 bg-mint text-ink-950' : 'bg-mist text-ink-900',
                       )}
                       aria-hidden="true"
                     >

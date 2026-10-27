@@ -30,13 +30,13 @@ export function ContactSection({ locale, t, common, headingAs = 'h2' }: ContactS
           </Reveal>
 
           <Reveal delay={0.1} className="space-y-6">
-            <div className="rounded-2xl bg-navy-900 p-6 text-white shadow-lift md:p-8">
+            <div className="rounded-2xl bg-ink-900 p-6 text-white shadow-lift md:p-8">
               <h3 className="font-heading text-xl font-bold">{t.info.title}</h3>
 
               <dl className="mt-6 space-y-6 text-sm">
                 <div className="flex gap-4">
                   <dt className="sr-only">{t.info.address}</dt>
-                  <MapPin className="mt-0.5 h-5 w-5 shrink-0 text-gold" aria-hidden="true" />
+                  <MapPin className="mt-0.5 h-5 w-5 shrink-0 text-mint" aria-hidden="true" />
                   <dd>
                     <address className="not-italic leading-relaxed text-slate-200">
                       {address.street}
@@ -50,13 +50,13 @@ export function ContactSection({ locale, t, common, headingAs = 'h2' }: ContactS
 
                 <div className="flex gap-4">
                   <dt className="sr-only">{t.info.phones}</dt>
-                  <Phone className="mt-0.5 h-5 w-5 shrink-0 text-gold" aria-hidden="true" />
+                  <Phone className="mt-0.5 h-5 w-5 shrink-0 text-mint" aria-hidden="true" />
                   <dd className="space-y-2.5">
                     {siteConfig.phones.map((phone) => (
                       <a
                         key={phone.tel}
                         href={`tel:${phone.tel}`}
-                        className="flex items-center gap-3 font-semibold text-white transition-colors hover:text-gold"
+                        className="flex items-center gap-3 font-semibold text-white transition-colors hover:text-mint"
                       >
                         {phone.country === 'SN' ? (
                           <FlagSN className="h-4 w-6 shrink-0 rounded-[2px]" title={common.senegal} />
@@ -71,9 +71,9 @@ export function ContactSection({ locale, t, common, headingAs = 'h2' }: ContactS
 
                 <div className="flex gap-4">
                   <dt className="sr-only">{t.info.email}</dt>
-                  <Mail className="mt-0.5 h-5 w-5 shrink-0 text-gold" aria-hidden="true" />
+                  <Mail className="mt-0.5 h-5 w-5 shrink-0 text-mint" aria-hidden="true" />
                   <dd>
-                    <a href={`mailto:${siteConfig.email}`} className="break-all font-semibold transition-colors hover:text-gold">
+                    <a href={`mailto:${siteConfig.email}`} className="break-all font-semibold transition-colors hover:text-mint">
                       {siteConfig.email}
                     </a>
                   </dd>
@@ -83,7 +83,7 @@ export function ContactSection({ locale, t, common, headingAs = 'h2' }: ContactS
                 {isFilled(hours) && (
                   <div className="flex gap-4">
                     <dt className="sr-only">{t.info.hours}</dt>
-                    <Clock className="mt-0.5 h-5 w-5 shrink-0 text-gold" aria-hidden="true" />
+                    <Clock className="mt-0.5 h-5 w-5 shrink-0 text-mint" aria-hidden="true" />
                     <dd className="text-slate-200">{hours}</dd>
                   </div>
                 )}
@@ -91,7 +91,7 @@ export function ContactSection({ locale, t, common, headingAs = 'h2' }: ContactS
             </div>
 
             {/* Carte Google Maps (chargée seulement quand elle arrive à l'écran) */}
-            <div className="overflow-hidden rounded-2xl border border-navy-900/10 shadow-soft">
+            <div className="overflow-hidden rounded-2xl border border-ink-900/10 shadow-soft">
               <iframe
                 title={t.info.mapTitle}
                 src={`https://maps.google.com/maps?q=${mapQuery}&z=15&hl=${locale}&output=embed`}
@@ -103,9 +103,9 @@ export function ContactSection({ locale, t, common, headingAs = 'h2' }: ContactS
                 href={`https://www.google.com/maps/search/?api=1&query=${mapQuery}`}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center justify-center gap-2 bg-white py-3 text-sm font-semibold text-navy-900 transition-colors hover:bg-mist"
+                className="flex items-center justify-center gap-2 bg-white py-3 text-sm font-semibold text-ink-900 transition-colors hover:bg-mist"
               >
-                <Navigation className="h-4 w-4 text-gold-dark" aria-hidden="true" />
+                <Navigation className="h-4 w-4 text-mint-dark" aria-hidden="true" />
                 {t.info.directions}
                 <span className="sr-only">{common.newTab}</span>
               </a>

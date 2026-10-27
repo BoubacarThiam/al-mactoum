@@ -49,11 +49,10 @@ export function Header({ locale, nav, whatsappMessage, skipLabel, navLabels }: H
 
   const links = [
     { href: localePath(locale, '/'), label: nav.home },
-    { href: localePath(locale, '/#services'), label: nav.services },
     { href: localePath(locale, '/#etapes'), label: nav.steps },
     { href: localePath(locale, '/#paiement'), label: nav.payment },
     { href: localePath(locale, '/vehicules'), label: nav.vehicles },
-    { href: localePath(locale, '/#faq'), label: nav.faq },
+    { href: localePath(locale, '/faq'), label: nav.faq },
     { href: localePath(locale, '/#contact'), label: nav.contact },
   ];
 
@@ -68,13 +67,13 @@ export function Header({ locale, nav, whatsappMessage, skipLabel, navLabels }: H
       <header
         className={cn(
           'fixed inset-x-0 top-0 z-50 transition-all duration-300',
-          // Bleu nuit au défilement : le logo officiel est conçu pour un fond sombre
-          solid ? 'bg-navy-950/95 shadow-lift backdrop-blur-md' : 'bg-transparent',
+          // Anthracite au défilement : le logo officiel est conçu pour un fond sombre
+          solid ? 'bg-ink-950/95 shadow-lift backdrop-blur-md' : 'bg-transparent',
         )}
       >
         <a
           href="#contenu"
-          className="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-[60] focus:rounded-lg focus:bg-gold focus:px-4 focus:py-2 focus:text-navy-950"
+          className="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-[60] focus:rounded-lg focus:bg-mint focus:px-4 focus:py-2 focus:text-ink-950"
         >
           {skipLabel}
         </a>
@@ -97,7 +96,7 @@ export function Header({ locale, nav, whatsappMessage, skipLabel, navLabels }: H
                     )}
                   >
                     {link.label}
-                    <span className="absolute inset-x-3 -bottom-0.5 h-0.5 origin-left scale-x-0 rounded-full bg-gold transition-transform duration-300 group-hover:scale-x-100" />
+                    <span className="absolute inset-x-3 -bottom-0.5 h-0.5 origin-left scale-x-0 rounded-full bg-mint transition-transform duration-300 group-hover:scale-x-100" />
                   </Link>
                 </li>
               ))}
@@ -119,7 +118,7 @@ export function Header({ locale, nav, whatsappMessage, skipLabel, navLabels }: H
                   key={l}
                   className={cn(
                     'rounded-full px-2.5 py-1.5 uppercase transition-colors',
-                    l === locale ? 'bg-gold text-navy-950' : 'text-white/80',
+                    l === locale ? 'bg-mint text-ink-950' : 'text-white/80',
                   )}
                 >
                   {l}
@@ -128,7 +127,7 @@ export function Header({ locale, nav, whatsappMessage, skipLabel, navLabels }: H
               <span className="sr-only">{nav.switchLanguage}</span>
             </Link>
 
-            <Link href={localePath(locale, '/#contact')} className="btn-gold hidden !px-5 !py-2.5 text-sm md:inline-flex">
+            <Link href={localePath(locale, '/#contact')} className="btn-mint hidden !px-5 !py-2.5 text-sm md:inline-flex">
               {nav.quote}
             </Link>
 
@@ -193,17 +192,17 @@ export function Header({ locale, nav, whatsappMessage, skipLabel, navLabels }: H
                     <Link
                       href={link.href}
                       onClick={() => setOpen(false)}
-                      className="flex items-center justify-between border-b border-navy-900/[0.07] py-4 font-heading text-xl font-bold text-navy-900"
+                      className="flex items-center justify-between border-b border-ink-900/[0.07] py-4 font-heading text-xl font-bold text-ink-900"
                     >
                       {link.label}
-                      <span className="text-gold" aria-hidden="true">→</span>
+                      <span className="text-mint" aria-hidden="true">→</span>
                     </Link>
                   </m.li>
                 ))}
               </ul>
 
               <div className="mt-8 grid gap-3">
-                <Link href={localePath(locale, '/#contact')} onClick={() => setOpen(false)} className="btn-gold w-full">
+                <Link href={localePath(locale, '/#contact')} onClick={() => setOpen(false)} className="btn-mint w-full">
                   {nav.quote}
                 </Link>
                 <a href={whatsappLink(whatsappMessage)} target="_blank" rel="noopener noreferrer" className="btn-whatsapp w-full">

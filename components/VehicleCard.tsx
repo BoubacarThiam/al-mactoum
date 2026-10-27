@@ -46,11 +46,11 @@ export function VehicleCard({ vehicle, t, locale }: VehicleCardProps) {
         />
 
         <div className="absolute inset-x-0 top-0 flex items-start justify-between p-3">
-          <span className="rounded-full bg-white/95 px-3 py-1 text-xs font-bold text-navy-900 shadow-sm">
+          <span className="rounded-full bg-white/95 px-3 py-1 text-xs font-bold text-ink-900 shadow-sm">
             {t.types[vehicle.type]}
           </span>
           {vehicle.isExample && (
-            <span className="rounded-full bg-gold px-3 py-1 text-[0.7rem] font-extrabold tracking-wider text-navy-950 shadow-sm">
+            <span className="rounded-full bg-mint px-3 py-1 text-[0.7rem] font-extrabold tracking-wider text-ink-950 shadow-sm">
               {t.example}
             </span>
           )}
@@ -63,7 +63,7 @@ export function VehicleCard({ vehicle, t, locale }: VehicleCardProps) {
               type="button"
               onClick={() => go(-1)}
               aria-label={t.previousPhoto}
-              className="absolute left-2 top-1/2 flex h-10 w-10 -translate-y-1/2 items-center justify-center rounded-full bg-white/90 text-navy-900 shadow-sm transition hover:bg-white"
+              className="absolute left-2 top-1/2 flex h-10 w-10 -translate-y-1/2 items-center justify-center rounded-full bg-white/90 text-ink-900 shadow-sm transition hover:bg-white"
             >
               <ChevronLeft className="h-5 w-5" aria-hidden="true" />
             </button>
@@ -71,7 +71,7 @@ export function VehicleCard({ vehicle, t, locale }: VehicleCardProps) {
               type="button"
               onClick={() => go(1)}
               aria-label={t.nextPhoto}
-              className="absolute right-2 top-1/2 flex h-10 w-10 -translate-y-1/2 items-center justify-center rounded-full bg-white/90 text-navy-900 shadow-sm transition hover:bg-white"
+              className="absolute right-2 top-1/2 flex h-10 w-10 -translate-y-1/2 items-center justify-center rounded-full bg-white/90 text-ink-900 shadow-sm transition hover:bg-white"
             >
               <ChevronRight className="h-5 w-5" aria-hidden="true" />
             </button>
@@ -91,16 +91,16 @@ export function VehicleCard({ vehicle, t, locale }: VehicleCardProps) {
       </div>
 
       <div className="flex flex-1 flex-col p-5">
-        <p className="text-xs font-bold uppercase tracking-[0.18em] text-gold-dark">{vehicle.brand}</p>
-        <h3 className="mt-1 font-heading text-xl font-bold text-navy-900">{vehicle.model}</h3>
+        <p className="text-xs font-bold uppercase tracking-[0.18em] text-mint-dark">{vehicle.brand}</p>
+        <h3 className="mt-1 font-heading text-xl font-bold text-ink-900">{vehicle.model}</h3>
 
         {specs.length > 0 && (
-          <dl className="mt-4 flex flex-wrap gap-x-6 gap-y-2 border-y border-navy-900/[0.07] py-4 text-sm">
+          <dl className="mt-4 flex flex-wrap gap-x-6 gap-y-2 border-y border-ink-900/[0.07] py-4 text-sm">
             {specs.map(({ icon: Icon, label, value }) => (
               <div key={label} className="flex items-center gap-2">
                 <Icon className="h-4 w-4 text-slate-400" aria-hidden="true" />
                 <dt className="sr-only">{label}</dt>
-                <dd className="font-medium text-navy-900">{value}</dd>
+                <dd className="font-medium text-ink-900">{value}</dd>
               </div>
             ))}
           </dl>
@@ -108,14 +108,14 @@ export function VehicleCard({ vehicle, t, locale }: VehicleCardProps) {
 
         <div className="mt-auto flex items-baseline justify-between pt-4">
           <span className="text-sm text-slate-500">{t.price}</span>
-          <span className="font-heading text-lg font-extrabold text-navy-900">{vehicle.price || t.onQuote}</span>
+          <span className="font-heading text-lg font-extrabold text-ink-900">{vehicle.price || t.onQuote}</span>
         </div>
 
         <a
           href={whatsappLink(message)}
           target="_blank"
           rel="noopener noreferrer"
-          className="btn-navy mt-5 w-full !py-3 text-sm group-hover:bg-whatsapp group-hover:text-navy-950"
+          className="btn-ink mt-5 w-full !py-3 text-sm group-hover:bg-whatsapp group-hover:text-ink-950"
         >
           <WhatsAppIcon className="h-4 w-4" />
           {t.cta}

@@ -34,15 +34,15 @@ export function VehiclesSection({ t, locale, limit, hideHeading }: VehiclesSecti
 
         {/* Recherche sur mesure */}
         <Reveal className="mt-14">
-          <div className="relative overflow-hidden rounded-3xl bg-navy-900 px-6 py-10 text-center md:px-12 md:text-left">
-            <div className="absolute -right-20 -top-20 h-64 w-64 rounded-full bg-gold/10" aria-hidden="true" />
+          <div className="relative overflow-hidden rounded-3xl bg-ink-900 px-6 py-10 text-center md:px-12 md:text-left">
+            <div className="absolute -right-20 -top-20 h-64 w-64 rounded-full bg-mint/10" aria-hidden="true" />
             <div className="absolute -bottom-24 left-1/3 h-56 w-56 rounded-full bg-white/[0.03]" aria-hidden="true" />
             <div className="relative flex flex-col items-center gap-6 md:flex-row md:justify-between">
               <div className="max-w-xl">
                 <h3 className="font-heading text-2xl font-extrabold text-white">{t.customTitle}</h3>
                 <p className="mt-2 text-slate-300">{t.customText}</p>
               </div>
-              <Link href={localePath(locale, '/#contact')} className="btn-gold shrink-0">
+              <Link href={localePath(locale, '/#contact')} className="btn-mint shrink-0">
                 <Search className="h-4 w-4" aria-hidden="true" />
                 {t.customCta}
               </Link>

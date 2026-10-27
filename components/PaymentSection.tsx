@@ -17,7 +17,7 @@ export function PaymentSection({ t, headingAs = 'h2' }: PaymentSectionProps) {
   return (
     <section id="paiement" className="section relative overflow-hidden" aria-labelledby="paiement-titre">
       <div
-        className="absolute inset-x-0 top-0 -z-10 h-[420px] bg-gradient-to-b from-gold/[0.07] to-transparent"
+        className="absolute inset-x-0 top-0 -z-10 h-[420px] bg-gradient-to-b from-mint/[0.07] to-transparent"
         aria-hidden="true"
       />
       <div className="container">
@@ -28,8 +28,8 @@ export function PaymentSection({ t, headingAs = 'h2' }: PaymentSectionProps) {
             <PaymentSplit t={t} />
 
             <div className="mt-10">
-              <h3 className="mb-4 flex items-center gap-2 font-heading text-lg font-bold text-navy-900">
-                <ShieldCheck className="h-5 w-5 text-gold-dark" aria-hidden="true" />
+              <h3 className="mb-4 flex items-center gap-2 font-heading text-lg font-bold text-ink-900">
+                <ShieldCheck className="h-5 w-5 text-mint-dark" aria-hidden="true" />
                 {t.methodsTitle}
               </h3>
               <PaymentBadges descriptions={t.methods} numberLabel={t.receiveNumber} />
