@@ -82,4 +82,16 @@ export const videoTestimonials: VideoTestimonial[] = [
     duration: '0:36',
     portrait: true,
   },
+  {
+    id: 'livraison-tucson-gris',
+    src: '/videos/temoignages/livraison-tucson-gris.mp4',
+    poster: '/videos/temoignages/livraison-tucson-gris.jpg',
+    title: { fr: 'Remise des clés : Hyundai Tucson', en: 'Handover: Hyundai Tucson' },
+    caption: {
+      fr: 'Un autre Tucson livré à son propriétaire.',
+      en: 'Another Tucson delivered to its owner.',
+    },
+    duration: '0:27',
+    portrait: true,
+  },
 ];
