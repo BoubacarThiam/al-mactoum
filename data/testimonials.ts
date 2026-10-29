@@ -70,4 +70,16 @@ export const videoTestimonials: VideoTestimonial[] = [
     duration: '1:15',
     portrait: true,
   },
+  {
+    id: 'livraison-bmw-saint-louis',
+    src: '/videos/temoignages/livraison-bmw-saint-louis.mp4',
+    poster: '/videos/temoignages/livraison-bmw-saint-louis.jpg',
+    title: { fr: 'Livraison d’une BMW', en: 'BMW delivery' },
+    caption: {
+      fr: 'Véhicule livré à son client à Saint-Louis (Ndar).',
+      en: 'Vehicle delivered to its owner in Saint-Louis (Ndar).',
+    },
+    duration: '0:36',
+    portrait: true,
+  },
 ];
