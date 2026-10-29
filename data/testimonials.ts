@@ -15,6 +15,9 @@
  *
  *  Les blocs avec placeholder: true s'affichent comme emplacements vides.
  *  Supprimez-les quand vous avez de vrais avis.
+ *
+ *  Vidéos de livraison (plus bas, videoTestimonials) : déposez la vidéo (.mp4) et
+ *  son image d'aperçu (.jpg) dans /public/videos/temoignages, puis copiez un bloc.
  * ============================================================
  */
 
@@ -35,4 +38,36 @@ export const testimonials: Testimonial[] = [
   { name: PLACEHOLDER, text: PLACEHOLDER, placeholder: true },
   { name: PLACEHOLDER, text: PLACEHOLDER, placeholder: true },
   { name: PLACEHOLDER, text: PLACEHOLDER, placeholder: true },
+];
+
+export interface VideoTestimonial {
+  /** Identifiant unique (sans espaces) */
+  id: string;
+  /** Fichier vidéo, chemin dans /public */
+  src: string;
+  /** Image affichée avant la lecture, chemin dans /public */
+  poster: string;
+  /** Titre court, en français et en anglais */
+  title: { fr: string; en: string };
+  /** Légende facultative, en français et en anglais */
+  caption?: { fr: string; en: string };
+  /** Durée affichée sur la vignette, ex. "1:15" */
+  duration?: string;
+  /** true = vidéo filmée à la verticale (téléphone) */
+  portrait?: boolean;
+}
+
+export const videoTestimonials: VideoTestimonial[] = [
+  {
+    id: 'livraison-tucson',
+    src: '/videos/temoignages/livraison-tucson.mp4',
+    poster: '/videos/temoignages/livraison-tucson.jpg',
+    title: { fr: 'Livraison d’un Hyundai Tucson', en: 'Hyundai Tucson delivery' },
+    caption: {
+      fr: 'Remise du véhicule à une cliente à Dakar.',
+      en: 'Vehicle handed over to a customer in Dakar.',
+    },
+    duration: '1:15',
+    portrait: true,
+  },
 ];

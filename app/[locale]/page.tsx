@@ -47,7 +47,7 @@ export default function HomePage({ params }: { params: { locale: Locale } }) {
       />
       <PaymentSection t={dict.payment} />
       <WhyUs t={dict.why} common={dict.common} />
-      <Testimonials t={dict.testimonials} />
+      <Testimonials t={dict.testimonials} locale={locale} />
       <ContactSection locale={locale} t={dict.contact} common={dict.common} />
     </>
   );

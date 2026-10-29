@@ -221,7 +221,8 @@
   "testimonials": {
     "eyebrow": "Testimonials",
     "title": "They trusted us",
-    "subtitle": "Our customers' reviews will be published here soon."
+    "subtitle": "Real deliveries, filmed when the vehicle was handed over.",
+    "play": "Play video: {title}"
   },
   "social": {
     "eyebrow": "Social media",
