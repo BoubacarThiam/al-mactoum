@@ -52,9 +52,9 @@ export function WhyUs({ t, common }: WhyUsProps) {
 
         <Reveal delay={0.1} className="relative">
           <div className="relative aspect-[4/5] overflow-hidden rounded-3xl shadow-lift sm:aspect-[4/3] lg:aspect-[4/5]">
-            {/* Photo à remplacer dans /public/images/route-voiture.webp */}
+            {/* Photo à remplacer dans /public/images/galerie/vehicules-alignes.webp */}
             <Image
-              src="/images/route-voiture.webp"
+              src="/images/galerie/vehicules-alignes.webp"
               alt={t.imageAlt}
               fill
               sizes="(min-width: 1024px) 560px, 100vw"
