@@ -22,19 +22,21 @@ export function VideoGallery({ t, locale }: VideoGalleryProps) {
   const [active, setActive] = useState<string | null>(null);
   if (operationVideos.length === 0) return null;
 
-  const single = operationVideos.length === 1;
+  // Grille adaptée au nombre de vidéos : pas de colonne vide avec 1 ou 2 vidéos
+  const count = operationVideos.length;
+  const layout =
+    count === 1
+      ? 'mx-auto max-w-3xl'
+      : count === 2 || count === 4
+        ? 'mx-auto max-w-5xl sm:grid-cols-2'
+        : 'sm:grid-cols-2 lg:grid-cols-3';
 
   return (
     <section id="videos" className="section bg-mist" aria-labelledby="videos-titre">
       <div className="container">
         <SectionHeading id="videos-titre" eyebrow={t.eyebrow} title={t.title} subtitle={t.subtitle} />
 
-        <ul
-          className={cn(
-            'mt-12 grid gap-6',
-            single ? 'mx-auto max-w-3xl' : 'sm:grid-cols-2 lg:grid-cols-3',
-          )}
-        >
+        <ul className={cn('mt-12 grid gap-6', layout)}>
           {operationVideos.map((video, i) => {
             const title = video.title[locale];
             const isActive = active === video.id;

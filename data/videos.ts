@@ -38,4 +38,15 @@ export const operationVideos: OperationVideo[] = [
     },
     duration: '0:13',
   },
+  {
+    id: 'arrivee-dakar-conteneur',
+    src: '/videos/operations/arrivee-dakar-conteneur.mp4',
+    poster: '/videos/operations/arrivee-dakar-conteneur.jpg',
+    title: { fr: 'Arrivée à Dakar', en: 'Arrival in Dakar' },
+    caption: {
+      fr: 'Un SUV Hyundai sorti de son conteneur à Dakar.',
+      en: 'A Hyundai SUV unloaded from its container in Dakar.',
+    },
+    duration: '0:30',
+  },
 ];
