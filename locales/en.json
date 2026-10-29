@@ -82,6 +82,12 @@
       }
     ]
   },
+  "videos": {
+    "eyebrow": "On video",
+    "title": "Our operations, for real",
+    "subtitle": "Real footage of our vehicles, from Canada to Dakar.",
+    "play": "Play video: {title}"
+  },
   "payment": {
     "eyebrow": "Secure payment",
     "title": "You pay the rest only when your car is here",
