@@ -1,5 +1,3 @@
-import { ShieldCheck } from 'lucide-react';
-import { PaymentBadges } from '@/components/PaymentBadges';
 import { PaymentSimulator } from '@/components/PaymentSimulator';
 import { PaymentSplit } from '@/components/PaymentSplit';
 import { Reveal } from '@/components/ui/Reveal';
@@ -12,7 +10,7 @@ interface PaymentSectionProps {
   headingAs?: 'h1' | 'h2';
 }
 
-/** Section Paiement : modèle 60/40, moyens de paiement et simulateur. */
+/** Section Paiement : modèle 60/40 et simulateur. */
 export function PaymentSection({ t, headingAs = 'h2' }: PaymentSectionProps) {
   return (
     <section id="paiement" className="section relative overflow-hidden" aria-labelledby="paiement-titre">
@@ -26,14 +24,6 @@ export function PaymentSection({ t, headingAs = 'h2' }: PaymentSectionProps) {
         <div className="mt-14 grid items-start gap-10 lg:grid-cols-[1.15fr_1fr] lg:gap-12">
           <Reveal>
             <PaymentSplit t={t} />
-
-            <div className="mt-10">
-              <h3 className="mb-4 flex items-center gap-2 font-heading text-lg font-bold text-ink-900">
-                <ShieldCheck className="h-5 w-5 text-mint-dark" aria-hidden="true" />
-                {t.methodsTitle}
-              </h3>
-              <PaymentBadges descriptions={t.methods} numberLabel={t.receiveNumber} />
-            </div>
           </Reveal>
 
           <Reveal delay={0.15}>
