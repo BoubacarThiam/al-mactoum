@@ -40,12 +40,18 @@ const config: Config = {
         lift: '0 22px 45px -18px rgba(14, 18, 16, 0.35)',
       },
       keyframes: {
+        // Défilement continu des images (la piste contient 2 copies identiques)
+        marquee: {
+          from: { transform: 'translateX(-50%)' },
+          to: { transform: 'translateX(0)' },
+        },
         pulseRing: {
           '0%': { transform: 'scale(1)', opacity: '0.55' },
           '80%, 100%': { transform: 'scale(1.6)', opacity: '0' },
         },
       },
       animation: {
+        marquee: 'marquee 45s linear infinite',
         // 3 pulsations seulement : une animation décorative ne doit pas tourner en boucle
         'pulse-ring': 'pulseRing 2.4s cubic-bezier(0.2, 0.6, 0.3, 1) 1.5s 3 both',
       },

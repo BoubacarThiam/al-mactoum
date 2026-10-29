@@ -88,6 +88,21 @@
     "subtitle": "Real footage of our vehicles, from Canada to Dakar.",
     "play": "Play video: {title}"
   },
+  "gallery": {
+    "pause": "Pause scrolling",
+    "play": "Resume scrolling",
+    "tagline": "Car import",
+    "title": "From Canada to Dakar, we handle everything",
+    "description": "Purchase, inspection, container, shipping and delivery: your vehicle is tracked at every step.",
+    "cta": "Get a quote",
+    "images": [
+      "Vehicle being unloaded from a container by two workers",
+      "Commercial port with truck, containers, ship and plane",
+      "Row of new SUVs lined up under a blue sky",
+      "Shipping container painted with the Canadian flag",
+      "Cargo ships docked and loaded with containers"
+    ]
+  },
   "payment": {
     "eyebrow": "Secure payment",
     "title": "You pay the rest only when your car is here",

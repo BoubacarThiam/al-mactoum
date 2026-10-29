@@ -88,6 +88,21 @@
     "subtitle": "Des images réelles de nos véhicules, du Canada jusqu'à Dakar.",
     "play": "Lire la vidéo : {title}"
   },
+  "gallery": {
+    "pause": "Mettre le défilement en pause",
+    "play": "Relancer le défilement",
+    "tagline": "Import automobile",
+    "title": "Du Canada jusqu'à Dakar, on s'occupe de tout",
+    "description": "Achat, inspection, conteneur, expédition et livraison : votre véhicule est suivi à chaque étape.",
+    "cta": "Demander un devis",
+    "images": [
+      "Véhicule déchargé d'un conteneur par deux agents",
+      "Port de commerce avec camion, conteneurs, navire et avion",
+      "Rangée de SUV neufs alignés sous un ciel bleu",
+      "Conteneur aux couleurs du drapeau canadien",
+      "Navires cargo à quai chargés de conteneurs"
+    ]
+  },
   "payment": {
     "eyebrow": "Paiement sécurisé",
     "title": "Vous payez le reste seulement quand votre voiture est là",
