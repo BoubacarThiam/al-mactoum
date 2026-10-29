@@ -42,7 +42,7 @@ export function VideoGallery({ t, locale }: VideoGalleryProps) {
             const isActive = active === video.id;
             return (
               <Reveal as="li" key={video.id} delay={motionTokens.stagger * i}>
-                <figure className="card overflow-hidden">
+                <figure className="card h-full overflow-hidden">
                   <div className="relative aspect-video bg-ink-950">
                     {isActive ? (
                       <video

@@ -49,4 +49,15 @@ export const operationVideos: OperationVideo[] = [
     },
     duration: '0:30',
   },
+  {
+    id: 'dechargement-mitsubishi',
+    src: '/videos/operations/dechargement-mitsubishi.mp4',
+    poster: '/videos/operations/dechargement-mitsubishi.jpg',
+    title: { fr: 'Sortie du conteneur', en: 'Out of the container' },
+    caption: {
+      fr: 'Un Mitsubishi RVR sorti de son conteneur à l’arrivée.',
+      en: 'A Mitsubishi RVR unloaded from its container on arrival.',
+    },
+    duration: '0:24',
+  },
 ];
