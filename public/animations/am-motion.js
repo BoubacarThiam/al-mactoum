@@ -158,13 +158,35 @@
       });
     },
     drive: function (el) {
-      var p = pinP(el);
+      var p = pinP(el), cars = el.querySelectorAll('.am-drive__car'), n = cars.length;
       setVar(el, '--p', p);
-      setVar(el, '--car', eOut(seg(p, 0, .42)));
-      setVar(el, '--txt', seg(p, .1, .45));
-      setVar(el, '--sweep', eInOut(seg(p, .48, .72)));
-      setVar(el, '--chips', seg(p, .55, .8));
       setVar(el, '--speed', clamp(Math.abs(vel) / 40));
+      if (n < 2) {
+        setVar(el, '--car', eOut(seg(p, 0, .42)));
+        setVar(el, '--txt', seg(p, .1, .45));
+        setVar(el, '--sweep', eInOut(seg(p, .48, .72)));
+        setVar(el, '--chips', seg(p, .55, .8));
+        return;
+      }
+      // plusieurs voitures : la 1re entre, puis chacune sort à gauche pendant que la suivante arrive
+      var car = eOut(seg(p, 0, .14)), start = .2, w = (.97 - start) / (n - 1), s = 0;
+      for (var k = 1; k < n; k++) s += eInOut(seg(p, start + (k - 1) * w, start + (k - .4) * w));
+      setVar(el, '--car', car);
+      setVar(el, '--txt', seg(p, .03, .16));
+      setVar(el, '--chips', seg(p, .12, .26));
+      cars.forEach(function (c, i) {
+        var x = i - s + (1 - car), arrived = i === 0 ? .14 : start + (i - .4) * w;
+        setVar(c, '--x', x);
+        setVar(c, '--b', Math.min(1, Math.abs(x)));
+        setVar(c, '--sweep', eInOut(seg(p, arrived, arrived + w * .3)));
+      });
+      var idx = Math.round(s);
+      if (el.getAttribute('data-car') !== String(idx)) {
+        el.setAttribute('data-car', idx);
+        var cur = cars[idx], name = el.querySelector('[data-car-name]'), num = el.querySelector('[data-car-num]');
+        if (name && cur) name.textContent = cur.getAttribute('data-name');
+        if (num) num.textContent = ('0' + (idx + 1)).slice(-2);
+      }
     },
     pay: function (el) {
       var p = pinP(el);

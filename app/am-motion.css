@@ -536,3 +536,16 @@
 /* Titre de l'appel à l'action : 4 lignes au lieu de 6 sur grand écran */
 .am-cta__title { font-size: clamp(38px, 5vw, 64px); }
 @media (min-width: 960px) { .am-cta__grid { grid-template-columns: 1.25fr 1fr; } }
+/* Plusieurs voitures qui défilent dans la section « Votre prochaine voiture » */
+.am-drive--multi { height: calc(140vh + var(--am-cars, 1) * 90vh); }
+.am-drive--multi .am-drive__car { grid-area: 1 / 1; align-self: end; transform: translate3d(calc(var(--x, 1) * 105vw), 0, 0) skewX(calc(var(--x, 1) * -14deg)); filter: blur(calc(var(--b, 1) * 8px)); will-change: transform; }
+.am-drive--multi div.am-drive__car:first-of-type { --x: calc(1 - var(--car)); --b: calc(1 - var(--car)); }
+.am-drive__counter { position: absolute; right: max(20px, calc((100% - 1160px) / 2)); top: 0; display: flex; align-items: baseline; gap: 10px; margin: 0; font: 600 13px var(--am-body); letter-spacing: .14em; text-transform: uppercase; color: var(--am-muted); opacity: var(--car); }
+.am-drive__counter b { font: 900 italic 28px/1 var(--am-display); letter-spacing: 0; color: var(--am-mint); }
+.am-drive__counter span { color: var(--am-text); }
+@media (max-width: 600px) { .am-drive__counter { top: -6px; font-size: 11px; } .am-drive__counter b { font-size: 22px; } }
+/* Mouvements réduits ou sans JavaScript : une seule voiture, section non épinglée */
+.am-reduce .am-drive--multi div.am-drive__car:not(:first-of-type), html:not(.am-ready) .am-drive--multi div.am-drive__car:not(:first-of-type) { display: none; }
+html:not(.am-ready) .am-drive--multi div.am-drive__car:first-of-type { --x: 0; --b: 0; }
+@media (prefers-reduced-motion: reduce) { .am-drive--multi { height: auto; } .am-drive--multi .am-drive__car { --x: 0 !important; --b: 0 !important; } }
+@media (max-width: 600px) { .am-drive__counter { top: 28px; } }

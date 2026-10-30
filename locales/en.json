@@ -454,7 +454,7 @@
       "eyebrow": "Your next car",
       "line1": "Inspected in Canada.",
       "line2": "Delivered in Dakar.",
-      "alt": "SUV imported from Canada by AL MACTOUM",
+      "alt": "{name} imported from Canada by AL MACTOUM",
       "chips": [
         "Pre-purchase inspection",
         "Sea freight",
