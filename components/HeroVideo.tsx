@@ -13,6 +13,7 @@ interface HeroVideoProps {
  * Lecture uniquement quand elle est visible à l'écran, et jamais automatique
  * si le visiteur a demandé à réduire les animations (l'image d'aperçu reste alors affichée).
  * Fichiers : /public/videos/al-mactoum-intro.mp4 (+ image d'aperçu -poster.jpg).
+ * Sur téléphone, le cadrage est décalé à droite pour garder le globe visible.
  */
 export function HeroVideo({ t }: HeroVideoProps) {
   const videoRef = useRef<HTMLVideoElement>(null);
@@ -55,7 +56,7 @@ export function HeroVideo({ t }: HeroVideoProps) {
     <>
       <video
         ref={videoRef}
-        className="absolute inset-0 -z-20 h-full w-full object-cover object-center"
+        className="absolute inset-0 -z-20 h-full w-full object-cover object-[68%_center] md:object-center"
         poster="/videos/al-mactoum-intro-poster.jpg"
         muted
         loop

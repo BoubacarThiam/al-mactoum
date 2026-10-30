@@ -4,12 +4,14 @@ import { Inter, Montserrat } from 'next/font/google';
 import { FloatingButtons } from '@/components/FloatingButtons';
 import { Footer } from '@/components/Footer';
 import { Header } from '@/components/Header';
+import { IntroLogo, introOnceScript } from '@/components/IntroLogo';
 import { JsonLd } from '@/components/JsonLd';
 import { MotionProvider } from '@/components/MotionProvider';
 import { siteConfig } from '@/config/site';
 import { type Locale, getDictionary, isLocale, locales } from '@/lib/i18n';
 import '../globals.css';
 import '../am-motion.css';
+import '../intro.css';
 
 // Polices Google auto-hébergées par Next.js (aucune requête vers Google côté visiteur)
 const montserrat = Montserrat({
@@ -83,9 +85,15 @@ export default function LocaleLayout({
   const locale: Locale = params.locale;
   const dict = getDictionary(locale);
 
+  // suppressHydrationWarning : les scripts d'animation ajoutent des classes sur <html> avant React
   return (
-    <html lang={locale} className={`${montserrat.variable} ${inter.variable}`}>
+    <html lang={locale} className={`${montserrat.variable} ${inter.variable}`} suppressHydrationWarning>
+      <head>
+        {/* Avant tout affichage : l'intro du logo ne se joue qu'une fois par visite */}
+        <script dangerouslySetInnerHTML={{ __html: introOnceScript }} />
+      </head>
       <body>
+        <IntroLogo />
         <MotionProvider>
           <Header
             locale={locale}

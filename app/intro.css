@@ -1,0 +1,194 @@
+/* ==========================================================================
+   Introduction animée du logo AL MACTOUM (components/IntroLogo.tsx)
+   Chronologie (≈ 3,4 s) :
+   0,0 s  halo + la silhouette de la voiture se dessine en roulant
+   0,55 s « AL MACTOUM » entre en force, puis reflet lumineux
+   1,0 s  « BUSINESS AUTOMOBILE » se resserre
+   1,3 s  filets et numéros de téléphone
+   2,5 s  le logo s'efface, le rideau remonte et dévoile le site
+   ========================================================================== */
+.am-intro {
+  --mint: #A3F7C6;
+  --ease-out: cubic-bezier(.16, 1, .3, 1);
+  --ease-inout: cubic-bezier(.65, 0, .35, 1);
+  --ease-back: cubic-bezier(.34, 1.56, .64, 1);
+  --out: 2.5s; /* début de la sortie */
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+  cursor: pointer;
+  background: radial-gradient(ellipse 70% 55% at 50% 45%, #1b2621 0%, #0E1210 70%);
+  animation: am-intro-wipe .8s calc(var(--out) + .25s) var(--ease-inout) both;
+}
+.am-intro-off .am-intro { display: none; }
+
+/* halo vert qui « respire » derrière le logo */
+.am-intro__glow {
+  position: absolute;
+  left: 50%;
+  top: 45%;
+  width: min(90vw, 900px);
+  aspect-ratio: 2 / 1;
+  translate: -50% -50%;
+  border-radius: 50%;
+  background: radial-gradient(closest-side, rgba(163, 247, 198, .16), transparent);
+  animation: am-intro-glow 1.6s .1s var(--ease-out) both;
+}
+
+.am-intro__logo {
+  position: relative;
+  display: grid;
+  justify-items: center;
+  gap: clamp(8px, 1.6vw, 14px);
+  text-align: center;
+  animation: am-intro-logo-out .55s var(--out) var(--ease-inout) both;
+}
+
+/* 1. la voiture : tracé du contour qui roule vers sa place, puis remplissage */
+.am-intro__car {
+  width: clamp(190px, 34vw, 340px);
+  height: auto;
+  overflow: visible;
+  animation: am-intro-drive 1.3s var(--ease-out) both;
+}
+.am-intro__car path {
+  fill: var(--mint);
+  fill-opacity: 0;
+  stroke: var(--mint);
+  stroke-width: .9;
+  stroke-dasharray: 1 1;
+  stroke-dashoffset: 1;
+  filter: drop-shadow(0 0 6px rgba(163, 247, 198, .7));
+  animation:
+    am-intro-draw 1.15s .05s var(--ease-inout) forwards,
+    am-intro-fill .6s .8s ease forwards;
+}
+
+/* 2. le nom : arrivée en force (flou de vitesse + italique accentué), ombre grise du logo */
+.am-intro__word {
+  position: relative;
+  font: 900 italic clamp(40px, 10vw, 104px)/.95 var(--font-montserrat), 'Arial Black', Arial, sans-serif;
+  letter-spacing: -.01em;
+  color: #fff;
+  text-shadow: -.055em .045em 0 #7f8a86;
+  white-space: nowrap;
+  clip-path: inset(-20% 100% -20% 0);
+  animation: am-intro-slam .75s .55s var(--ease-out) forwards;
+}
+/* reflet lumineux qui balaie le nom */
+.am-intro__word::after {
+  content: attr(data-text);
+  position: absolute;
+  inset: 0;
+  color: transparent;
+  text-shadow: none;
+  background: linear-gradient(100deg, transparent 38%, rgba(255, 255, 255, .95) 50%, transparent 62%) no-repeat;
+  background-size: 260% 100%;
+  background-position: 130% 0;
+  -webkit-background-clip: text;
+  background-clip: text;
+  animation: am-intro-shine 1.1s 1.35s ease-in-out forwards;
+}
+
+/* 3. la signature : les lettres se resserrent */
+.am-intro__sub {
+  font: 400 clamp(11px, 1.8vw, 19px) var(--font-inter), Arial, sans-serif;
+  letter-spacing: .48em;
+  margin-right: -.48em;
+  color: var(--mint);
+  text-transform: uppercase;
+  white-space: nowrap;
+  opacity: 0;
+  animation: am-intro-track .95s 1s var(--ease-out) forwards;
+}
+
+/* 4. filets effilés (comme sur le logo) + numéros */
+.am-intro__rule {
+  display: flex;
+  align-items: center;
+  gap: clamp(10px, 2vw, 18px);
+  width: clamp(260px, 52vw, 520px);
+  margin-top: 4px;
+}
+.am-intro__rule i {
+  flex: 1;
+  height: 4px;
+  background: var(--mint);
+  clip-path: polygon(0 45%, 88% 45%, 100% 50%, 88% 55%, 0 55%);
+  transform: scaleX(0);
+  transform-origin: left;
+  animation: am-intro-grow .8s 1.3s var(--ease-out) forwards;
+}
+.am-intro__rule i:last-child { clip-path: polygon(100% 45%, 12% 45%, 0 50%, 12% 55%, 100% 55%); transform-origin: right; }
+.am-intro__rule span {
+  font: 500 clamp(11px, 1.5vw, 15px)/1.35 var(--font-inter), Arial, sans-serif;
+  letter-spacing: .14em;
+  color: #fff;
+  font-variant-numeric: tabular-nums;
+  opacity: 0;
+  animation: am-intro-rise .6s 1.5s var(--ease-out) forwards;
+}
+
+/* fine barre de chargement en bas de l'écran */
+.am-intro__bar {
+  position: absolute;
+  left: 50%;
+  bottom: max(32px, env(safe-area-inset-bottom, 0px));
+  width: min(180px, 40vw);
+  height: 2px;
+  translate: -50% 0;
+  background: rgba(255, 255, 255, .1);
+  overflow: hidden;
+  border-radius: 2px;
+}
+.am-intro__bar i {
+  display: block;
+  height: 100%;
+  background: var(--mint);
+  transform: scaleX(0);
+  transform-origin: left;
+  animation: am-intro-grow var(--out) cubic-bezier(.4, 0, .2, 1) forwards;
+}
+
+/* le site se pose en douceur pendant que le rideau remonte */
+html:not(.am-intro-off) #contenu > section:first-of-type {
+  animation: am-intro-settle 1.2s 2.85s cubic-bezier(.16, 1, .3, 1) both;
+}
+
+/* passer l'intro : clic, toucher ou Échap */
+.am-intro-skip .am-intro { animation: am-intro-wipe .6s cubic-bezier(.65, 0, .35, 1) both; }
+.am-intro-skip .am-intro__logo { animation: am-intro-logo-out .3s ease both; }
+html.am-intro-skip:not(.am-intro-off) #contenu > section:first-of-type { animation-delay: .1s; }
+
+@keyframes am-intro-glow { from { opacity: 0; scale: .6; } to { opacity: 1; scale: 1; } }
+@keyframes am-intro-drive { from { transform: translateX(-40px); } to { transform: none; } }
+@keyframes am-intro-draw { to { stroke-dashoffset: 0; } }
+@keyframes am-intro-fill { to { fill-opacity: 1; } }
+@keyframes am-intro-slam {
+  0% { clip-path: inset(-20% 100% -20% 0); transform: translateX(-60px) skewX(-14deg); filter: blur(6px); }
+  100% { clip-path: inset(-20% -5% -20% -5%); transform: none; filter: none; }
+}
+@keyframes am-intro-shine { to { background-position: -30% 0; } }
+@keyframes am-intro-track {
+  from { opacity: 0; letter-spacing: 1.1em; margin-right: -1.1em; filter: blur(4px); }
+  to { opacity: 1; letter-spacing: .48em; margin-right: -.48em; filter: none; }
+}
+@keyframes am-intro-grow { to { transform: scaleX(1); } }
+@keyframes am-intro-rise { from { opacity: 0; transform: translateY(8px); filter: blur(3px); } to { opacity: 1; transform: none; filter: none; } }
+@keyframes am-intro-logo-out { to { opacity: 0; transform: scale(1.06); filter: blur(6px); } }
+@keyframes am-intro-wipe {
+  from { clip-path: inset(0 0 0 0); }
+  99% { visibility: visible; }
+  to { clip-path: inset(0 0 100% 0); visibility: hidden; pointer-events: none; }
+}
+@keyframes am-intro-settle { from { transform: scale(1.06); filter: brightness(.6); } to { transform: none; filter: none; } }
+
+/* mouvements réduits : logo affiché directement, sortie rapide */
+@media (prefers-reduced-motion: reduce) {
+  .am-intro, .am-intro * { animation-duration: .01ms !important; animation-delay: 0s !important; }
+  .am-intro { animation: am-intro-wipe .01ms 1.2s both !important; }
+  html:not(.am-intro-off) #contenu > section:first-of-type { animation: none; }
+}
