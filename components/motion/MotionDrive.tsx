@@ -5,12 +5,14 @@ import { SUV_IMAGE } from './KitIcons';
 /**
  * Voitures qui défilent, dans cet ordre. Photos détourées (fond transparent, 883 px de large)
  * dans /public/animations : ajoutez ou retirez une ligne pour changer la sélection.
+ * scale (facultatif) : affiche la voiture plus petite, utile si la photo d'origine est peu détaillée.
  */
-const cars = [
+const cars: { name: string; src: string; scale?: number }[] = [
   { name: 'Mitsubishi Outlander', src: SUV_IMAGE },
   { name: 'Hyundai Tucson', src: '/animations/cars/tucson.webp' },
   { name: 'Hyundai Elantra', src: '/animations/cars/elantra.webp' },
-  { name: 'Range Rover Evoque', src: '/animations/cars/evoque.webp' },
+  // Photo d'origine petite (314 px) : affichée un peu plus petite pour rester nette
+  { name: 'Range Rover Evoque', src: '/animations/cars/evoque.webp', scale: 0.85 },
 ];
 
 const pad = (n: number) => String(n).padStart(2, '0');
@@ -53,7 +55,12 @@ export function MotionDrive({ t }: { t: Dictionary['motion']['drive'] }) {
             <b data-car-num="">01</b>/ {pad(cars.length)} · <span data-car-name="">{cars[0].name}</span>
           </p>
           {cars.map((car) => (
-            <div key={car.src} className="am-drive__car" data-name={car.name}>
+            <div
+              key={car.src}
+              className="am-drive__car"
+              data-name={car.name}
+              style={car.scale ? ({ '--s': car.scale } as React.CSSProperties) : undefined}
+            >
               {/* eslint-disable-next-line @next/next/no-img-element -- photos détourées déjà optimisées (≈ 55 Ko) */}
               <img
                 className="am-drive__img"

@@ -549,3 +549,5 @@
 html:not(.am-ready) .am-drive--multi div.am-drive__car:first-of-type { --x: 0; --b: 0; }
 @media (prefers-reduced-motion: reduce) { .am-drive--multi { height: auto; } .am-drive--multi .am-drive__car { --x: 0 !important; --b: 0 !important; } }
 @media (max-width: 600px) { .am-drive__counter { top: 28px; } }
+/* Taille propre à chaque voiture (--s, 1 par défaut) : sert aux photos de petite taille */
+.am-drive--multi .am-drive__car { width: calc(min(92vw, 980px, calc((100vh - 360px) * 1.7)) * var(--s, 1)); }
