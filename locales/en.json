@@ -374,5 +374,229 @@
         "text": "At our office and on WhatsApp"
       }
     ]
+  },
+  "motion": {
+    "bands": {
+      "places": [
+        "Montreal",
+        "Dakar",
+        "Sicap Foire",
+        "Canada",
+        "Senegal",
+        "Keur Yoff"
+      ],
+      "keywords": [
+        "SUV",
+        "Sedan",
+        "Pickup",
+        "4x4",
+        "Family car",
+        "City car",
+        "Inspection",
+        "Shipping",
+        "Customs",
+        "Delivery"
+      ]
+    },
+    "bento": {
+      "eyebrow": "Why AL MACTOUM",
+      "title": "From Canada to Dakar,",
+      "titleAccent": "no bad surprises.",
+      "lead": "We find your car in Canada, inspect it, ship it and hand it over at our Sicap Foire branch. You only pay the balance once the car has arrived.",
+      "gauge": {
+        "title": "Pay in 2 instalments",
+        "text": "60% when you order to start the purchase. The remaining 40% only when your car is in Dakar.",
+        "captions": "On order|On arrival|In 2 instalments"
+      },
+      "track": {
+        "title": "Tracked from A to Z",
+        "text": "At every step you know where your car is, from Canada to our branch.",
+        "stops": [
+          "Montreal",
+          "Departure port",
+          "Atlantic",
+          "Dakar"
+        ]
+      },
+      "checks": {
+        "title": "Pre-purchase inspection",
+        "text": "The vehicle is inspected in Canada before we buy it.",
+        "items": [
+          "Body and chassis",
+          "Engine and gearbox",
+          "Mileage",
+          "Vehicle papers"
+        ]
+      },
+      "chat": {
+        "title": "A team you can reach",
+        "text": "Any questions? We answer on WhatsApp.",
+        "label": "Sample conversation",
+        "messages": [
+          {
+            "from": "out",
+            "text": "Hello, where is my car now?"
+          },
+          {
+            "from": "in",
+            "text": "Hello! It has just arrived at the port of Dakar."
+          },
+          {
+            "from": "in",
+            "text": "You can pick it up at our Sicap Foire branch."
+          }
+        ],
+        "link": "Message us on WhatsApp"
+      }
+    },
+    "drive": {
+      "label": "Your next car",
+      "eyebrow": "Your next car",
+      "line1": "Inspected in Canada.",
+      "line2": "Delivered in Dakar.",
+      "alt": "SUV imported from Canada by AL MACTOUM",
+      "chips": [
+        "Pre-purchase inspection",
+        "Sea freight",
+        "Customs clearance",
+        "Handover at Sicap Foire"
+      ]
+    },
+    "pay": {
+      "eyebrow": "Pay in 2 instalments",
+      "line1": "60% when you order.",
+      "line2": "40% on arrival.",
+      "lead": "You only pay the balance once your car has arrived in Dakar.",
+      "paid": "paid",
+      "status": [
+        "Scroll to follow your car ↓",
+        "Order placed: 60% deposit",
+        "Purchase and inspection in Canada",
+        "At sea, heading to Dakar",
+        "Car arrived in Dakar: 40% balance",
+        "Car handed over at our Sicap Foire branch"
+      ],
+      "badge": "✓ Car delivered",
+      "deposit": "When you order",
+      "balance": "When the car arrives",
+      "simulator": "Calculate my deposit"
+    },
+    "story": {
+      "eyebrow": "How it works",
+      "title": "Your car,",
+      "titleAccent": "in 5 steps.",
+      "stepLabel": "Step",
+      "steps": [
+        {
+          "title": "Choose.",
+          "text": "Tell us the model, year and budget, or pick one of the cars we offer. We find it in Canada."
+        },
+        {
+          "title": "Pay 60%.",
+          "text": "You pay 60% of the price by Wave, Orange Money or cash to place the order. That is all you pay before arrival."
+        },
+        {
+          "title": "Purchase and inspection.",
+          "text": "Our team in Canada inspects the vehicle, then buys it on the spot."
+        },
+        {
+          "title": "Shipping.",
+          "text": "Your car crosses the Atlantic by ship to the port of Dakar. We help you with customs clearance."
+        },
+        {
+          "title": "Pay 40% and drive.",
+          "text": "When the car arrives, you pay the remaining 40% and collect it at our Sicap Foire branch."
+        }
+      ],
+      "card": {
+        "title": "Your order status",
+        "chips": [
+          "Searching",
+          "Order placed",
+          "In Canada",
+          "At sea",
+          "Arrived in Dakar"
+        ],
+        "car": "SUV · example",
+        "route": "Canada → Dakar",
+        "items": [
+          "Vehicle chosen",
+          "60% deposit received",
+          "Bought and inspected in Canada",
+          "At sea, heading to Dakar",
+          "40% balance · car handed over"
+        ],
+        "deposit": "Deposit",
+        "depositWhen": "When you order",
+        "balance": "Balance",
+        "balanceWhen": "On arrival"
+      }
+    },
+    "services": {
+      "eyebrow": "Our services",
+      "title": "We handle everything,",
+      "titleAccent": "from Canada to Dakar.",
+      "hint": "Hover over or tap a panel to open it.",
+      "panels": [
+        {
+          "label": "Search",
+          "title": "Vehicle search",
+          "text": "Give us the model, year and your criteria: we find the car in Canada."
+        },
+        {
+          "label": "Inspection",
+          "title": "Pre-purchase inspection",
+          "text": "Every vehicle is inspected before purchase. You receive photos and details."
+        },
+        {
+          "label": "Purchase",
+          "title": "Purchase in Canada",
+          "text": "We handle the purchase directly on site, with a two-step payment."
+        },
+        {
+          "label": "Shipping",
+          "title": "Sea freight",
+          "text": "Your car travels by ship from Canada to the port of Dakar."
+        },
+        {
+          "label": "Delivery",
+          "title": "Customs and delivery",
+          "text": "We guide you through the paperwork, then you collect your car at Sicap Foire."
+        }
+      ],
+      "stats": [
+        {
+          "value": 60,
+          "suffix": "%",
+          "text": "of the price when you order"
+        },
+        {
+          "value": 40,
+          "suffix": "%",
+          "text": "when the car arrives"
+        },
+        {
+          "value": 2,
+          "suffix": "",
+          "text": "countries: Canada and Senegal"
+        },
+        {
+          "value": 5,
+          "suffix": "",
+          "text": "steps, from choice to handover"
+        }
+      ]
+    },
+    "cta": {
+      "lines": [
+        "Your next",
+        "car is",
+        "in Canada."
+      ],
+      "text": "Tell us what you are looking for. You get a quote, then pay 60% when you order and 40% on arrival.",
+      "whatsapp": "Get a quote on WhatsApp",
+      "call": "Call {phone}",
+      "alt": "SUV available for import"
+    }
   }
 }

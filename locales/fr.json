@@ -374,5 +374,229 @@
         "text": "À l'agence et sur WhatsApp"
       }
     ]
+  },
+  "motion": {
+    "bands": {
+      "places": [
+        "Montréal",
+        "Dakar",
+        "Sicap Foire",
+        "Canada",
+        "Sénégal",
+        "Keur Yoff"
+      ],
+      "keywords": [
+        "SUV",
+        "Berline",
+        "Pick-up",
+        "4x4",
+        "Familiale",
+        "Citadine",
+        "Inspection",
+        "Expédition",
+        "Dédouanement",
+        "Livraison"
+      ]
+    },
+    "bento": {
+      "eyebrow": "Pourquoi AL MACTOUM",
+      "title": "Du Canada à Dakar,",
+      "titleAccent": "sans mauvaise surprise.",
+      "lead": "Nous trouvons votre voiture au Canada, la contrôlons, l'expédions et vous la remettons à notre agence de Sicap Foire. Vous ne payez le solde qu'une fois la voiture arrivée.",
+      "gauge": {
+        "title": "Paiement en 2 fois",
+        "text": "60 % à la commande pour lancer l'achat. Les 40 % restants seulement quand votre voiture est à Dakar.",
+        "captions": "À la commande|À l'arrivée|En 2 fois"
+      },
+      "track": {
+        "title": "Suivi de A à Z",
+        "text": "Vous savez à chaque étape où se trouve votre voiture, du Canada jusqu'à l'agence.",
+        "stops": [
+          "Montréal",
+          "Port de départ",
+          "Atlantique",
+          "Dakar"
+        ]
+      },
+      "checks": {
+        "title": "Inspection avant achat",
+        "text": "Le véhicule est contrôlé au Canada avant l'achat.",
+        "items": [
+          "Carrosserie et châssis",
+          "Moteur et boîte de vitesses",
+          "Kilométrage",
+          "Papiers du véhicule"
+        ]
+      },
+      "chat": {
+        "title": "Une équipe joignable",
+        "text": "Une question ? On vous répond sur WhatsApp.",
+        "label": "Exemple de conversation",
+        "messages": [
+          {
+            "from": "out",
+            "text": "Bonjour, où en est ma voiture ?"
+          },
+          {
+            "from": "in",
+            "text": "Bonjour ! Elle vient d'arriver au port de Dakar."
+          },
+          {
+            "from": "in",
+            "text": "Vous pouvez passer la récupérer à l'agence de Sicap Foire."
+          }
+        ],
+        "link": "Écrire sur WhatsApp"
+      }
+    },
+    "drive": {
+      "label": "Votre prochaine voiture",
+      "eyebrow": "Votre prochaine voiture",
+      "line1": "Inspectée au Canada.",
+      "line2": "Livrée à Dakar.",
+      "alt": "SUV importé du Canada par AL MACTOUM",
+      "chips": [
+        "Inspection avant achat",
+        "Transport maritime",
+        "Dédouanement",
+        "Remise à Sicap Foire"
+      ]
+    },
+    "pay": {
+      "eyebrow": "Paiement en 2 fois",
+      "line1": "60 % à la commande.",
+      "line2": "40 % à l'arrivée.",
+      "lead": "Vous réglez le solde seulement quand votre voiture est arrivée à Dakar.",
+      "paid": "payé",
+      "status": [
+        "Faites défiler pour suivre votre voiture ↓",
+        "Commande lancée : acompte de 60 %",
+        "Achat et inspection au Canada",
+        "En mer vers Dakar",
+        "Voiture arrivée à Dakar : solde de 40 %",
+        "Voiture remise à l'agence de Sicap Foire"
+      ],
+      "badge": "✓ Voiture livrée",
+      "deposit": "À la commande",
+      "balance": "À l'arrivée de la voiture",
+      "simulator": "Calculer mon acompte"
+    },
+    "story": {
+      "eyebrow": "Comment ça marche",
+      "title": "Votre voiture,",
+      "titleAccent": "en 5 étapes.",
+      "stepLabel": "Étape",
+      "steps": [
+        {
+          "title": "Choisissez.",
+          "text": "Dites-nous le modèle, l'année et votre budget, ou choisissez une voiture que nous vous proposons. Nous la trouvons au Canada."
+        },
+        {
+          "title": "Payez 60 %.",
+          "text": "Vous versez 60 % du prix par Wave, Orange Money ou en espèces pour lancer la commande. C'est tout ce que vous payez avant l'arrivée."
+        },
+        {
+          "title": "Achat et inspection.",
+          "text": "Notre équipe au Canada contrôle le véhicule puis l’achète sur place."
+        },
+        {
+          "title": "Expédition.",
+          "text": "Votre voiture traverse l'Atlantique en bateau jusqu'au port de Dakar. Nous vous accompagnons pour le dédouanement."
+        },
+        {
+          "title": "Payez 40 % et roulez.",
+          "text": "À l'arrivée de la voiture, vous réglez les 40 % restants et la récupérez à notre agence de Sicap Foire."
+        }
+      ],
+      "card": {
+        "title": "Suivi de votre commande",
+        "chips": [
+          "Recherche en cours",
+          "Commande lancée",
+          "Au Canada",
+          "En mer",
+          "Arrivée à Dakar"
+        ],
+        "car": "SUV · exemple",
+        "route": "Canada → Dakar",
+        "items": [
+          "Véhicule choisi",
+          "Acompte de 60 % reçu",
+          "Acheté et inspecté au Canada",
+          "En mer vers Dakar",
+          "Solde de 40 % · voiture remise"
+        ],
+        "deposit": "Acompte",
+        "depositWhen": "À la commande",
+        "balance": "Solde",
+        "balanceWhen": "À l'arrivée"
+      }
+    },
+    "services": {
+      "eyebrow": "Nos services",
+      "title": "On s'occupe de tout,",
+      "titleAccent": "du Canada à Dakar.",
+      "hint": "Passez la souris ou touchez un panneau pour l’ouvrir.",
+      "panels": [
+        {
+          "label": "Recherche",
+          "title": "Recherche du véhicule",
+          "text": "Donnez-nous le modèle, l'année et vos critères : nous trouvons la voiture au Canada."
+        },
+        {
+          "label": "Inspection",
+          "title": "Inspection avant achat",
+          "text": "Chaque véhicule est contrôlé avant l'achat. Vous recevez photos et informations."
+        },
+        {
+          "label": "Achat",
+          "title": "Achat au Canada",
+          "text": "Nous gérons l'achat du véhicule directement sur place, avec un paiement en deux temps."
+        },
+        {
+          "label": "Transport",
+          "title": "Transport maritime",
+          "text": "Votre voiture voyage par bateau du Canada jusqu'au port de Dakar."
+        },
+        {
+          "label": "Livraison",
+          "title": "Dédouanement et livraison",
+          "text": "Nous vous guidons dans les formalités, puis vous récupérez la voiture à Sicap Foire."
+        }
+      ],
+      "stats": [
+        {
+          "value": 60,
+          "suffix": "%",
+          "text": "du prix à la commande"
+        },
+        {
+          "value": 40,
+          "suffix": "%",
+          "text": "à l'arrivée de la voiture"
+        },
+        {
+          "value": 2,
+          "suffix": "",
+          "text": "pays : Canada et Sénégal"
+        },
+        {
+          "value": 5,
+          "suffix": "",
+          "text": "étapes, du choix à la remise des clés"
+        }
+      ]
+    },
+    "cta": {
+      "lines": [
+        "Votre prochaine",
+        "voiture est",
+        "au Canada."
+      ],
+      "text": "Dites-nous ce que vous cherchez. Vous recevez un devis, puis vous payez 60 % à la commande et 40 % à l’arrivée.",
+      "whatsapp": "Devis sur WhatsApp",
+      "call": "Appeler le {phone}",
+      "alt": "SUV disponible à l'import"
+    }
   }
 }

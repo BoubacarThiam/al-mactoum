@@ -9,11 +9,12 @@ import { MotionProvider } from '@/components/MotionProvider';
 import { siteConfig } from '@/config/site';
 import { type Locale, getDictionary, isLocale, locales } from '@/lib/i18n';
 import '../globals.css';
+import '../am-motion.css';
 
 // Polices Google auto-hébergées par Next.js (aucune requête vers Google côté visiteur)
 const montserrat = Montserrat({
   subsets: ['latin'],
-  weight: ['600', '700', '800'],
+  weight: ['600', '700', '800', '900'], // 900 : grands titres animés de l'accueil
   style: ['normal', 'italic'], // italique : titre du hero, comme le logo
   variable: '--font-montserrat',
   display: 'swap',
