@@ -28,7 +28,7 @@ export function PromoVideos({ t, locale }: PromoVideosProps) {
       <div className="container relative">
         <SectionHeading id="publicites-titre" tone="light" eyebrow={t.eyebrow} title={t.title} subtitle={t.subtitle} />
 
-        <ul className="mt-12 flex flex-wrap justify-center gap-6 md:mt-14 md:gap-8">
+        <ul className="mt-12 flex flex-wrap items-center justify-center gap-6 md:mt-14 md:gap-8">
           {promoVideos.map((video, i) => {
             const title = video.title[locale];
             return (
