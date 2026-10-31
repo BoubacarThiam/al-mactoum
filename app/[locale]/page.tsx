@@ -1,6 +1,7 @@
 import Script from 'next/script';
 import { ContactSection } from '@/components/ContactSection';
 import { Hero } from '@/components/Hero';
+import { PromoVideos } from '@/components/PromoVideos';
 import { Testimonials } from '@/components/Testimonials';
 import { TrustBar } from '@/components/TrustBar';
 import { AnimatedMarqueeHero } from '@/components/ui/hero-3';
@@ -46,6 +47,7 @@ export default function HomePage({ params }: { params: { locale: Locale } }) {
       <TrustBar locale={locale} t={dict.trust} />
       <MotionBands t={motion.bands} />
       <MotionBento t={motion.bento} common={dict.common} whatsappMessage={dict.hero.whatsappMessage} />
+      <PromoVideos t={dict.promos} locale={locale} />
       <MotionDrive t={motion.drive} />
       <MotionStory t={motion.story} />
       <VideoGallery t={dict.videos} locale={locale} />

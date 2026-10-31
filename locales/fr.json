@@ -82,6 +82,12 @@
       }
     ]
   },
+  "promos": {
+    "eyebrow": "Nos publicités",
+    "title": "AL MACTOUM en images",
+    "subtitle": "Découvrez nos vidéos et voyez comment nous faisons venir votre voiture du Canada.",
+    "play": "Lire la vidéo : {title}"
+  },
   "videos": {
     "eyebrow": "En vidéo",
     "title": "Nos opérations, en vrai",

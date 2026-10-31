@@ -82,6 +82,12 @@
       }
     ]
   },
+  "promos": {
+    "eyebrow": "Our ads",
+    "title": "AL MACTOUM on screen",
+    "subtitle": "Watch our videos and see how we bring your car over from Canada.",
+    "play": "Play video: {title}"
+  },
   "videos": {
     "eyebrow": "On video",
     "title": "Our operations, for real",
