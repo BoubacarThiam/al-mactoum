@@ -37,7 +37,7 @@ export function Hero({ locale, t }: HeroProps) {
       {/* Marge basse : laisse la place au bandeau de confiance qui chevauche le hero */}
       <div className="container pb-24 pt-28 md:pb-36 md:pt-32">
         <div className="max-w-3xl">
-          <p className="animate-fade-up mb-6 inline-flex items-center gap-3 text-[0.7rem] font-semibold uppercase tracking-[0.32em] text-mint sm:text-xs">
+          <p className="animate-fade-up mb-6 inline-flex items-center gap-3 text-[0.68rem] font-semibold uppercase tracking-[0.2em] text-mint sm:text-xs sm:tracking-[0.32em]">
             <Ornament />
             {t.eyebrow}
           </p>

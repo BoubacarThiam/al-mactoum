@@ -551,3 +551,8 @@ html:not(.am-ready) .am-drive--multi div.am-drive__car:first-of-type { --x: 0; -
 @media (max-width: 600px) { .am-drive__counter { top: 28px; } }
 /* Taille propre à chaque voiture (--s, 1 par défaut) : sert aux photos de petite taille */
 .am-drive--multi .am-drive__car { width: calc(min(92vw, 980px, calc((100vh - 360px) * 1.7)) * var(--s, 1)); }
+/* Petits écrans et tablettes : garder le contenu hors de la zone des boutons flottants (WhatsApp, retour en haut) */
+@media (max-width: 1023px) { .am-drive__sticky { padding-bottom: 92px; } }
+@media (max-width: 767px) { .am-footer__legal { padding-bottom: 84px; } }
+/* Tablette : la carte « équipe joignable » prend toute la largeur au lieu de laisser une colonne vide */
+@media (min-width: 760px) and (max-width: 1039px) { .am-card--chat { grid-column: 1 / -1; } }

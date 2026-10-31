@@ -83,3 +83,12 @@
 .animate-fade-up {
   animation: fadeUp 0.8s cubic-bezier(0.2, 0.7, 0.2, 1) both;
 }
+
+/* Grille 2 colonnes (tablette) : la dernière carte seule est centrée au lieu de rester collée à gauche */
+@media (min-width: 640px) and (max-width: 1023.98px) {
+  .grid-center-orphan > :last-child:nth-child(odd) {
+    grid-column: 1 / -1;
+    justify-self: center;
+    width: calc(50% - 0.75rem);
+  }
+}

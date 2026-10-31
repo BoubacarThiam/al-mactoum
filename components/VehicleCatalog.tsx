@@ -90,7 +90,7 @@ export function VehicleCatalog({ vehicles, t, locale, limit }: VehicleCatalogPro
 
       {/* Grille */}
       {shown.length > 0 ? (
-        <m.ul layout className="mt-4 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        <m.ul layout className="grid-center-orphan mt-4 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           <AnimatePresence mode="popLayout">
             {shown.map((vehicle) => (
               <m.li

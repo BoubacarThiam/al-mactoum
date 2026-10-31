@@ -25,7 +25,7 @@ export function VideoGallery({ t, locale }: VideoGalleryProps) {
       ? 'mx-auto max-w-3xl'
       : count === 2 || count === 4
         ? 'mx-auto max-w-5xl sm:grid-cols-2'
-        : 'sm:grid-cols-2 lg:grid-cols-3';
+        : 'grid-center-orphan sm:grid-cols-2 lg:grid-cols-3';
 
   return (
     <section id="videos" className="section bg-mist" aria-labelledby="videos-titre">
