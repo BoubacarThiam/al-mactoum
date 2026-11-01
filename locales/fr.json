@@ -336,7 +336,8 @@
     "contact": "Contact",
     "follow": "Suivez-nous",
     "payments": "Paiements acceptés",
-    "rights": "© {year} AL MACTOUM BUSINESS AUTOMOBILE. Tous droits réservés."
+    "rights": "© {year} AL MACTOUM BUSINESS AUTOMOBILE. Tous droits réservés.",
+    "admin": "Espace gestion"
   },
   "pages": {
     "vehicles": {

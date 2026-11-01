@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { Clock, Mail, MapPin } from 'lucide-react';
+import { Clock, LockKeyhole, Mail, MapPin } from 'lucide-react';
 import { Logo } from '@/components/Logo';
 import { PaymentBadges } from '@/components/PaymentBadges';
 import { FacebookIcon, FlagCA, FlagSN, TikTokIcon } from '@/components/icons/BrandIcons';
@@ -125,7 +125,18 @@ export function Footer({ locale, dict }: FooterProps) {
       <div className="border-t border-white/10">
         <div className="container flex flex-col items-center justify-between gap-2 py-6 text-center text-xs text-slate-400 md:flex-row md:text-left">
           <p>{fill(footer.rights, { year: new Date().getFullYear() })}</p>
-          <p>Dakar · Canada</p>
+          <div className="flex items-center gap-4">
+            <p>Dakar · Canada</p>
+            {/* Accès au backoffice du gérant (gestion des véhicules) */}
+            <a
+              href="/admin/"
+              rel="nofollow"
+              className="inline-flex items-center gap-1.5 rounded-lg border border-white/15 px-3 py-1.5 font-medium text-slate-300 transition hover:border-mint/60 hover:text-mint"
+            >
+              <LockKeyhole className="h-3.5 w-3.5" aria-hidden="true" />
+              {footer.admin}
+            </a>
+          </div>
         </div>
       </div>
     </footer>
