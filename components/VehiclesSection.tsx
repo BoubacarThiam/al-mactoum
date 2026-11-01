@@ -3,8 +3,8 @@ import { Search } from 'lucide-react';
 import { VehicleCatalog } from '@/components/VehicleCatalog';
 import { Reveal } from '@/components/ui/Reveal';
 import { SectionHeading } from '@/components/ui/SectionHeading';
-import { vehicles } from '@/data/vehicles';
 import { type Dictionary, type Locale, localePath } from '@/lib/i18n';
+import { getVehicles } from '@/lib/vehicle-store';
 
 interface VehiclesSectionProps {
   t: Dictionary['vehicles'];
@@ -15,7 +15,10 @@ interface VehiclesSectionProps {
   hideHeading?: boolean;
 }
 
-export function VehiclesSection({ t, locale, limit, hideHeading }: VehiclesSectionProps) {
+export async function VehiclesSection({ t, locale, limit, hideHeading }: VehiclesSectionProps) {
+  // Catalogue géré depuis le backoffice (/admin)
+  const vehicles = await getVehicles();
+
   return (
     <section id="vehicules" className="section bg-white" aria-labelledby="vehicules-titre">
       <div className="container">

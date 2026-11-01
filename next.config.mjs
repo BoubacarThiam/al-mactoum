@@ -1,7 +1,7 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  // Export statique : le dossier "out" peut être hébergé n'importe où (Vercel, Netlify…)
-  output: 'export',
+  // Pas d'export statique : le backoffice (/admin) a besoin du serveur Vercel.
+  // Les pages restent pré-générées et sont rafraîchies à chaque modification du catalogue.
   images: {
     // Les tailles sont générées à l'avance par scripts/optimize-images.mjs
     loader: 'custom',

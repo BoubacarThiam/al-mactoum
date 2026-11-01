@@ -4,7 +4,8 @@ Site officiel d'**AL MACTOUM BUSINESS AUTOMOBILE** : achat et livraison de voitu
 
 - Next.js 14 (App Router) + TypeScript + Tailwind CSS + Framer Motion
 - Bilingue : français (par défaut) `/fr/` et anglais `/en/`
-- Export 100 % statique : pas de serveur, hébergement gratuit sur Vercel
+- Pages pré-générées (rapides), hébergement gratuit sur Vercel
+- **Backoffice** `/admin` : le client gère lui-même ses véhicules (connexion par numéro + mot de passe)
 - Formulaire de devis, simulateur de paiement et boutons « Ce véhicule m'intéresse » : tout s'envoie sur **WhatsApp** (`wa.me`)
 
 ---
@@ -21,7 +22,7 @@ npm run dev      # lance le site sur http://localhost:3000
 Pour tester la version finale, exactement comme en ligne :
 
 ```bash
-npm run build    # crée le site dans le dossier "out"
+npm run build    # prépare la version finale
 npm start        # l'affiche sur http://localhost:3000
 ```
 
@@ -34,7 +35,7 @@ npm start        # l'affiche sur http://localhost:3000
 | Téléphones, email, adresse, WhatsApp, réseaux, horaires   | `config/site.ts`                         |
 | Numéros Wave / Orange Money                               | `config/site.ts`                         |
 | Les textes du site (FR / EN)                              | `locales/fr.json` et `locales/en.json`   |
-| Les véhicules                                             | `data/vehicles.ts`                       |
+| Les véhicules                                             | Backoffice `/admin` (voir section 4)     |
 | Les avis clients                                          | `data/testimonials.ts`                   |
 | Les photos                                                | `public/images/`                         |
 | Les logos Wave / Orange Money                             | `public/images/paiement/`                |
@@ -73,33 +74,28 @@ npm run assets
 
 ---
 
-## 4. Ajouter un véhicule
+## 4. Gérer les véhicules (backoffice)
 
-Ouvrez `data/vehicles.ts` et copiez un bloc existant :
+Les véhicules se gèrent depuis le **backoffice**, sans toucher au code : `https://votre-site/admin`
 
-```ts
-{
-  id: 'toyota-rav4-gris',               // identifiant unique, sans espaces
-  brand: 'Toyota',
-  model: 'RAV4',
-  type: 'suv',                          // 'suv' | 'berline' | 'pickup'
-  color: { fr: 'Gris', en: 'Grey' },
-  year: 2020,                           // facultatif
-  mileageKm: 65000,                     // facultatif
-  images: [                             // 1 ou plusieurs photos (galerie avec flèches)
-    '/images/vehicules/toyota-rav4-1.webp',
-    '/images/vehicules/toyota-rav4-2.webp',
-  ],
-  imageAlt: 'Toyota RAV4 gris, vue de trois quarts',
-  price: '',                            // vide = « Sur devis », ou ex. '12 500 000 FCFA'
-},
-```
+- Connexion avec le **numéro de téléphone** et le **mot de passe** du gérant.
+- **Ajouter** un véhicule : photos (une ou plusieurs, réduites automatiquement), marque, modèle, type, couleur ; prix, année et kilométrage facultatifs (prix vide = « Sur devis »).
+- **Modifier**, **supprimer** (les photos sont supprimées aussi) et **changer l'ordre** avec les flèches. Les 3 premiers véhicules apparaissent sur l'accueil.
+- Le site public se met à jour **immédiatement** après chaque enregistrement.
 
-1. Mettez les photos dans `public/images/vehicules/` (.webp, .jpg ou .png).
-2. L'année, le kilométrage et le prix sont facultatifs : s'ils sont absents, ils ne s'affichent pas.
-3. Pour retirer un véhicule vendu, supprimez simplement son bloc.
+`data/vehicles.ts` ne sert plus que de catalogue de départ, tant que rien n'a été enregistré depuis le backoffice.
 
-Les filtres se mettent à jour automatiquement (le filtre par type n'apparaît que s'il y a au moins deux types de véhicules).
+### Mise en place sur Vercel (une seule fois)
+
+1. **Stockage des photos** : dans le projet Vercel, ouvrez **Storage → Create → Blob**, créez le store et reliez-le au projet. La variable `BLOB_READ_WRITE_TOKEN` est ajoutée automatiquement.
+2. **Identifiants** : dans **Settings → Environment Variables**, ajoutez :
+   - `ADMIN_PHONE` : numéro du gérant, ex. `771234567` (accepté ensuite avec ou sans `+221`, espaces, tirets)
+   - `ADMIN_PASSWORD` : un mot de passe solide
+3. **Redéployez** (Deployments → ⋯ → Redeploy).
+
+Changer `ADMIN_PASSWORD` puis redéployer déconnecte toutes les sessions ouvertes.
+
+**En local** : créez un fichier `.env.local` avec `ADMIN_PHONE` et `ADMIN_PASSWORD`. Sans Vercel Blob, le catalogue est enregistré dans `.data/` et les photos dans `public/uploads/` (ignorés par Git).
 
 ---
 

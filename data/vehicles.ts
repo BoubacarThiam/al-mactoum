@@ -1,10 +1,11 @@
 /**
  * ============================================================
- *  CATALOGUE DES VÉHICULES
+ *  CATALOGUE DES VÉHICULES — CATALOGUE DE DÉPART
  * ============================================================
- *  Pour ajouter un véhicule :
- *   1. Déposez ses photos dans /public/images/vehicules (.webp, .jpg ou .png)
- *   2. Copiez un bloc { ... } ci-dessous et modifiez les informations
+ *  Les véhicules se gèrent désormais depuis le backoffice : /admin
+ *  (ajout, modification, suppression, ordre, photos).
+ *  Cette liste ne sert que tant que rien n'a été enregistré depuis le backoffice ;
+ *  ensuite, le catalogue enregistré (Vercel Blob) la remplace.
  *
  *  Année, kilométrage et prix sont facultatifs : laissez-les vides s'ils ne sont
  *  pas connus. Ils ne s'afficheront pas (le prix affiche alors « Sur devis »).
