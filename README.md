@@ -5,7 +5,7 @@ Site officiel d'**AL MACTOUM BUSINESS AUTOMOBILE** : achat et livraison de voitu
 - Next.js 14 (App Router) + TypeScript + Tailwind CSS + Framer Motion
 - Bilingue : français (par défaut) `/fr/` et anglais `/en/`
 - Pages pré-générées (rapides), hébergement gratuit sur Vercel
-- **Backoffice** `/admin` : le client gère lui-même ses véhicules (connexion par numéro + mot de passe)
+- **Backoffice** `/admin` : le client gère lui-même ses véhicules et ses vidéos (connexion par numéro + mot de passe)
 - Formulaire de devis, simulateur de paiement et boutons « Ce véhicule m'intéresse » : tout s'envoie sur **WhatsApp** (`wa.me`)
 
 ---
@@ -74,20 +74,21 @@ npm run assets
 
 ---
 
-## 4. Gérer les véhicules (backoffice)
+## 4. Gérer les véhicules et les vidéos (backoffice)
 
 Les véhicules se gèrent depuis le **backoffice**, sans toucher au code : `https://votre-site/admin`
 
 - Connexion avec le **numéro de téléphone** et le **mot de passe** du gérant.
 - **Ajouter** un véhicule : photos (une ou plusieurs, réduites automatiquement), marque, modèle, type, couleur ; prix, année et kilométrage facultatifs (prix vide = « Sur devis »).
 - **Modifier**, **supprimer** (les photos sont supprimées aussi) et **changer l'ordre** avec les flèches. Les 3 premiers véhicules apparaissent sur l'accueil.
+- Onglet **Vidéos** : ajouter, modifier, supprimer et ordonner les vidéos des sections « Nos publicités » et « En vidéo ». L'image d'aperçu, la durée et le format (vertical / horizontal) sont détectés automatiquement. MP4 conseillé, 100 Mo maximum.
 - Le site public se met à jour **immédiatement** après chaque enregistrement.
 
-`data/vehicles.ts` ne sert plus que de catalogue de départ, tant que rien n'a été enregistré depuis le backoffice.
+`data/vehicles.ts`, `data/promos.ts` et `data/videos.ts` ne servent plus que de contenu de départ, tant que rien n'a été enregistré depuis le backoffice.
 
 ### Mise en place sur Vercel (une seule fois)
 
-1. **Stockage des photos** : dans le projet Vercel, ouvrez **Storage → Create → Blob**, créez le store et reliez-le au projet. La variable `BLOB_READ_WRITE_TOKEN` est ajoutée automatiquement.
+1. **Stockage des photos et vidéos** : dans le projet Vercel, ouvrez **Storage → Create → Blob**, créez le store et reliez-le au projet. La variable `BLOB_READ_WRITE_TOKEN` est ajoutée automatiquement.
 2. **Identifiants** : dans **Settings → Environment Variables**, ajoutez :
    - `ADMIN_PHONE` : numéro du gérant, ex. `771234567` (accepté ensuite avec ou sans `+221`, espaces, tirets)
    - `ADMIN_PASSWORD` : un mot de passe solide

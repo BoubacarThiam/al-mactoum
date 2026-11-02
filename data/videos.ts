@@ -2,9 +2,8 @@
  * ============================================================
  *  VIDÉOS DE NOS OPÉRATIONS (section « En vidéo » de l'accueil)
  * ============================================================
- *  Pour ajouter une vidéo :
- *   1. Déposez la vidéo (.mp4) et son image d'aperçu (.jpg) dans /public/videos/operations
- *   2. Copiez un bloc { ... } ci-dessous et modifiez les informations
+ *  Les vidéos se gèrent désormais depuis le backoffice : /admin, onglet Vidéos.
+ *  Cette liste ne sert que tant que rien n'a été enregistré depuis le backoffice.
  *
  *  Les vidéos s'affichent dans l'ordre de la liste. Format conseillé : horizontal (16:9),
  *  moins de 30 secondes, moins de 10 Mo.

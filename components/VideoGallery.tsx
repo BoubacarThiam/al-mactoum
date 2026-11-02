@@ -1,7 +1,7 @@
 import { Reveal } from '@/components/ui/Reveal';
 import { SectionHeading } from '@/components/ui/SectionHeading';
 import { VideoCard } from '@/components/ui/VideoCard';
-import { operationVideos } from '@/data/videos';
+import { getOperationVideos } from '@/lib/content-store';
 import type { Dictionary, Locale } from '@/lib/i18n';
 import { motionTokens } from '@/lib/motion';
 import { cn, fill } from '@/lib/utils';
@@ -12,10 +12,11 @@ interface VideoGalleryProps {
 }
 
 /**
- * Section « En vidéo » : vraies vidéos de nos opérations (liste dans /data/videos.ts).
+ * Section « En vidéo » : vraies vidéos de nos opérations (gérées depuis le backoffice /admin).
  * Rien n'est téléchargé avant le clic (image d'aperçu seulement) ; une seule vidéo joue à la fois.
  */
-export function VideoGallery({ t, locale }: VideoGalleryProps) {
+export async function VideoGallery({ t, locale }: VideoGalleryProps) {
+  const operationVideos = await getOperationVideos();
   if (operationVideos.length === 0) return null;
 
   // Grille adaptée au nombre de vidéos : pas de colonne vide avec 1 ou 2 vidéos

@@ -4,7 +4,7 @@ import { VehicleCatalog } from '@/components/VehicleCatalog';
 import { Reveal } from '@/components/ui/Reveal';
 import { SectionHeading } from '@/components/ui/SectionHeading';
 import { type Dictionary, type Locale, localePath } from '@/lib/i18n';
-import { getVehicles } from '@/lib/vehicle-store';
+import { getVehicles } from '@/lib/content-store';
 
 interface VehiclesSectionProps {
   t: Dictionary['vehicles'];

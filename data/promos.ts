@@ -2,9 +2,8 @@
  * ============================================================
  *  VIDÉOS PUBLICITAIRES (section « Nos publicités » de l'accueil)
  * ============================================================
- *  Pour ajouter une vidéo :
- *   1. Déposez la vidéo (.mp4) et son image d'aperçu (.jpg) dans /public/videos/publicites
- *   2. Copiez un bloc { ... } ci-dessous et modifiez les informations
+ *  Les vidéos se gèrent désormais depuis le backoffice : /admin, onglet Vidéos.
+ *  Cette liste ne sert que tant que rien n'a été enregistré depuis le backoffice.
  *
  *  Tant que la liste est vide, la section n'apparaît pas sur le site.
  *  Vidéo filmée au téléphone (verticale) : mettez portrait: true.

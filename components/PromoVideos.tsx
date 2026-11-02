@@ -1,7 +1,7 @@
 import { Reveal } from '@/components/ui/Reveal';
 import { SectionHeading } from '@/components/ui/SectionHeading';
 import { VideoCard } from '@/components/ui/VideoCard';
-import { promoVideos } from '@/data/promos';
+import { getPromoVideos } from '@/lib/content-store';
 import type { Dictionary, Locale } from '@/lib/i18n';
 import { motionTokens } from '@/lib/motion';
 import { cn, fill } from '@/lib/utils';
@@ -12,10 +12,11 @@ interface PromoVideosProps {
 }
 
 /**
- * Section « Nos publicités » : vidéos publicitaires (liste dans /data/promos.ts), sur fond sombre
+ * Section « Nos publicités » : vidéos publicitaires (gérées depuis le backoffice /admin), sur fond sombre
  * pour ressortir entre les sections claires. Vidéos verticales ou horizontales, côte à côte dès la tablette.
  */
-export function PromoVideos({ t, locale }: PromoVideosProps) {
+export async function PromoVideos({ t, locale }: PromoVideosProps) {
+  const promoVideos = await getPromoVideos();
   if (promoVideos.length === 0) return null;
 
   return (
