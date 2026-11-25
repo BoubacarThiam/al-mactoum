@@ -51,7 +51,7 @@ export const siteConfig = {
    * Adresse publique du site, sans "/" final.
    * À remplacer par votre nom de domaine définitif (utilisée pour le SEO, le sitemap et Open Graph).
    */
-  url: 'https://almactoum.vercel.app',
+  url: 'https://www.al-mactoum.com',
 
   address: {
     street: "Autoroute de l'Aéroport, Sicap Foire",
