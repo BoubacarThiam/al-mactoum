@@ -10,3 +10,5 @@ public/_img
 # Backoffice en local (sans Vercel Blob)
 .data
 public/uploads
+.vercel
+.env*
